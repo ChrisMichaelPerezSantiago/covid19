@@ -13,9 +13,13 @@ class PluginManager {
     return res;
   };
 
-
   async getDeaths(){
     const res = await Promise.all(this.plugins.map(plugin => plugin.deaths()));
+    return res;
+  };
+
+  async getSituationReports(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.situationReports()));
     return res;
   };
 }
