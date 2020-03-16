@@ -22,6 +22,16 @@ class PluginManager {
     const res = await Promise.all(this.plugins.map(plugin => plugin.situationReports()));
     return res;
   };
+
+  async getTaskForceInfoUS(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.TaskForceUS()));
+    return res;
+  };
+
+  async getGlobalData(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.globalData()));
+    return res;
+  };
 }
 
 module.exports = PluginManager;
