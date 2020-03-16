@@ -6,7 +6,7 @@
 <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" target="_blank" />
 <img src="https://img.shields.io/badge/COVI19-API-brightgreen.svg" alt="">
 
- <a href="https://nodei.co/npm/covid19/"><img src="https://nodei.co/npm/covid19.png"></a>
+ <a href="https://nodei.co/npm/covid19-api/"><img src="https://nodei.co/npm/covid19-api.png"></a>
 
 
 > This API provides updated real-time data on coronavirus cases from the worldometers page, provided by the most reputable organizations and statistical offices in the world.
