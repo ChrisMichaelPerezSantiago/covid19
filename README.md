@@ -1,4 +1,4 @@
-# **🐛 COVID19** (version 1.0.1)
+# **🐛 COVID19** (version 1.0.2)
 
 ![node version](https://img.shields.io/badge/node->=10.16.x-brightgreen.svg)
 ![npm version](https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg)
@@ -12,6 +12,11 @@
 > This API provides updated real-time data on coronavirus cases from the worldometers page, provided by the most reputable organizations and statistical offices in the world.
 
 ---
+
+## 🚨 Important Information 🚨
+*If you notice that I make and publish many updates / versions in the api, it is due to all the data that is reaching the public. This helps me create a more complete API, with accurate data.*
+
+*Sorry for the inconvenience!*
 
 ## 📝 Brief Information on COVID19
 
@@ -46,10 +51,17 @@
 
 *Symptoms of the novel coronavirus (2019-nCoV) may appear in as few as `2` days or as long as `14` (estimated ranges vary from `2-10` days, `2-14` days, and `10-14` days, [see details](https://www.worldometers.info/coronavirus/coronavirus-incubation-period/)), during which the virus is contagious but the patient does not display any symptom (asymptomatic transmission).*
 
-## 🎉 COVID19 API - UPDATED v1.0.1
-- [x] *Coronavirus disease (COVID-2019) situation reports*
-  - This provides a list of reports in pdf format updated in real time.
-  - `PluginManager.getSituationReports()`
+
+## 🎉 COVID19 API - UPDATED v1.0.2
+- [X] - *White House Coronavirus Task Force Information*
+  - *What every American and community can do now to decrease the spread of the coronavirus*
+  - *Recommendations for 30-Day Mitigation Strategies*
+  - `PluginManager.getTaskForceInfoUS()`
+
+- [X] *Public data of each country, with updated data in real time.*
+  - *The problem with this function is that the data takes a little time to display, this is due to the large amount of data that is added to [COVID-19 google spreadsheets](https://docs.google.com/spreadsheets/d/1avGWWl1J19O_Zm0NGTGy2E-fOG05i4ljRfjl87P7FiA/htmlview?ts=5e5e9222&sle=true#gid=0).*
+  - *According to information it is possible that the data is moved due to the large amount of data on the page. Eventually any changes I will be aware of.*
+  - `PluginManager.getGlobalData()`
 
 ## 📖 API Documentation
 
@@ -308,14 +320,94 @@
     // .....
   ]
 ]
-
 ```
 
+
+### PluginManager.getTaskForceInfoUS()
+*From the White House Coronavirus Task Force*
+  - *What every American and community can do now to decrease the spread of the coronavirus*
+  - *Recommendations for 30-Day Mitigation Strategies*
+
+```json
+[
+  [
+    {
+      state: 'Keeping workplaces, homes, schools, or commercial establishments safe',
+      pdf: 'https://www.cdc.gov/coronavirus/2019-ncov/downloads/workplace-school-and-home-guidance.pdf'
+    },
+    {
+      state: 'CDC’s framework for mitigation',
+      pdf: 'https://www.cdc.gov/coronavirus/2019-ncov/downloads/community-mitigation-strategy.pdf'
+    },
+    {
+      state: 'Florida',
+      pdf: 'https://www.cdc.gov/coronavirus/2019-ncov/downloads/FL_Community_Mitigation.pdf'
+    },
+    {
+      state: 'Massachusetts',
+      pdf: 'https://www.cdc.gov/coronavirus/2019-ncov/downloads/MA_Community_Mitigation.pdf'
+    },
+    {
+      state: 'New Rochelle, NY',
+      pdf: 'https://www.cdc.gov/coronavirus/2019-ncov/downloads/New-Rochelle_Community_Mitigation.pdf'
+    },
+    {
+      state: 'Santa Clara, CA',
+      pdf: 'https://www.cdc.gov/coronavirus/2019-ncov/downloads/Santa-Clara_Community_Mitigation.pdf'
+    },
+    {
+      state: 'Seattle, WA',
+      pdf: 'https://www.cdc.gov/coronavirus/2019-ncov/downloads/Seattle_Community_Mitigation.pdf'
+    }
+  ]
+]
+```
+
+### PluginManager.getGlobalData();
+- *Public data of each country, with updated data in real time.*
+  - *The problem with this function is that the data takes a little time to display, this is due to the large amount of data that is added to [COVID-19 google spreadsheets](https://docs.google.com/spreadsheets/d/1avGWWl1J19O_Zm0NGTGy2E-fOG05i4ljRfjl87P7FiA/htmlview?ts=5e5e9222&sle=true#gid=0).*
+  - *According to information it is possible that the data is moved due to the large amount of data on the page. Eventually any changes I will be aware of.*
+  - *Since the data is not well parsed I leave you a table referencing the properties:*
+  - | Object Properties      | 
+    | ---------------------- |
+    |A = Province/State      |
+    |B =  date               |
+    |C = Case Type           |
+    |D = Cases               |
+    |E = Long                |
+    |F = Lat                 |
+    |D = Difference          |
+    |H = Last Update Date    |
+
+```json
+  {
+    "53065": "Argentina",
+    "A": "",
+    "B": "2020-03-15",
+    "C": "Confirmed",
+    "D": "45",
+    "E": "-63.6167",
+    "F": "-38.4161",
+    "G": "11",
+    "H": "2020-03-16 12:08:25"
+  },  
+  {
+    "53065": "Armenia",
+    "A": "",
+    "B": "2020-01-22",
+    "C": "Confirmed",
+    "D": "0",
+    "E": "45.0382",
+    "F": "40.0691",
+    "G": "0",
+    "H": "2020-03-16 12:08:25"
+  },
+```
 
 ## 💡 References
 - *worldometers. 2020. Coronavirus. [online] Available at: <https://www.worldometers.info/coronavirus/> [Accessed 16 March 2020].*
 - *who. 2020. Coronavirus disease (COVID-2019) situation reports [online] Available at: <https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/> [Accessed 17 March 20202]*
-
+- *cdc.gov. 2020. From the White House Coronavirus Task Force [online] Available at: <https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/from-the-white-house-task-force.html/>*
 
 ## **:handshake: Contributing**
 
