@@ -1,7 +1,12 @@
 const cloudscraper = require('cloudscraper');
 const cheerio = require('cheerio');
 const tabletojson = require('tabletojson').Tabletojson;
-const { BASE_URL , WHO_BASE_URL } = require('./url/index.js');
+const { 
+  BASE_URL , 
+  WHO_BASE_URL,
+  CDC_GOV_BASE_URL,
+  COVID19_SPREADSHEETS_BASE_URL
+} = require('./url/index.js');
 
 
 const reports = async() =>{
@@ -174,9 +179,40 @@ const situationReports = async() =>{
   return Promise.all(data);
 };
 
+const TaskForceUS = async() =>{
+  const res = await cloudscraper(`${CDC_GOV_BASE_URL}/coronavirus/2019-ncov/cases-updates/from-the-white-house-task-force.html` , {
+    method: 'GET',
+  });
+  const $ = cheerio.load(res);
+  const data = [];
+
+  $('div.col ul li').each((index , element) =>{
+    const $element = $(element);
+    const state = $element.find('a').text().split('[')[0].split('pdf')[0].trim();
+    const pdf = `${CDC_GOV_BASE_URL}` + $element.find('a').attr('href');
+    data.push({
+      state,
+      pdf
+    });
+  });
+
+  return Promise.all(data);
+};
+
+const globalData  = async() =>{
+  const res = await cloudscraper(`${COVID19_SPREADSHEETS_BASE_URL}` , {method: 'GET'})
+  const $ = cheerio.load(res);
+  const html = $.html();
+  const table = tabletojson.convert(html);  
+
+  return Promise.all(table)
+};
+
 module.exports = {
   reports,
   reportsByCountries,
   deaths,
-  situationReports
+  situationReports,
+  TaskForceUS,
+  globalData
 };
