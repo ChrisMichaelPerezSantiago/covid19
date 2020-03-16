@@ -1,0 +1,47 @@
+{
+  "name": "covid19",
+  "version": "1.0.0",
+  "description": "This API provides updated real-time data on coronavirus cases from the worldometers page, provided by the most reputable organizations and statistical offices in the world.",
+  "main": "./src/api/index.js",
+  "scripts": {
+    "start:api": "nodemon ./src/api/api",
+    "start:plugin": "nodemon ./TestPlugin"
+  },
+  "keywords": [
+    "COVID-19",
+    "coronavirus",
+    "pandemic"
+  ],
+  "author": {
+    "name": "Chris Michael",
+    "email": "chrisperezsantiago1@gmail.com",
+    "url": "http://personal-porfolio.chrismichael.now.sh",
+    "social": {
+      "github": "https://github.com/ChrisMichaelPerezSantiago",
+      "twitter": "https://twitter.com/Chris5855M"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Chris Michael",
+      "url": "https://github.com/ChrisMichaelPerezSantiago",
+      "reason": "Project Leader, and Developer"
+    }
+  ],
+  "bugs": {
+    "url": "https://github.com/ChrisMichaelPerezSantiago/covid19/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ChrisMichaelPerezSantiago/covid19.git"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "cloudscraper": "^4.6.0",
+    "nodemon": "^2.0.2",
+    "request": "^2.88.2",
+    "tabletojson": "^2.0.3"
+  }
+}
