@@ -1,4 +1,4 @@
-# **🐛 COVID19** (version 1.0.0)
+# **🐛 COVID19** (version 1.0.1)
 
 ![node version](https://img.shields.io/badge/node->=10.16.x-brightgreen.svg)
 ![npm version](https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg)
@@ -46,9 +46,15 @@
 
 *Symptoms of the novel coronavirus (2019-nCoV) may appear in as few as `2` days or as long as `14` (estimated ranges vary from `2-10` days, `2-14` days, and `10-14` days, [see details](https://www.worldometers.info/coronavirus/coronavirus-incubation-period/)), during which the virus is contagious but the patient does not display any symptom (asymptomatic transmission).*
 
+## 🎉 COVID19 API - UPDATED v1.0.1
+- [x] *Coronavirus disease (COVID-2019) situation reports*
+  - This provides a list of reports in pdf format updated in real time.
+  - `PluginManager.getSituationReports()`
+
 ## 📖 API Documentation
 
 ### PluginManager.getReports()
+*Confirmed Cases and Deaths(GLOBAL)*
 
 ```json
 [
@@ -182,6 +188,7 @@
 
 
 ### PluginManager.getReportsByCountries([country])
+*Confirmed Cases and Deaths by Country*
 
 | Countries     |
 | ------------- |
@@ -217,6 +224,7 @@
 ```
 
 ### PluginManager.getDeaths();
+*Total Deaths of Novel Coronavirus (2019-nCoV)*
 
 ```json
 [
@@ -261,8 +269,52 @@
 ]
 ```
 
+## PluginManager.getSituationReports()
+*Coronavirus disease (COVID-2019) situation reports*
+
+```json
+[
+  [
+    {
+      report: 'Situation report - 55',
+      date: ' 15 March 2020',
+      pdf: 'https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200315-sitrep-55-covid-19.pdf?sfvrsn=33daa5cb_8'
+    },
+    {
+      report: 'Situation report - 54',
+      date: ' 14 March 2020',
+      pdf: 'https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200314-sitrep-54-covid-19.pdf?sfvrsn=dcd46351_8'
+    },
+    {
+      report: 'Situation report - 53',
+      date: ' 13 March 2020',
+      pdf: 'https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200313-sitrep-53-covid-19.pdf?sfvrsn=adb3f72_2'
+    },
+    {
+      report: 'Situation report - 52',
+      date: ' 12 March 2020',
+      pdf: 'https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200312-sitrep-52-covid-19.pdf?sfvrsn=e2bfc9c0_4'
+    },
+    {
+      report: 'Situation report - 51',
+      date: ' 11 March 2020',
+      pdf: 'https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200311-sitrep-51-covid-19.pdf?sfvrsn=1ba62e57_10'
+    },
+    {
+      report: 'Situation report - 50',
+      date: ' 10 March 2020',
+      pdf: 'https://www.who.int/docs/default-source/coronaviruse/situation-reports/20200310-sitrep-50-covid-19.pdf?sfvrsn=55e904fb_2'
+    },
+    // .....
+  ]
+]
+
+```
+
+
 ## 💡 References
 - *worldometers. 2020. Coronavirus. [online] Available at: <https://www.worldometers.info/coronavirus/> [Accessed 16 March 2020].*
+- *who. 2020. Coronavirus disease (COVID-2019) situation reports [online] Available at: <https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/> [Accessed 17 March 20202]*
 
 
 ## **:handshake: Contributing**
