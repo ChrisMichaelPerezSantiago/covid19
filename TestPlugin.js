@@ -7,4 +7,5 @@ const PluginManager = require('./src/api/index');
   const situationsReports = await PluginManager.getSituationReports();
   const taskforce = await PluginManager.getTaskForceInfoUS();
   const globalData = await PluginManager.getGlobalData();
+  const testsInUS = await PluginManager.getTestsInUS();
 })();
