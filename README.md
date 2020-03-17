@@ -1,4 +1,4 @@
-# **🐛 COVID19** (version 1.0.2)
+# **🐛 COVID19** (version 1.0.3)
 
 ![node version](https://img.shields.io/badge/node->=10.16.x-brightgreen.svg)
 ![npm version](https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg)
@@ -9,7 +9,7 @@
  <a href="https://nodei.co/npm/covid19-api/"><img src="https://nodei.co/npm/covid19-api.png"></a>
 
 
-> This API provides updated real-time data on coronavirus cases from the worldometers page, provided by the most reputable organizations and statistical offices in the world.
+> This API provides updated real-time data on coronavirus cases from the worldometers page and other important websites, provided by the most reputable organizations and statistical offices in the world.
 
 ---
 
@@ -52,16 +52,11 @@
 *Symptoms of the novel coronavirus (2019-nCoV) may appear in as few as `2` days or as long as `14` (estimated ranges vary from `2-10` days, `2-14` days, and `10-14` days, [see details](https://www.worldometers.info/coronavirus/coronavirus-incubation-period/)), during which the virus is contagious but the patient does not display any symptom (asymptomatic transmission).*
 
 
-## 🎉 COVID19 API - UPDATED v1.0.2
-- [X] - *White House Coronavirus Task Force Information*
-  - *What every American and community can do now to decrease the spread of the coronavirus*
-  - *Recommendations for 30-Day Mitigation Strategies*
-  - `PluginManager.getTaskForceInfoUS()`
-
-- [X] *Public data of each country, with updated data in real time.*
-  - *The problem with this function is that the data takes a little time to display, this is due to the large amount of data that is added to [COVID-19 google spreadsheets](https://docs.google.com/spreadsheets/d/1avGWWl1J19O_Zm0NGTGy2E-fOG05i4ljRfjl87P7FiA/htmlview?ts=5e5e9222&sle=true#gid=0).*
-  - *According to information it is possible that the data is moved due to the large amount of data on the page. Eventually any changes I will be aware of.*
-  - `PluginManager.getGlobalData()`
+## 🎉 COVID19 API - UPDATED v1.0.3
+- [x] *Reporting public health labs are 48 state public health labs (AK, AL, AR, AZ, CA, CO, CT, DE, FL, GA, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO, MS, MT, NC, ND, NE, NH, NJ, NM, NV, NY, OH, OK, OR, PA, RI, SC, SD, TN, TX, VT, WA, WI, WV and WY), New York City, USAF, and 9 California counties.*
+ - *Non-respiratory specimens were excluded. For state public health labs, the date represents the date of sample collection, if available, or the date tested. For CDC labs, the date represents the date specimen was received at CDC.*
+ - *[Centers for Disease Control and Prevention Testing in U.S. ](https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/testing-in-us.html)*
+ - `PluginManager.getTestsInUS()`
 
 ## 📖 API Documentation
 
@@ -402,6 +397,49 @@
     "G": "0",
     "H": "2020-03-16 12:08:25"
   },
+```
+
+### PluginManager.getTestsInUS()
+*Reporting public health labs are 48 state public health labs (AK, AL, AR, AZ, CA, CO, CT, DE, FL, GA, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO, MS, MT, NC, ND, NE, NH, NJ, NM, NV, NY, OH, OK, OR, PA, RI, SC, SD, TN, TX, VT, WA, WI, WV and WY), New York City, USAF, and 9 California counties.*
+ - *Non-respiratory specimens were excluded. For state public health labs, the date represents the date of sample collection, if available, or the date tested. For CDC labs, the date represents the date specimen was received at CDC.*
+ - *[Centers for Disease Control and Prevention Testing in U.S. ](https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/testing-in-us.html)*
+
+```json
+[
+  [
+    // .....
+    {
+      'Date Collected': '3/10',
+      'CDC Labs': '139',
+      'US Public Health Labs': '2567'
+    },
+    {
+      'Date Collected': '3/11',
+      'CDC Labs': '107',
+      'US Public Health Labs': '2637'
+    },
+    {
+      'Date Collected': '3/12',
+      'CDC Labs': '75‡',
+      'US Public Health Labs': '2302‡'
+    },
+    {
+      'Date Collected': '3/13',
+      'CDC Labs': '0‡',
+      'US Public Health Labs': '1511‡'
+    },
+    {
+      'Date Collected': '3/14',
+      'CDC Labs': '0‡',
+      'US Public Health Labs': '165‡'
+    },
+    {
+      'Date Collected': '3/15',
+      'CDC Labs': '0‡',
+      'US Public Health Labs': '4‡'
+    }
+  ]
+]
 ```
 
 ## 💡 References
