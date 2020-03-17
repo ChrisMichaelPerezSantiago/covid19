@@ -1,11 +1,13 @@
 {
   "name": "covid19-api",
-  "version": "1.0.2",
-  "description": "This API provides updated real-time data on coronavirus cases from the worldometers page, provided by the most reputable organizations and statistical offices in the world.",
+  "version": "1.0.3",
+  "description": "This API provides updated real-time data on coronavirus cases from the worldometers page and other important websites, provided by the most reputable organizations and statistical offices in the world.",
   "main": "./src/api/index.js",
   "scripts": {
     "start:api": "nodemon ./src/api/api",
-    "start:plugin": "nodemon ./TestPlugin"
+    "start:plugin": "nodemon ./TestPlugin",
+    "start": "node ./server/index.js",
+    "start:server-dev": "nodemon ./server/index.js"
   },
   "keywords": [
     "COVID-19",
@@ -38,10 +40,19 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.19.2",
+    "body-parser": "^1.19.0",
     "cheerio": "^1.0.0-rc.3",
     "cloudscraper": "^4.6.0",
+    "compose-middleware": "^5.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.3",
+    "mocha": "^7.1.0",
+    "morgan": "^1.9.1",
     "nodemon": "^2.0.2",
     "request": "^2.88.2",
+    "supertest": "^4.0.2",
     "tabletojson": "^2.0.3"
   }
 }
