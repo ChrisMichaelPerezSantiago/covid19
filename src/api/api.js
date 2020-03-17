@@ -208,11 +208,29 @@ const globalData  = async() =>{
   return Promise.all(table)
 };
 
+const testsInUS  = async() =>{
+  const res = await cloudscraper(`${CDC_GOV_BASE_URL}/coronavirus/2019-ncov/cases-updates/testing-in-us.html` , {method: 'GET'})
+  const $ = cheerio.load(res);
+  const html = $.html();
+  const data = [];
+  
+  const lastUpdatedDay = $('div.syndicate span.text-red').text().trim();
+  const table = tabletojson.convert(html);  
+
+  data.push({
+    lastUpdatedDay: lastUpdatedDay,
+    table: table[0]
+  });
+    
+  return Promise.all(data);
+};
+
 module.exports = {
   reports,
   reportsByCountries,
   deaths,
   situationReports,
   TaskForceUS,
-  globalData
+  globalData,
+  testsInUS
 };
