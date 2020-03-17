@@ -32,6 +32,11 @@ class PluginManager {
     const res = await Promise.all(this.plugins.map(plugin => plugin.globalData()));
     return res;
   };
+
+  async getTestsInUS(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.testsInUS()));
+    return res;
+  }
 }
 
 module.exports = PluginManager;
