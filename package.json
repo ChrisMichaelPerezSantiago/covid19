@@ -5,9 +5,7 @@
   "main": "./src/api/index.js",
   "scripts": {
     "start:api": "nodemon ./src/api/api",
-    "start:plugin": "nodemon ./TestPlugin",
-    "start": "node ./server/index.js",
-    "start:server-dev": "nodemon ./server/index.js"
+    "start:plugin": "nodemon ./TestPlugin"
   },
   "keywords": [
     "COVID-19",
