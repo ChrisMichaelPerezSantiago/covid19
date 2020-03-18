@@ -1,0 +1,83 @@
+const express = require('express');
+const router = express.Router();
+const PluginManager = require('../api');
+
+router.get('/AllReports' , (req , res) =>{
+  PluginManager.reports()
+    .then(reports =>{
+      res.status(200).json({
+        reports
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/Deaths' , (req , res) =>{
+  PluginManager.deaths()
+    .then(deaths =>{
+      res.status(200).json({
+        deaths: deaths[0]
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/ReportsByCountries/:country' , (req , res) =>{
+  const country = req.params.country;
+  PluginManager.reportsByCountries(country)
+    .then(report =>{
+      res.status(200).json({
+        report: report[0]
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/SituationReports' , (req , res) =>{
+  PluginManager.situationReports()
+    .then(reports =>{
+      res.status(200).json({
+        reports: reports
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/TaskForceInfoUS' , (req , res) =>{
+  PluginManager.TaskForceUS()
+    .then(doc =>{
+      res.status(200).json({
+        doc: doc
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/GlobalDataReports' , (req , res) =>{
+  PluginManager.globalData()
+    .then(reports =>{
+      res.status(200).json({
+        reports: reports
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/TestsInUS' , (req , res) =>{
+  PluginManager.testsInUS()
+    .then(tests =>{
+      res.status(200).json({
+        tests: tests[0]
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+module.exports = router;
