@@ -15,7 +15,8 @@ router.get('/', (req, res) => {
         'SituationReports': '/api/v1/SituationReports',
         'TaskForceInfoUS': '/api/v1/TaskForceInfoUS',
         'GlobalDataReports': '/api/v1/GlobalDataReports',
-        'TestsInUS': '/api/v1/TestsInUS'
+        'TestsInUS': '/api/v1/TestsInUS',
+        'FatalityRateByAge': 'FatalityRateByAge'
       }
     ]
   });

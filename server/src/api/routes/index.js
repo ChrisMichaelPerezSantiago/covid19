@@ -80,4 +80,48 @@ router.get('/TestsInUS' , (req , res) =>{
     });
 });
 
+router.get('/FatalityRateByAge' , (req , res) =>{
+  PluginManager.fatalityRateByAge()
+    .then(table =>{
+      res.status(200).json({
+        table: table
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/FatalityRateBySex' , (req , res) =>{
+  PluginManager.fatalityRateBySex()
+    .then(table =>{
+      res.status(200).json({
+        table: table
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/FatalityRateByComorbidities' , (req , res) =>{
+  PluginManager.fatalityRateByComorbidities()
+    .then(table =>{
+      res.status(200).json({
+        table: table
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/CountriesWhereCoronavirusHasSpread' , (req , res) =>{
+  PluginManager.countriesWhereCoronavirusHasSpread()
+    .then(table =>{
+      res.status(200).json({
+        table: table
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
 module.exports = router;
