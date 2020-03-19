@@ -225,6 +225,46 @@ const testsInUS  = async() =>{
   return Promise.all(data);
 };
 
+const fatalityRateByAge  = async() =>{
+  const res = await cloudscraper(`${BASE_URL}/coronavirus/coronavirus-age-sex-demographics/` , {method: 'GET'})
+  const $ = cheerio.load(res);
+  const html = $.html();
+  const table = tabletojson.convert(html);  
+  const data = table[0];
+
+  return Promise.all(data)
+};
+
+const fatalityRateBySex  = async() =>{
+  const res = await cloudscraper(`${BASE_URL}/coronavirus/coronavirus-age-sex-demographics/` , {method: 'GET'})
+  const $ = cheerio.load(res);
+  const html = $.html();
+  const table = tabletojson.convert(html);  
+  const data = table[1];
+
+  return Promise.all(data);
+};
+
+const fatalityRateByComorbidities  = async() =>{
+  const res = await cloudscraper(`${BASE_URL}/coronavirus/coronavirus-age-sex-demographics/` , {method: 'GET'})
+  const $ = cheerio.load(res);
+  const html = $.html();
+  const table = tabletojson.convert(html);  
+  const data = table[2];
+
+  return Promise.all(data);
+};
+
+const countriesWhereCoronavirusHasSpread  = async() =>{
+  const res = await cloudscraper(`${BASE_URL}/coronavirus/countries-where-coronavirus-has-spread/` , {method: 'GET'})
+  const $ = cheerio.load(res);
+  const html = $.html();
+  const table = tabletojson.convert(html);  
+  const data = table[0];
+
+  return Promise.all(data);
+};
+
 module.exports = {
   reports,
   reportsByCountries,
@@ -232,5 +272,9 @@ module.exports = {
   situationReports,
   TaskForceUS,
   globalData,
-  testsInUS
+  testsInUS,
+  fatalityRateByAge,
+  fatalityRateBySex,
+  fatalityRateByComorbidities,
+  countriesWhereCoronavirusHasSpread
 };

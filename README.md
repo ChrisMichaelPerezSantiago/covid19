@@ -1,4 +1,4 @@
-# **🐛 COVID19** (version 1.0.3)
+# **🐛 COVID19** (version 1.0.4)
 
 ![node version](https://img.shields.io/badge/node->=10.16.x-brightgreen.svg)
 ![npm version](https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg)
@@ -52,11 +52,15 @@
 *Symptoms of the novel coronavirus (2019-nCoV) may appear in as few as `2` days or as long as `14` (estimated ranges vary from `2-10` days, `2-14` days, and `10-14` days, [see details](https://www.worldometers.info/coronavirus/coronavirus-incubation-period/)), during which the virus is contagious but the patient does not display any symptom (asymptomatic transmission).*
 
 
-## 🎉 COVID19 API - UPDATED v1.0.3
-- [x] *Reporting public health labs are 48 state public health labs (AK, AL, AR, AZ, CA, CO, CT, DE, FL, GA, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO, MS, MT, NC, ND, NE, NH, NJ, NM, NV, NY, OH, OK, OR, PA, RI, SC, SD, TN, TX, VT, WA, WI, WV and WY), New York City, USAF, and 9 California counties.*
- - *Non-respiratory specimens were excluded. For state public health labs, the date represents the date of sample collection, if available, or the date tested. For CDC labs, the date represents the date specimen was received at CDC.*
- - *[Centers for Disease Control and Prevention Testing in U.S. ](https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/testing-in-us.html)*
- - `PluginManager.getTestsInUS()`
+## 🎉 COVID19 API - UPDATED v1.0.4
+- [x] *Age of Coronavirus Deaths - COVID-19 Fatality Rate by **AGE**
+  - `PluginManager.getFatalityRateByAge()`
+- [x] *Sex ratio - COVID-19 Fatality Rate by **SEX**
+  - `PluginManager.getFatalityRateBySex()`
+- [x] *COVID-19 Fatality Rate by **COMORBIDITY***
+  - `PluginManager.getFatalityRateByComorbidities()`
+- [x] *Countries where COVID-19 has spread*
+  - `PluginManager.getCountriesWhereCoronavirusHasSpread()`
 
 ## 📖 API Documentation
 
@@ -442,11 +446,131 @@
 ]
 ```
 
+## Age, Sex, Existing Conditions of COVID-19 Cases and Deaths
+
+### PluginManager.getFatalityRateByAge()
+- ***Age of Coronavirus Deaths - COVID-19 Fatality Rate by AGE***
+  - *`Death Rate` = (number of deaths / number of cases) = `probability of dying if infected by the virus` (%). This probability differs depending on the age group. The percentages shown below `do not have to add up to 100%`, as they `do NOT represent share of deaths by age` group. Rather, it represents, for a person in a given age group, the `risk of dying` if infected with COVID-19.*
+  - **`Death Rate` = (number of deaths / number of cases) = `probability of dying if infected by the virus` (%). The percentages do not have to add up to 100%, as they `do NOT represent share of deaths by age` group.*
+
+```json
+[
+  [
+    {
+      '0': 'AGE',
+      '1': 'DEATH RATE confirmed cases',
+      '2': 'DEATH RATE all cases'
+    },
+    { '0': '80+ years old', '1': '21.9%', '2': '14.8%' },  
+    { '0': '70-79 years old', '1': '', '2': '8.0%' },      
+    { '0': '60-69 years old', '1': '', '2': '3.6%' },      
+    { '0': '50-59 years old', '1': '', '2': '1.3%' },      
+    { '0': '40-49 years old', '1': '', '2': '0.4%' },      
+    { '0': '30-39 years old', '1': '', '2': '0.2%' },      
+    { '0': '20-29 years old', '1': '', '2': '0.2%' },      
+    { '0': '10-19 years old', '1': '', '2': '0.2%' },      
+    { '0': '0-9 years old', '1': '', '2': 'no fatalities' }
+  ]
+]
+```
+
+### PluginManager.getFatalityRateBySex()
+- ***Sex ratio - COVID-19 Fatality Rate by SEX***
+  - *`Death Rate` = (number of deaths / number of cases) = `probability of dying if infected by the virus` (%). This probability differs depending on sex. When reading these numbers, it must be taken into account that `smoking` in China is much more prevalent among males. Smoking increases the risks of respiratory complications.*
+  - *`Death Rate` = (number of deaths / number of cases) = `probability of dying if infected by the virus` (%). The percentages `do not have to add up to 100%`, as they `do NOT represent share of deaths by sex.`*
+
+```json
+[
+  [
+    {
+      '0': 'SEX',
+      '1': 'DEATH RATE confirmed cases',
+      '2': 'DEATH RATE all cases'
+    },
+    { '0': 'Male', '1': '4.7%', '2': '2.8%' },
+    { '0': 'Female', '1': '2.8%', '2': '1.7%' }
+  ]
+]
+```
+## Pre-existing medical conditions (comorbidities)
+*Patients who reported no pre-existing ("comorbid") medical conditions had a case fatality rate of 0.9%. Pre-existing illnesses that put patients at higher risk of dying from a COVID-19 infection are:*
+
+### PluginManager.getFatalityRateByComorbidities()
+ - *COVID-19 Fatality Rate by COMORBIDITY*
+   - *`Death Rate` = (number of deaths / number of cases) = `probability of dying if infected by the virus` (%). This probability differs depending on pre-existing condition. The percentage shown below does `NOT represent in any way the share of deaths by pre-existing condition. Rather, it represents, for a patient with a given pre-existing condition`, the `risk of dying` if infected by COVID-19.*
+
+```json
+[
+  [
+    {
+      '0': 'PRE-EXISTING CONDITION',
+      '1': 'DEATH RATE confirmed cases',
+      '2': 'DEATH RATE all cases'
+    },
+    { '0': 'Cardiovascular disease', '1': '13.2%', '2': '10.5%' },
+    { '0': 'Diabetes', '1': '9.2%', '2': '7.3%' },
+    { '0': 'Chronic respiratory disease', '1': '8.0%', '2': '6.3%' },
+    { '0': 'Hypertension', '1': '8.4%', '2': '6.0%' },
+    { '0': 'Cancer', '1': '7.6%', '2': '5.6%' },
+    { '0': 'no pre-existing conditions', '1': '', '2': '0.9%' }
+  ]
+]
+```
+
+## Countries where COVID-19 has spread
+### PluginManager.getCountriesWhereCoronavirusHasSpread();
+*The 177 countries where COVID-19 has spread and reported*
+
+```json
+[
+  [
+    {
+      "Country": "China",
+      "Cases": "80,928",
+      "Deaths": "3,245",
+      "Region": "Asia"
+    },
+    {
+      "Country": "Italy",
+      "Cases": "35,713",
+      "Deaths": "2,978",
+      "Region": "Europe"
+    },
+    {
+      "Country": "Iran",
+      "Cases": "18,407",
+      "Deaths": "1,284",
+      "Region": "Asia"
+    },
+    {
+      "Country": "Spain",
+      "Cases": "17,147",
+      "Deaths": "767",
+      "Region": "Europe"
+    },
+    {
+      "Country": "Germany",
+      "Cases": "13,632",
+      "Deaths": "33",
+      "Region": "Europe"
+    },
+    {
+      "Country": "United States",
+      "Cases": "9,479",
+      "Deaths": "155",
+      "Region": "North America"
+    },
+    // .....
+  ]
+]
+```
+
 ## 💡 References
 - *worldometers. 2020. Coronavirus. [online] Available at: <https://www.worldometers.info/coronavirus/> [Accessed 16 March 2020].*
 - *cdc.gov. 2020. From the White House Coronavirus Task Force [online] Available at: <https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/from-the-white-house-task-force.html/>*
 - *who. 2020. Coronavirus disease (COVID-2019) situation reports [online] Available at: <https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/> [Accessed 16 March 2020]*
-
+- *[The Epidemiological Characteristics of an Outbreak of 2019 Novel Coronavirus Diseases (COVID-19)](http://weekly.chinacdc.cn/en/article/id/e53946e2-c6c4-41e9-9a9b-fea8db1a8f51) - China CCDC, February 17 2020*
+- *[Report of the WHO-China Joint Mission on Coronavirus Disease 2019 (COVID-19)](https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf) [Pdf] - World Health Organization, Feb. 28, 2020*
 
 ## **:handshake: Contributing**
 
