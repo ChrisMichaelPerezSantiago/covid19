@@ -8,4 +8,8 @@ const PluginManager = require('./src/api/index');
   const taskforce = await PluginManager.getTaskForceInfoUS();
   const globalData = await PluginManager.getGlobalData();
   const testsInUS = await PluginManager.getTestsInUS();
+  const fatalityRateByAge = await PluginManager.getFatalityRateByAge();
+  const fatalityRateBySex = await PluginManager.getFatalityRateBySex();
+  const fatalityRateByComorbidities = await PluginManager.getFatalityRateByComorbidities();
+  const countriesWhereCoronavirusHasSpread = await PluginManager.getCountriesWhereCoronavirusHasSpread();
 })();
