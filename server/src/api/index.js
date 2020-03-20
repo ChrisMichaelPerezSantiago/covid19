@@ -20,6 +20,7 @@ router.get('/', (req, res) => {
         'FatalityRateBySex': '/api/v1/FatalityRateBySex',
         'FatalityRateByComorbidities': '/api/v1/FatalityRateByComorbidities',
         'CountriesWhereCoronavirusHasSpread': '/api/v1/CountriesWhereCoronavirusHasSpread',
+        'TravelHealthNotices': '/api/v1/TravelHealthNotices',
       }
     ]
   });

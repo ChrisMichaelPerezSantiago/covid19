@@ -1,11 +1,14 @@
 const cloudscraper = require('cloudscraper');
 const cheerio = require('cheerio');
 const tabletojson = require('tabletojson').Tabletojson;
+const {renameKey} = require('./utils/utils');
 const { 
   BASE_URL , 
   WHO_BASE_URL,
   CDC_GOV_BASE_URL,
-  COVID19_SPREADSHEETS_BASE_URL
+  COVID19_SPREADSHEETS_BASE_URL,
+  TRAVEL_ADVISORIES_BASE_URL,
+  TEMP_CDC_GOV_BASE_URL
 } = require('./url/index');
 
 
@@ -265,6 +268,77 @@ const countriesWhereCoronavirusHasSpread  = async() =>{
   return Promise.all(data);
 };
 
+const travelHealthNotices = async() =>{
+  const res = await cloudscraper(`${TEMP_CDC_GOV_BASE_URL}/travel/notices` , {method: 'GET'})
+  const $ = cheerio.load(res);
+  const data = [];
+  const doc = {
+    warning: [],
+    alert: [],
+    watch: []
+  };
+
+  $('div#contentArea div div#warning ul li').each((index , element) =>{
+    const $element = $(element);
+    const title = $element.find('a').eq(1).text();
+    const date = $element.find('span.date').text();
+    const summary = $element.find('span.summary').text();
+    doc.warning.push({
+      title,
+      date,
+      summary
+    });
+  });
+
+  $('div#contentArea div div#alert ul li').each((index , element) =>{
+    const $element = $(element);
+    const title = $element.find('a').eq(1).text();
+    const date = $element.find('span.date').text();
+    const summary = $element.find('span.summary').text();
+    doc.alert.push({
+      title,
+      date,
+      summary
+    });
+  });
+
+  $('div#contentArea div div#watch ul li').each((index , element) =>{
+    const $element = $(element);
+    const title = $element.find('a').eq(1).text();
+    const date = $element.find('span.date').text();
+    const summary = $element.find('span.summary').text();
+    doc.watch.push({
+      title,
+      date,
+      summary
+    });
+  });
+
+  const table = await travelAdvisoriesHelper();
+
+  data.push({
+    data:{
+      travelHealthNotices: doc,
+      table: table
+    }
+  });
+
+  return Promise.all(data);
+};
+
+const travelAdvisoriesHelper = async() =>{
+  const res = await cloudscraper(`${TRAVEL_ADVISORIES_BASE_URL}/content/travel/en/traveladvisories/traveladvisories.html` , {method: 'GET'})
+  const $ = cheerio.load(res);
+  const html = $.html();
+  const table = tabletojson.convert(html);  
+  const data = table;
+  data.map(doc =>{
+    doc.forEach(obj => renameKey(obj , 'Date Updated' , 'DateUpdated') )
+  });
+
+  return Promise.all(data)
+};
+
 module.exports = {
   reports,
   reportsByCountries,
@@ -276,5 +350,6 @@ module.exports = {
   fatalityRateByAge,
   fatalityRateBySex,
   fatalityRateByComorbidities,
-  countriesWhereCoronavirusHasSpread
+  countriesWhereCoronavirusHasSpread,
+  travelHealthNotices
 };

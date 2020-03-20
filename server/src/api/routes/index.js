@@ -124,4 +124,15 @@ router.get('/CountriesWhereCoronavirusHasSpread' , (req , res) =>{
     });
 });
 
+router.get('/TravelHealthNotices' , (req , res) =>{
+  PluginManager.travelHealthNotices()
+    .then(data =>{
+      res.status(200).json({
+        data: data[0].data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
 module.exports = router;
