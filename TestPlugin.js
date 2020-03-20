@@ -12,4 +12,5 @@ const PluginManager = require('./src/api/index');
   const fatalityRateBySex = await PluginManager.getFatalityRateBySex();
   const fatalityRateByComorbidities = await PluginManager.getFatalityRateByComorbidities();
   const countriesWhereCoronavirusHasSpread = await PluginManager.getCountriesWhereCoronavirusHasSpread();
+  const travelHealthNotices = await PluginManager.getTravelHealthNotices();
 })();

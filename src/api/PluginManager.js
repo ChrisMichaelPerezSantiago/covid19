@@ -57,6 +57,11 @@ class PluginManager {
     const res = await Promise.all(this.plugins.map(plugin => plugin.countriesWhereCoronavirusHasSpread()));
     return res;
   };
+
+  async getTravelHealthNotices(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.travelHealthNotices()));
+    return res;
+  };
 }
 
 module.exports = PluginManager;
