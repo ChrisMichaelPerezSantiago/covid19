@@ -1,4 +1,4 @@
-# **🐛 COVID19** (version 1.0.4)
+# **🐛 COVID19** (version 1.0.5)
 
 ![node version](https://img.shields.io/badge/node->=10.16.x-brightgreen.svg)
 ![npm version](https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg)
@@ -52,15 +52,13 @@
 *Symptoms of the novel coronavirus (2019-nCoV) may appear in as few as `2` days or as long as `14` (estimated ranges vary from `2-10` days, `2-14` days, and `10-14` days, [see details](https://www.worldometers.info/coronavirus/coronavirus-incubation-period/)), during which the virus is contagious but the patient does not display any symptom (asymptomatic transmission).*
 
 
-## 🎉 COVID19 API - UPDATED v1.0.4
-- [x] *Age of Coronavirus Deaths - COVID-19 Fatality Rate by **AGE**
-  - `PluginManager.getFatalityRateByAge()`
-- [x] *Sex ratio - COVID-19 Fatality Rate by **SEX**
-  - `PluginManager.getFatalityRateBySex()`
-- [x] *COVID-19 Fatality Rate by **COMORBIDITY***
-  - `PluginManager.getFatalityRateByComorbidities()`
-- [x] *Countries where COVID-19 has spread*
-  - `PluginManager.getCountriesWhereCoronavirusHasSpread()`
+## 🎉 COVID19 API - UPDATED v1.0.5
+- [x] *Travel Health Notices*
+  - *Warning Level 3, Avoid Nonessential Travel*
+  - *Alert Level 2, Practice Enhanced Precautions*
+  - *Watch Level 1, Practice Usual Precautions*
+  - `PluginManager.getTravelHealthNotices()`
+
 
 ## 📖 API Documentation
 
@@ -566,12 +564,12 @@
 ```
 
 ## Travel Health Notices
+### PluginManager.getTravelHealthNotices()
+*Department of State Safety and Security Alerts*
  - ***Types of Notices***
    - <span style="color:red;">Warning Level 3 (Red):</span>*`Avoid all non-essential travel` to this destination. The outbreak is of high risk to travelers and no precautions are available to protect against the identified increased risk.*
    - <span style="color:yellow;">Alert Level 2 (Yellow):</span>*`Practice enhanced precautions` for this destination. The Travel Health Notice describes additional precautions added, or defines a specific at-risk population.*
    - <span style="color:green;">Watch Level 1 (Green): </span>*`Practice usual precautions` for this destination, as described in the Travel Health Notice and/or on the [destination page](https://wwwnc.cdc.gov/travel/destinations/list). This includes being up-to-date on all recommended vaccines and practicing appropriate mosquito avoidance.*
-### PluginManager.getTravelHealthNotices()
-*Department of State Safety and Security Alerts*
 
 ```json
 
