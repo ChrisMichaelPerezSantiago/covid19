@@ -565,6 +565,78 @@
 ]
 ```
 
+## Travel Health Notices
+ - ***Types of Notices***
+   - <span style="color:red;">Warning Level 3 (Red):</span>*`Avoid all non-essential travel` to this destination. The outbreak is of high risk to travelers and no precautions are available to protect against the identified increased risk.*
+   - <span style="color:yellow;">Alert Level 2 (Yellow):</span>*`Practice enhanced precautions` for this destination. The Travel Health Notice describes additional precautions added, or defines a specific at-risk population.*
+   - <span style="color:green;">Watch Level 1 (Green): </span>*`Practice usual precautions` for this destination, as described in the Travel Health Notice and/or on the [destination page](https://wwwnc.cdc.gov/travel/destinations/list). This includes being up-to-date on all recommended vaccines and practicing appropriate mosquito avoidance.*
+### PluginManager.getTravelHealthNotices()
+*Department of State Safety and Security Alerts*
+
+```json
+
+{
+  "data": {
+    "travelHealthNotices": {
+      "warning": [
+        {
+          "title": "COVID-19 in Malaysia",
+          "date": "March 18, 2020",
+          "summary": "Malaysia is experiencing widespread ongoing transmission of respiratory illness caused by the novel coronavirus (COVID-19). CDC recommends that travelers avoid all nonessential travel to Malaysia."
+        },
+        // .....
+      ],
+      "alert": [
+        {
+          "title": "Global COVID-19 Outbreak Notice",
+          "date": "March 16, 2020",
+          "summary": "Ongoing community transmission of respiratory illness caused by the novel (new) coronavirus (COVID-19) is occurring globally. Older adults and people of any age with serious chronic medical conditions should consider postponing nonessential travel. "
+        },
+        // .....
+      ],
+      "watch": [
+        {
+          "title": "Dengue in the Americas",
+          "date": "March 17, 2020",
+          "summary": "Dengue is a risk in many parts of Central and South America, Mexico, and the Caribbean. Some countries are reporting increased numbers of cases of the disease. Travelers to the Americas can protect themselves by preventing mosquito bites.\n"
+        },
+        // .....
+      ]
+    },
+    "table": [
+      [
+        {
+          "Advisory": "Liechtenstein Travel Advisory",
+          "Level": "Level 1: Exercise Normal Precautions",
+          "DateUpdated": "October 8, 2019"
+        },
+        {
+          "Advisory": "North Macedonia Travel Advisory",
+          "Level": "Level 1: Exercise Normal Precautions",
+          "DateUpdated": "December 23, 2019"
+        },
+        {
+          "Advisory": "Nauru Travel Advisory",
+          "Level": "Level 1: Exercise Normal Precautions",
+          "DateUpdated": "March 11, 2020"
+        },
+        {
+          "Advisory": "Palau Travel Advisory",
+          "Level": "Level 1: Exercise Normal Precautions",
+          "DateUpdated": "February 4, 2020"
+        },
+        {
+          "Advisory": "Burma (Myanmar) Travel Advisory",
+          "Level": "Level 2: Exercise Increased Caution",
+          "DateUpdated": "October 4, 2019"
+        },
+        // .....
+      ]
+    ]
+  }
+}
+```
+
 ## 💡 References
 - *worldometers. 2020. Coronavirus. [online] Available at: <https://www.worldometers.info/coronavirus/> [Accessed 16 March 2020].*
 - *cdc.gov. 2020. From the White House Coronavirus Task Force [online] Available at: <https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/from-the-white-house-task-force.html/>*
