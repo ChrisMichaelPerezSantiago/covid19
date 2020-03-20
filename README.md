@@ -13,6 +13,10 @@
 
 ---
 
+ <p align="center"> 
+  <img style="" src="./assets/img/logo.png"/>
+</p> 
+
 ## 🚨 Important Information 🚨
 *If you notice that I make and publish many updates / versions in the api, it is due to all the data that is reaching the public. This helps me create a more complete API, with accurate data.*
 
