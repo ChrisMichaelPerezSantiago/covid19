@@ -164,6 +164,10 @@ const deaths = async() =>{
     table: table[0]
   });
 
+  data[0].table.forEach((obj) => renameKey(obj , 'Total Deaths' , 'TotalDeaths'));
+  data[0].table.forEach((obj) => renameKey(obj , 'Change in Total' , 'ChangeInTotal'));
+  data[0].table.forEach((obj) => renameKey(obj , 'Change in  Total (%)' , 'ChangeTotalInPercent'));
+
   return Promise.all(data);
 };
 
