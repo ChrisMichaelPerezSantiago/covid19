@@ -205,8 +205,18 @@
 
 | Countries     |
 | ------------- |
-| china, south-korea, iran, italy, spain, france, us |
-
+|algeria , australia , austria |
+|belgium , brazil |
+|canada , china , china-hong-kong-sar|
+|denmark|
+|france|
+|germany , greece |
+|indonesia , iran , iraq , ireland , italy|
+|malaysia|
+|netherlands , norway|
+|philippines , poland , portugal|
+|south-korea , spain , sweden , switzerland|
+|uk , us|
 
 ```json
 [
@@ -639,12 +649,15 @@
 }
 ```
 
+
+
 ## 💡 References
 - *worldometers. 2020. Coronavirus. [online] Available at: <https://www.worldometers.info/coronavirus/> [Accessed 16 March 2020].*
 - *cdc.gov. 2020. From the White House Coronavirus Task Force [online] Available at: <https://www.cdc.gov/coronavirus/2019-ncov/cases-updates/from-the-white-house-task-force.html/>*
 - *who. 2020. Coronavirus disease (COVID-2019) situation reports [online] Available at: <https://www.who.int/emergencies/diseases/novel-coronavirus-2019/situation-reports/> [Accessed 16 March 2020]*
 - *[The Epidemiological Characteristics of an Outbreak of 2019 Novel Coronavirus Diseases (COVID-19)](http://weekly.chinacdc.cn/en/article/id/e53946e2-c6c4-41e9-9a9b-fea8db1a8f51) - China CCDC, February 17 2020*
 - *[Report of the WHO-China Joint Mission on Coronavirus Disease 2019 (COVID-19)](https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf) [Pdf] - World Health Organization, Feb. 28, 2020*
+- *paho(Organizacion Panamericano de la Salud). 2020. Enfermedad por el Coronavirus ‎‎(COVID-19)‎. [online] Available at: <https://www.paho.org/es/temas/coronavirus/enfermedad-por-coronavirus-covid-19/> [Accessed 21 Mar 2020]*
 
 ## **:handshake: Contributing**
 
