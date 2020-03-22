@@ -85,8 +85,6 @@ const reports = async() =>{
   return Promise.all(data);
 };
 
-reports()
-
 const reportsByCountries = async(country) =>{
   const res = await cloudscraper(`${BASE_URL}/coronavirus/country/${country}` , {
     method: 'GET',
