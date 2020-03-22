@@ -13,4 +13,7 @@ const PluginManager = require('./src/api/index');
   const fatalityRateByComorbidities = await PluginManager.getFatalityRateByComorbidities();
   const countriesWhereCoronavirusHasSpread = await PluginManager.getCountriesWhereCoronavirusHasSpread();
   const travelHealthNotices = await PluginManager.getTravelHealthNotices();
+  const getAllCasesInAmerica = await PluginManager.getAllCasesInAmerica();
+  const getAllCasesInEurope = await PluginManager.getAllCasesInEurope();
+  const caseStatusUndeEvalutationInPR = await PluginManager.getCaseStatusUndeEvalutationInPR();
 })();

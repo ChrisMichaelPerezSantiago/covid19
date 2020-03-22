@@ -62,6 +62,21 @@ class PluginManager {
     const res = await Promise.all(this.plugins.map(plugin => plugin.travelHealthNotices()));
     return res;
   };
+
+  async getAllCasesInAmerica(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.allCasesInAmerica()));
+    return res;
+  };
+
+  async getAllCasesInEurope(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.allCasesInEurope()));
+    return res;
+  };
+
+  async getCaseStatusUndeEvalutationInPR(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.caseStatusUndeEvalutationInPR()));
+    return res;
+  };
 }
 
 module.exports = PluginManager;

@@ -10,7 +10,10 @@ const {
   CDC_GOV_BASE_URL,
   COVID19_SPREADSHEETS_BASE_URL,
   TEMP_CDC_GOV_BASE_URL,
-  TRAVEL_ADVISORIES_BASE_URL
+  TRAVEL_ADVISORIES_BASE_URL,
+  PAHO_ORG_BASE_URL,
+  ECDC_BASE_URL,
+  SALUD_GOV_BASE_URL
 } = require('./url/index.js');
 
 
@@ -341,6 +344,86 @@ const travelAdvisoriesHelper = async() =>{
   return Promise.all(data)
 };
 
+const allCasesInAmerica = async() =>{
+  const res = await cloudscraper(`${PAHO_ORG_BASE_URL}/es/temas/coronavirus/enfermedad-por-coronavirus-covid-19` , {method: 'GET'})
+  const $ = cheerio.load(res);
+  const html = $.html();
+  const table = tabletojson.convert(html);
+  const data = table;
+  data.map(doc =>{
+    doc.forEach((obj) => {
+      renameKey(obj , 'País' , 'Country');
+      renameKey(obj , 'Confirmados' , 'Confirmed');
+      renameKey(obj , 'Muertes' , 'Deaths');
+    });
+  });
+
+  const doc = [{
+    table: table
+  }]; 
+
+  return Promise.all(doc);
+};
+
+const allCasesInEurope = async() =>{
+  const res = await cloudscraper(`${ECDC_BASE_URL}cases-2019-ncov-eueea` , {method: 'GET'})
+  const $ = cheerio.load(res);
+  const html = $.html();
+  const table = tabletojson.convert(html);
+  const data = table;
+
+  data.map(doc =>{
+    doc.forEach((obj) => {
+      renameKey(obj , 'EU/EEA and the UK' , 'Country');
+      renameKey(obj , 'Sum of Cases' , 'Cases');
+      renameKey(obj , 'Sum of Deaths' , 'Deaths');
+    });
+  });
+
+  const doc = [{
+    table: table
+  }]; 
+
+  return Promise.all(doc);
+};
+
+const caseStatusUndeEvalutationInPR = async() =>{
+  const res = await cloudscraper(`${SALUD_GOV_BASE_URL}/Pages/coronavirus.aspx`);
+  const $ = cheerio.load(res);
+  const html = $.html();
+  const x = [] , y = [] , z = [];
+
+  $('table tbody tr').eq(1).find('td').each((index , element) =>{
+    const $element = $(element);
+    const values = $element.find('h3').text();
+    x.push(values);
+  });
+
+  $('table tbody tr').eq(2).find('td').each((index , element) =>{
+    const $element = $(element);
+    const values = $element.find('h3').text();
+    y.push(values);
+  });
+
+  $('table tbody tr').eq(3).find('td').each((index , element) =>{
+    const $element = $(element);
+    const values = $element.find('h3').text();
+    z.push(values);
+  });
+
+  const data1 = { 'testsPerformed': x[1], 'ConfirmedCases': x[2], 'NegativeCases': x[3], 'TestsInProgress': x[4] };
+  const data2 = { 'testsPerformed': y[1], 'ConfirmedCases': y[2], 'NegativeCases': y[3], 'TestsInProgress': y[4] };
+  const data3 = { 'testsPerformed': z[1], 'ConfirmedCases': z[2], 'NegativeCases': z[3], 'TestsInProgress': z[4] };
+
+  const data = [{
+    publicHealthLaboratory: data1,
+    caribbeanVeteransHealthSystem: data2,
+    total: data3
+  }];
+
+  return Promise.all(data);
+};
+
 
 module.exports = {
   reports,
@@ -354,5 +437,8 @@ module.exports = {
   fatalityRateBySex,
   fatalityRateByComorbidities,
   countriesWhereCoronavirusHasSpread,
-  travelHealthNotices
+  travelHealthNotices,
+  allCasesInAmerica,
+  allCasesInEurope,
+  caseStatusUndeEvalutationInPR
 };
