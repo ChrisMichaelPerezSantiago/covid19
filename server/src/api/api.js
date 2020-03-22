@@ -417,8 +417,6 @@ const allCasesInEurope = async() =>{
   data.map(doc =>{
     doc.forEach((obj) => {
       renameKey(obj , 'EU/EEA and the UK' , 'Country');
-      renameKey(obj , 'Sum of Cases' , 'Cases');
-      renameKey(obj , 'Sum of Deaths' , 'Deaths');
     });
   });
 
@@ -428,7 +426,6 @@ const allCasesInEurope = async() =>{
 
   return Promise.all(doc);
 };
-
 
 const caseStatusUndeEvalutationInPR = async() =>{
   const res = await cloudscraper(`${SALUD_GOV_BASE_URL}/Pages/coronavirus.aspx`);
