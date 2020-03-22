@@ -135,4 +135,26 @@ router.get('/TravelHealthNotices' , (req , res) =>{
     });
 });
 
+router.get('/AllCasesInAmerica' , (req , res) =>{
+  PluginManager.allCasesInAmerica()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/AllCasesInEurope' , (req , res) =>{
+  PluginManager.allCasesInEurope()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
 module.exports = router;

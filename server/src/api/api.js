@@ -8,7 +8,9 @@ const {
   CDC_GOV_BASE_URL,
   COVID19_SPREADSHEETS_BASE_URL,
   TRAVEL_ADVISORIES_BASE_URL,
-  TEMP_CDC_GOV_BASE_URL
+  TEMP_CDC_GOV_BASE_URL,
+  PAHO_ORG_BASE_URL,
+  ECDC_BASE_URL
 } = require('./url/index');
 
 
@@ -339,6 +341,50 @@ const travelAdvisoriesHelper = async() =>{
   return Promise.all(data)
 };
 
+const allCasesInAmerica = async() =>{
+  const res = await cloudscraper(`${PAHO_ORG_BASE_URL}/es/temas/coronavirus/enfermedad-por-coronavirus-covid-19` , {method: 'GET'})
+  const $ = cheerio.load(res);
+  const html = $.html();
+  const table = tabletojson.convert(html);
+  const data = table;
+  data.map(doc =>{
+    doc.forEach((obj) => {
+      renameKey(obj , 'País' , 'Country');
+      renameKey(obj , 'Confirmados' , 'Confirmed');
+      renameKey(obj , 'Muertes' , 'Deaths');
+    });
+  });
+
+  const doc = [{
+    table: table
+  }]; 
+
+  return Promise.all(doc);
+};
+
+const allCasesInEurope = async() =>{
+  const res = await cloudscraper(`${ECDC_BASE_URL}cases-2019-ncov-eueea` , {method: 'GET'})
+  const $ = cheerio.load(res);
+  const html = $.html();
+  const table = tabletojson.convert(html);
+  const data = table;
+
+  data.map(doc =>{
+    doc.forEach((obj) => {
+      renameKey(obj , 'EU/EEA and the UK' , 'Country');
+      renameKey(obj , 'Sum of Cases' , 'Cases');
+      renameKey(obj , 'Sum of Deaths' , 'Deaths');
+    });
+  });
+
+  const doc = [{
+    table: table
+  }]; 
+
+  return Promise.all(doc);
+};
+
+
 module.exports = {
   reports,
   reportsByCountries,
@@ -351,5 +397,7 @@ module.exports = {
   fatalityRateBySex,
   fatalityRateByComorbidities,
   countriesWhereCoronavirusHasSpread,
-  travelHealthNotices
+  travelHealthNotices,
+  allCasesInAmerica,
+  allCasesInEurope
 };
