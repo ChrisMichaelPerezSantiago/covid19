@@ -769,6 +769,8 @@
 - *[The Epidemiological Characteristics of an Outbreak of 2019 Novel Coronavirus Diseases (COVID-19)](http://weekly.chinacdc.cn/en/article/id/e53946e2-c6c4-41e9-9a9b-fea8db1a8f51) - China CCDC, February 17 2020*
 - *[Report of the WHO-China Joint Mission on Coronavirus Disease 2019 (COVID-19)](https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf) [Pdf] - World Health Organization, Feb. 28, 2020*
 - *paho(Organizacion Panamericano de la Salud). 2020. Enfermedad por el Coronavirus ‎‎(COVID-19)‎. [online] Available at: <https://www.paho.org/es/temas/coronavirus/enfermedad-por-coronavirus-covid-19/> [Accessed 21 Mar 2020]*
+- *salud.gov. 2020 . ESTATUS DE CASOS BAJO EVALUACIÓN POR COVID-19 [online] Available at: <http://www.salud.gov.pr/Pages/coronavirus.aspx/> [Accessed 22 Mar 2020]*
+
 
 ## **:handshake: Contributing**
 
