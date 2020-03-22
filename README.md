@@ -1,4 +1,4 @@
-# **🐛 COVID19** (version 1.0.5)
+# **🐛 COVID19** (version 1.0.6)
 
 ![node version](https://img.shields.io/badge/node->=10.16.x-brightgreen.svg)
 ![npm version](https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg)
@@ -56,13 +56,14 @@
 *Symptoms of the novel coronavirus (2019-nCoV) may appear in as few as `2` days or as long as `14` (estimated ranges vary from `2-10` days, `2-14` days, and `10-14` days, [see details](https://www.worldometers.info/coronavirus/coronavirus-incubation-period/)), during which the virus is contagious but the patient does not display any symptom (asymptomatic transmission).*
 
 
-## 🎉 COVID19 API - UPDATED v1.0.5
-- [x] *Travel Health Notices*
-  - *Warning Level 3, Avoid Nonessential Travel*
-  - *Alert Level 2, Practice Enhanced Precautions*
-  - *Watch Level 1, Practice Usual Precautions*
-  - `PluginManager.getTravelHealthNotices()`
-
+## 🎉 COVID19 API - UPDATED v1.0.6
+- [x] *Number of COVID-19 cases in the Americas region*
+  - `PluginManager.getAllCasesInAmerica()`
+- [x] *Situation update for the EU/EEA and the UK*
+  - `PluginManager.getAllCasesInEurope()`
+- [x] *Health Department (Government of Puerto Rico)*
+  - *Public Health Laboratory of the Department of Health & ​Caribbean Veterans Health System*
+  - `PluginManager.getCaseStatusUndeEvalutationInPR()`
 
 ## 📖 API Documentation
 
@@ -649,7 +650,117 @@
 }
 ```
 
+### PluginManager.getAllCasesInAmerica()
+*Number of COVID-19 cases in the Americas region*
 
+```json
+[
+  [
+    {
+      "table": [
+        [
+          {
+            "Country": "Antigua y Barbuda",
+            "Confirmed": "1",
+            "Deaths": "0"
+          },
+          {
+            "Country": "Argentina",
+            "Confirmed": "158",
+            "Deaths": "3"
+          },
+          {
+            "Country": "Aruba",
+            "Confirmed": "5",
+            "Deaths": "0"
+          },
+          {
+            "Country": "Bahamas",
+            "Confirmed": "4",
+            "Deaths": "0"
+          },
+          // .....
+        ]
+      ],
+    }
+  ]
+]
+```
+
+### PluginManager.getAllCasesInEurope()
+*Situation update for the EU/EEA and the UK*
+
+```json
+[
+  [
+    {
+      "table": [
+        [
+          {
+            "Country": "Italy",
+            "Cases": "47021",  
+            "Deaths": "4032"   
+          },
+          {
+            "Country": "Spain",
+            "Cases": "19980",
+            "Deaths": "1002"
+          },
+          {
+            "Country": "Germany",
+            "Cases": "18323",
+            "Deaths": "45"
+          },
+          {
+            "Country": "France",
+            "Cases": "12612",
+            "Deaths": "450"
+          },
+          // .....
+        ]
+      ]
+    }
+  ]
+]
+```
+----
+
+## Information of cases for which we live in PR
+
+## Health Department (Government of Puerto Rico)
+*Both the Department of Health and the Centers for Disease Control and Prevention (CDC) remain on alert and continuously monitoring for an outbreak of respiratory illness caused by a new coronavirus (called COVID-19). This virus was first detected in Wuhan City, Hubei Province, China and continues to spread.*
+
+### PluginManager.getCaseStatusUndeEvalutationInPR()
+ - *CASE STATUS UNDER EVALUATION BY COVID-19*
+   - *Public Health Laboratory of the Department of Health*
+   - *​Caribbean Veterans Health System*
+
+```json
+[
+  [
+    {
+      "publicHealthLaboratory": {
+        "testsPerformed": "215",
+        "ConfirmedCases": "​12",
+        "NegativeCases": "158",
+        "TestsInProgress": "​45"
+      },
+      "caribbeanVeteransHealthSystem": {
+        "testsPerformed": "60",
+        "ConfirmedCases": "11",
+        "NegativeCases": "25",
+        "TestsInProgress": "24"
+      },
+      "total": {
+        "testsPerformed": "​275",
+        "ConfirmedCases": "23",
+        "NegativeCases": "​183",
+        "TestsInProgress": "​69"
+      }
+    }
+  ]
+]
+```
 
 ## 💡 References
 - *worldometers. 2020. Coronavirus. [online] Available at: <https://www.worldometers.info/coronavirus/> [Accessed 16 March 2020].*
