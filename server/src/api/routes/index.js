@@ -157,4 +157,15 @@ router.get('/AllCasesInEurope' , (req , res) =>{
     });
 });
 
+router.get('/CaseStatusUndeEvalutationInPR' , (req , res) =>{
+  PluginManager.caseStatusUndeEvalutationInPR()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
 module.exports = router;

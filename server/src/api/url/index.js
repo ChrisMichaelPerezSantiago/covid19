@@ -6,6 +6,7 @@ const TRAVEL_ADVISORIES_BASE_URL = 'https://travel.state.gov';
 const TEMP_CDC_GOV_BASE_URL = 'https://wwwnc.cdc.gov';
 const PAHO_ORG_BASE_URL = 'https://www.paho.org';
 const ECDC_BASE_URL = 'https://www.ecdc.europa.eu/en/';
+const SALUD_GOV_BASE_URL = 'http://www.salud.gov.pr';
 
 module.exports = {
   BASE_URL,
@@ -15,5 +16,6 @@ module.exports = {
   TRAVEL_ADVISORIES_BASE_URL,
   TEMP_CDC_GOV_BASE_URL,
   PAHO_ORG_BASE_URL,
-  ECDC_BASE_URL
+  ECDC_BASE_URL,
+  SALUD_GOV_BASE_URL
 };
