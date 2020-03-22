@@ -252,7 +252,17 @@ const fatalityRateByAge  = async() =>{
   const table = tabletojson.convert(html);  
   const data = table[0];
 
-  return Promise.all(data)
+  data.forEach((obj) => renameKey(obj , '0' , 'Age'));
+  data.forEach((obj) => renameKey(obj , '1' , 'DeathRateConfirmedCases'));
+  data.forEach((obj) => renameKey(obj , '2' , 'DeathRateAllCases'));
+  const doc = [];
+
+  Array.from({length: data.length} , (v , k) =>{
+    let info = data[k + 1];
+    doc.push(info)
+  });
+
+  return Promise.all(doc.filter(doc => doc))
 };
 
 const fatalityRateBySex  = async() =>{
@@ -262,7 +272,17 @@ const fatalityRateBySex  = async() =>{
   const table = tabletojson.convert(html);  
   const data = table[1];
 
-  return Promise.all(data);
+  data.forEach((obj) => renameKey(obj , '0' , 'Sex'));
+  data.forEach((obj) => renameKey(obj , '1' , 'DeathRateConfirmedCases'));
+  data.forEach((obj) => renameKey(obj , '2' , 'DeathRateAllCases'));
+  const doc = [];
+
+  Array.from({length: data.length} , (v , k) =>{
+    let info = data[k + 1];
+    doc.push(info)
+  });
+
+  return Promise.all(doc.filter(doc => doc))
 };
 
 const fatalityRateByComorbidities  = async() =>{
@@ -272,7 +292,17 @@ const fatalityRateByComorbidities  = async() =>{
   const table = tabletojson.convert(html);  
   const data = table[2];
 
-  return Promise.all(data);
+  data.forEach((obj) => renameKey(obj , '0' , 'PreExistingCondition'));
+  data.forEach((obj) => renameKey(obj , '1' , 'DeathRateConfirmedCases'));
+  data.forEach((obj) => renameKey(obj , '2' , 'DeathRateAllCases'));
+  const doc = [];
+
+  Array.from({length: data.length} , (v , k) =>{
+    let info = data[k + 1];
+    doc.push(info)
+  });
+
+  return Promise.all(doc.filter(doc => doc))
 };
 
 const countriesWhereCoronavirusHasSpread  = async() =>{
