@@ -4,6 +4,7 @@
   "description": "COVID19 Server",
   "scripts": {
     "start": "node src/index.js",
+    "start:api": "nodemon src/api/api.js",
     "dev": "nodemon src/index.js"
   },
   "keywords": [
