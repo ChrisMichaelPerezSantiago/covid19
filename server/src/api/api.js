@@ -237,6 +237,10 @@ const testsInUS  = async() =>{
     lastUpdatedDay: lastUpdatedDay,
     table: table[0]
   });
+
+  data[0].table.forEach((obj) => renameKey(obj , 'Date Collected' , 'DateCollected'));
+  data[0].table.forEach((obj) => renameKey(obj , 'CDC Labs' , 'CDCLabs'));
+  data[0].table.forEach((obj) => renameKey(obj , 'US Public Health Labs' , 'USPublicHealthLabs'));
     
   return Promise.all(data);
 };
