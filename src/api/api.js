@@ -1,20 +1,18 @@
 const cloudscraper = require('cloudscraper');
 const cheerio = require('cheerio');
 const tabletojson = require('tabletojson').Tabletojson;
-const {
-  renameKey
-} = require('./utils/utils');
+const {renameKey} = require('./utils/utils');
 const { 
   BASE_URL , 
   WHO_BASE_URL,
   CDC_GOV_BASE_URL,
   COVID19_SPREADSHEETS_BASE_URL,
-  TEMP_CDC_GOV_BASE_URL,
   TRAVEL_ADVISORIES_BASE_URL,
+  TEMP_CDC_GOV_BASE_URL,
   PAHO_ORG_BASE_URL,
   ECDC_BASE_URL,
   SALUD_GOV_BASE_URL
-} = require('./url/index.js');
+} = require('./url/index');
 
 
 const reports = async() =>{
@@ -76,6 +74,12 @@ const reports = async() =>{
     active_cases: activeCases,
     closed_cases: closedCases,
     table: table
+  });
+
+  data[0].table.map(doc =>{
+    doc.forEach((obj) => renameKey(obj , 'Country,Other' , 'Country'));
+    doc.forEach((obj) => renameKey(obj , 'Serious,Critical' , 'Serious_Critical'));
+    doc.forEach((obj) => renameKey(obj , 'Tot Cases/1M pop' , 'TotCases_1M_Pop'));
   });
 
   return Promise.all(data);
@@ -160,6 +164,10 @@ const deaths = async() =>{
     table: table[0]
   });
 
+  data[0].table.forEach((obj) => renameKey(obj , 'Total Deaths' , 'TotalDeaths'));
+  data[0].table.forEach((obj) => renameKey(obj , 'Change in Total' , 'ChangeInTotal'));
+  data[0].table.forEach((obj) => renameKey(obj , 'Change in  Total (%)' , 'ChangeTotalInPercent'));
+
   return Promise.all(data);
 };
 
@@ -229,6 +237,10 @@ const testsInUS  = async() =>{
     lastUpdatedDay: lastUpdatedDay,
     table: table[0]
   });
+
+  data[0].table.forEach((obj) => renameKey(obj , 'Date Collected' , 'DateCollected'));
+  data[0].table.forEach((obj) => renameKey(obj , 'CDC Labs' , 'CDCLabs'));
+  data[0].table.forEach((obj) => renameKey(obj , 'US Public Health Labs' , 'USPublicHealthLabs'));
     
   return Promise.all(data);
 };
@@ -240,7 +252,17 @@ const fatalityRateByAge  = async() =>{
   const table = tabletojson.convert(html);  
   const data = table[0];
 
-  return Promise.all(data)
+  data.forEach((obj) => renameKey(obj , '0' , 'Age'));
+  data.forEach((obj) => renameKey(obj , '1' , 'DeathRateConfirmedCases'));
+  data.forEach((obj) => renameKey(obj , '2' , 'DeathRateAllCases'));
+  const doc = [];
+
+  Array.from({length: data.length} , (v , k) =>{
+    let info = data[k + 1];
+    doc.push(info)
+  });
+
+  return Promise.all(doc.filter(doc => doc))
 };
 
 const fatalityRateBySex  = async() =>{
@@ -250,7 +272,17 @@ const fatalityRateBySex  = async() =>{
   const table = tabletojson.convert(html);  
   const data = table[1];
 
-  return Promise.all(data);
+  data.forEach((obj) => renameKey(obj , '0' , 'Sex'));
+  data.forEach((obj) => renameKey(obj , '1' , 'DeathRateConfirmedCases'));
+  data.forEach((obj) => renameKey(obj , '2' , 'DeathRateAllCases'));
+  const doc = [];
+
+  Array.from({length: data.length} , (v , k) =>{
+    let info = data[k + 1];
+    doc.push(info)
+  });
+
+  return Promise.all(doc.filter(doc => doc))
 };
 
 const fatalityRateByComorbidities  = async() =>{
@@ -260,7 +292,17 @@ const fatalityRateByComorbidities  = async() =>{
   const table = tabletojson.convert(html);  
   const data = table[2];
 
-  return Promise.all(data);
+  data.forEach((obj) => renameKey(obj , '0' , 'PreExistingCondition'));
+  data.forEach((obj) => renameKey(obj , '1' , 'DeathRateConfirmedCases'));
+  data.forEach((obj) => renameKey(obj , '2' , 'DeathRateAllCases'));
+  const doc = [];
+
+  Array.from({length: data.length} , (v , k) =>{
+    let info = data[k + 1];
+    doc.push(info)
+  });
+
+  return Promise.all(doc.filter(doc => doc))
 };
 
 const countriesWhereCoronavirusHasSpread  = async() =>{
@@ -375,8 +417,6 @@ const allCasesInEurope = async() =>{
   data.map(doc =>{
     doc.forEach((obj) => {
       renameKey(obj , 'EU/EEA and the UK' , 'Country');
-      renameKey(obj , 'Sum of Cases' , 'Cases');
-      renameKey(obj , 'Sum of Deaths' , 'Deaths');
     });
   });
 
@@ -401,13 +441,13 @@ const caseStatusUndeEvalutationInPR = async() =>{
 
   $('table tbody tr').eq(2).find('td').each((index , element) =>{
     const $element = $(element);
-    const values = $element.find('h3').text();
+    const values = $element.find('h3').text().trim();
     y.push(values);
   });
 
   $('table tbody tr').eq(3).find('td').each((index , element) =>{
     const $element = $(element);
-    const values = $element.find('h3').text();
+    const values = $element.find('h3').text().trim();
     z.push(values);
   });
 
