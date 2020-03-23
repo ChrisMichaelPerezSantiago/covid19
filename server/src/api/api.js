@@ -431,36 +431,49 @@ const caseStatusUndeEvalutationInPR = async() =>{
   const res = await cloudscraper(`${SALUD_GOV_BASE_URL}/Pages/coronavirus.aspx`);
   const $ = cheerio.load(res);
   const html = $.html();
-  const x = [] , y = [] , z = [];
+  const table = tabletojson.convert(html);
+  const x = [];
 
   $('table tbody tr').eq(1).find('td').each((index , element) =>{
     const $element = $(element);
-    const values = $element.find('h3').text();
-    x.push(values);
+    const value = $element.find('h2').text().trim();
+    x.push(value);
   });
-
-  $('table tbody tr').eq(2).find('td').each((index , element) =>{
-    const $element = $(element);
-    const values = $element.find('h3').text().trim();
-    y.push(values);
-  });
-
-  $('table tbody tr').eq(3).find('td').each((index , element) =>{
-    const $element = $(element);
-    const values = $element.find('h3').text().trim();
-    z.push(values);
-  });
-
-  const data1 = { 'testsPerformed': x[1], 'ConfirmedCases': x[2], 'NegativeCases': x[3], 'TestsInProgress': x[4] };
-  const data2 = { 'testsPerformed': y[1], 'ConfirmedCases': y[2], 'NegativeCases': y[3], 'TestsInProgress': y[4] };
-  const data3 = { 'testsPerformed': z[1], 'ConfirmedCases': z[2], 'NegativeCases': z[3], 'TestsInProgress': z[4] };
 
   const data = [{
-    publicHealthLaboratory: data1,
-    caribbeanVeteransHealthSystem: data2,
-    total: data3
+    'ConfirmedCases': x[0],
+    'Deaths': x[1]
   }];
+ 
+  //const x = [] , y = [] , z = [];
 
+  //$('table tbody tr').eq(1).find('td').each((index , element) =>{
+  //  const $element = $(element);
+  //  const values = $element.find('h3').text();
+  //  x.push(values);
+  //});
+//
+  //$('table tbody tr').eq(2).find('td').each((index , element) =>{
+  //  const $element = $(element);
+  //  const values = $element.find('h3').text().trim();
+  //  y.push(values);
+  //});
+//
+  //$('table tbody tr').eq(3).find('td').each((index , element) =>{
+  //  const $element = $(element);
+  //  const values = $element.find('h3').text().trim();
+  //  z.push(values);
+  //});
+//
+  //const data1 = { 'testsPerformed': x[1], 'ConfirmedCases': x[2], 'NegativeCases': x[3], 'TestsInProgress': x[4] };
+  //const data2 = { 'testsPerformed': y[1], 'ConfirmedCases': y[2], 'NegativeCases': y[3], 'TestsInProgress': y[4] };
+  //const data3 = { 'testsPerformed': z[1], 'ConfirmedCases': z[2], 'NegativeCases': z[3], 'TestsInProgress': z[4] };
+//
+  //const data = [{
+  //  publicHealthLaboratory: data1,
+  //  caribbeanVeteransHealthSystem: data2,
+  //  total: data3
+  //}];
   return Promise.all(data);
 };
 
