@@ -20,6 +20,8 @@
 ## 🚨 Important Information 🚨
 *If you notice that I make and publish many updates / versions in the api, it is due to all the data that is reaching the public. This helps me create a more complete API, with accurate data.*
 
+*In turn, I have created a [website](https://covid19pr.chrismichael.now.sh/) to demonstrate the capabilities that this API has when using it to create web applications. I have only created it for demonstration, so it will serve as a prototype.*
+
 *Sorry for the inconvenience!*
 
 ## 📝 Brief Information on COVID19
