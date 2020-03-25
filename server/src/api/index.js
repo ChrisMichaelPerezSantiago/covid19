@@ -23,7 +23,7 @@ router.get('/', (req, res) => {
         'TravelHealthNotices': '/api/v1/TravelHealthNotices',
         'AllCasesInAmerica': '/api/v1/AllCasesInAmerica',
         'AllCasesInEurope': '/api/v1/AllCasesInEurope',
-        'CaseStatusUndeEvalutationInPR': '/api/v1/CaseStatusUndeEvalutationInPR'
+        //'CaseStatusUndeEvalutationInPR': '/api/v1/CaseStatusUndeEvalutationInPR',
       }
     ]
   });
