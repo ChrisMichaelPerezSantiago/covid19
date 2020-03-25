@@ -73,10 +73,16 @@ class PluginManager {
     return res;
   };
 
-  async getCaseStatusUndeEvalutationInPR(){
-    const res = await Promise.all(this.plugins.map(plugin => plugin.caseStatusUndeEvalutationInPR()));
+  //async getCaseStatusUndeEvalutationInPR(){
+  //  const res = await Promise.all(this.plugins.map(plugin => plugin.caseStatusUndeEvalutationInPR()));
+  //  return res;
+  //};
+
+  async getCasesInAllUSStates(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.casesInAllUSStates()));
     return res;
   };
+
 }
 
 module.exports = PluginManager;

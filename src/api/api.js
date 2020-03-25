@@ -1,6 +1,7 @@
 const cloudscraper = require('cloudscraper');
 const cheerio = require('cheerio');
 const tabletojson = require('tabletojson').Tabletojson;
+const _ = require('lodash');
 const {renameKey} = require('./utils/utils');
 const { 
   BASE_URL , 
@@ -465,6 +466,18 @@ const caseStatusUndeEvalutationInPR = async() =>{
 };
 
 
+const casesInAllUSStates = async() =>{
+  const res = await cloudscraper(`${BASE_URL}/coronavirus/country/us` , {method: 'GET'})
+  const $ = cheerio.load(res);
+  const html = $.html();
+  const table = tabletojson.convert(html);
+  table[0].map(doc =>  delete doc.Source);
+  const data = [{table: table[0]}];
+
+  return Promise.all(data);
+};
+
+
 module.exports = {
   reports,
   reportsByCountries,
@@ -480,5 +493,6 @@ module.exports = {
   travelHealthNotices,
   allCasesInAmerica,
   allCasesInEurope,
-  caseStatusUndeEvalutationInPR
+  caseStatusUndeEvalutationInPR,
+  casesInAllUSStates
 };

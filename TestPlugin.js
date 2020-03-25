@@ -16,4 +16,5 @@ const PluginManager = require('./src/api/index');
   //const getAllCasesInAmerica = await PluginManager.getAllCasesInAmerica();
   //const getAllCasesInEurope = await PluginManager.getAllCasesInEurope();
   //const caseStatusUndeEvalutationInPR = await PluginManager.getCaseStatusUndeEvalutationInPR();
+  //const casesInAllUSStates = await PluginManager.getCasesInAllUSStates();
 })();
