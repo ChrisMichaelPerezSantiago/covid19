@@ -477,6 +477,17 @@ const caseStatusUndeEvalutationInPR = async() =>{
   return Promise.all(data);
 };
 
+const casesInAllUSStates = async() =>{
+  const res = await cloudscraper(`${BASE_URL}/coronavirus/country/us` , {method: 'GET'})
+  const $ = cheerio.load(res);
+  const html = $.html();
+  const table = tabletojson.convert(html);
+  table[0].map(doc =>  delete doc.Source);
+  const data = [{table: table[0]}];
+
+  return Promise.all(data);
+};
+
 
 module.exports = {
   reports,
@@ -493,5 +504,6 @@ module.exports = {
   travelHealthNotices,
   allCasesInAmerica,
   allCasesInEurope,
-  caseStatusUndeEvalutationInPR
+  caseStatusUndeEvalutationInPR,
+  casesInAllUSStates
 };

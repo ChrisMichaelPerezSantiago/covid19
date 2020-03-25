@@ -168,4 +168,15 @@ router.get('/AllCasesInEurope' , (req , res) =>{
 //    });
 //});
 
+router.get('/CasesInAllUSStates' , (req , res) =>{
+  PluginManager.casesInAllUSStates()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
 module.exports = router;

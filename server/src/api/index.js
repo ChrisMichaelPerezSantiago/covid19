@@ -24,6 +24,7 @@ router.get('/', (req, res) => {
         'AllCasesInAmerica': '/api/v1/AllCasesInAmerica',
         'AllCasesInEurope': '/api/v1/AllCasesInEurope',
         //'CaseStatusUndeEvalutationInPR': '/api/v1/CaseStatusUndeEvalutationInPR',
+        'CasesInAllUSStates': '/api/v1/CasesInAllUSStates',
       }
     ]
   });
