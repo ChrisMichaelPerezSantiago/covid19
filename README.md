@@ -764,7 +764,6 @@
 ]
 ```
 
-<<<<<<< HEAD
 ## United States Specific Data (COVID CARE)
 *For more information visit [COVID CARE MAP](https://www.covidcaremap.org/#data)*
 
