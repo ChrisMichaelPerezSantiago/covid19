@@ -1,6 +1,6 @@
 {
   "name": "covid19-api",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "This API provides updated real-time data on coronavirus cases from the worldometers page and other important websites, provided by the most reputable organizations and statistical offices in the world.",
   "main": "./src/api/index.js",
   "scripts": {
@@ -40,6 +40,7 @@
     "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.3",
     "cloudscraper": "^4.6.0",
+    "csvtojson": "^2.0.10",
     "https": "^1.0.0",
     "nodemon": "^2.0.2",
     "path": "^0.12.7",
