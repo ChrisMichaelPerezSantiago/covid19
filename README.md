@@ -1,4 +1,4 @@
-# **🐛 COVID19** (version 1.0.8)
+# **🐛 COVID19** (version 1.0.9)
 
 ![node version](https://img.shields.io/badge/node->=10.16.x-brightgreen.svg)
 ![npm version](https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg)
@@ -58,10 +58,11 @@
 *Symptoms of the novel coronavirus (2019-nCoV) may appear in as few as `2` days or as long as `14` (estimated ranges vary from `2-10` days, `2-14` days, and `10-14` days, [see details](https://www.worldometers.info/coronavirus/coronavirus-incubation-period/)), during which the virus is contagious but the patient does not display any symptom (asymptomatic transmission).*
 
 
-## 🎉 COVID19 API - UPDATED v1.0.8
-- [x] *The `getCaseStatusUndeEvalutationInPR` function has been temporarily removed as it does not have enough information.*
-- [x] *Coronavirus cases in all US states*
-  - `PluginManager.getCasesInAllUSStates()`
+## 🎉 COVID19 API - UPDATED v1.0.9
+- [x] *Capacity information for US Health Facilities* 
+  - `PluginManager.getCapacityInfoUSHealthFacilities()`
+- [x] *Aggregated facility capacity information by County*
+  - `PluginManager.getAggregatedFacilityCapacityCounty()`
 
 
 
@@ -763,6 +764,168 @@
 ]
 ```
 
+## United States Specific Data (COVID CARE)
+*For more information visit [COVID CARE MAP](https://www.covidcaremap.org/#data)*
+
+
+### PluginManager.getCapacityInfoUSHealthFacilities();
+*Capacity information for US Health Facilities*
+- ***Name***: *Name of the facility, same as Definitive Healthcare data.*
+- ***Hospital Type***: *Hospital Type from Definititve Healthcare data. See Hospital Types.*
+- ***Address, Address_2, City, State, Zipcode, County, Latitude, Longitude***: *Location information from the Definitive Healthcare data.*
+- ***Staffed All Beds***: *Number of hospital beds of all types typically set up and staffed for inpatient care as reported/estimated in selected facility or area.*
+- ***Staffed ICU Beds***: *Number of ICU beds typically set up and staffed for intensive inpatient care as reported/estimated in selected facility or area.*
+- ***Licensed All Beds***: *Number of hospital beds of all types licensed for potential use in selected facility or area.*
+- ***All Bed Occupancy Rate***: *% of hospital beds of all types typically occupied by patients in selected facility or area.*
+- ***ICU Bed Occupancy Rate***: *% of ICU beds typically occupied by patients in selected facility or area.*
+- ***CCM_ID***: *Unique identifier for the facility. Matches the Definitive Healtchare ID until new facilities are added or other datasets are brought in.*
+- ***DH-OBJECTID***: *The OBJECTID in the Definitive Healthcare dataset for this facility.*
+- ***HCRIS-Provider Number***: *The Provider Number from the HCRIS reports (also matches the PROVIDER_NUMBER field in the facility information).*
+
+```json
+[
+  {
+    table: [
+      {
+        "Name": "Ascension St Vincent Carmel (FKA St Vincent Carmel Hospital)",
+        "Address": "13500 N Meridian St",
+        "Address_2": "",
+        "City": "Carmel",
+        "State": "IN",
+        "Zipcode": "46032",
+        "County": "Hamilton",
+        "Latitude": "39.982751",
+        "Longitude": "-86.143426",
+        "CCM_ID": "1224",
+        "StaffedAllBeds": "153.0",
+        "StaffedICUBeds": "10.0",
+        "LicensedAllBeds": "153.0",
+        "AllBedOccupancyRate": "0.288674",
+        "ICUBedOccupancyRate": "0.3421917808219178",
+        "StaffedAllBeds_SOURCE": "DH-NUM_STAFFE",
+        "StaffedICUBeds_SOURCE": "DH-NUM_ICU_BE",
+        "LicensedAllBeds_SOURCE": "DH-NUM_LICENS",
+        "AllBedOccupancyRate_SOURCE": "DH-BED_UTILIZ",
+        "ICUBedOccupancyRate_SOURCE": "HCRIS-ICU Occupancy Rate",
+        "DH_OBJECTID": "1224.0",
+        "HCRISProviderNumber": "150157",
+        "HospitalType": "Short Term Acute Care Hospital"
+      },
+      {
+        "Name": "Memorial Health Dwaine & Cynthia Willett Childrens Hospital of Savannah",
+        "Address": "4700 Waters Ave",
+        "Address_2": "",
+        "City": "Savannah",
+        "State": "GA",
+        "Zipcode": "31404",
+        "County": "Chatham",
+        "Latitude": "32.029986",
+        "Longitude": "-81.08948449999997",
+        "CCM_ID": "6403",
+        "StaffedAllBeds": "42.0",
+        "StaffedICUBeds": "",
+        "LicensedAllBeds": "42.0",
+        "AllBedOccupancyRate": "",
+        "ICUBedOccupancyRate": "",
+        "StaffedAllBeds_SOURCE": "DH-NUM_STAFFE",
+        "StaffedICUBeds_SOURCE": "None",
+        "LicensedAllBeds_SOURCE": "DH-NUM_LICENS",
+        "AllBedOccupancyRate_SOURCE": "None",
+        "ICUBedOccupancyRate_SOURCE": "None",
+        "DH_OBJECTID": "6403.0",
+        "HCRISProviderNumber": "",
+        "HospitalType": "Childrens Hospital"
+      },
+      // .....
+    ]
+  }
+]
+```
+
+### PluginManager.getAggregatedFacilityCapacityCounty();
+*Aggregated facility capacity information by County*
+
+- ***Name***: *Name of the facility, same as Definitive Healthcare data.*
+- ***Hospital Type***: Hospital Type from Definititve Healthcare data. See Hospital Types*
+- ***Address, Address_2, City, State, Zipcode, County, Latitude, Longitude***: Location information from the Definitive Healthcare data.*
+- ***Staffed All Beds***: *Number of hospital beds of all types typically set up and staffed for inpatient care as reported/estimated in selected facility or area*
+- ***Staffed ICU Beds***: *Number of ICU beds typically set up and staffed for intensive inpatient care as reported/estimated in selected facility or area*
+- ***Licensed All Beds***: *Number of hospital beds of all types licensed for potential use in selected facility or area*
+- ***All Bed Occupancy Rate***: % of hospital beds of all types typically occupied by patients in selected facility or area*
+- ***ICU Bed Occupancy Rate***: % of ICU beds typically occupied by patients in selected facility or area*
+- ***CCM_ID***: *Unique identifier for the facility. Matches the Definitive Healtchare ID until new facilities are added or other datasets are brought in.*
+- ***DH-OBJECTID***: *The OBJECTID in the Definitive Healthcare dataset for this facility.*
+- ***HCRIS-Provider Number***: *The Provider Number from the HCRIS reports (also matches the PROVIDER_NUMBER field in the facility information).*
+
+- ***Per Capita Information***: *There are additional per-capita fields in the regional datasets:*
+  - ***Population***: *Population of this region, sourced by the US Census Bureau 2018 county population estimates.*
+  - ***Population*** (20+): *Population of people aged 20 years or older.*
+  - ***Population*** (65+): *Population of people aged 65 years or older.*
+  - *Staffed All Beds [Per 1000 People], Staffed All Beds [Per 1000 Adults (20+)], Staffed All Beds [Per 1000 Elderly (65+)], etc.: The Staffed All Beds, Staffed ICU Beds, and Licensed All Beds fields per capita of the population described.*
+
+```json 
+[ 
+  [
+    { 
+      table: [
+         {
+          "State": "AL",
+          "Population": "44153.0",
+          "CountyName": "Chilton",
+          "StaffedAllBeds": "26.0",
+          "StaffedICUBeds": "6.0",
+          "LicensedAllBeds": "30.0",
+          "AllBedOccupancyRate": "0.29",
+          "ICUBedOccupancyRate": "0.1",
+          "Population_20_plus": "32683.0",
+          "Population_65_plus": "7411.0",
+          "StaffedAllBedsPer1000People": "0.589",
+          "StaffedAllBedsPer1000Adults20_plus": "0.796",
+          "StaffedAllBedsPer1000Elderly65_plus": "3.508",
+          "StaffedICUBedsPer1000People": "0.136",
+          "StaffedICUBedsPer1000Adults20_plus": "0.184",
+          "StaffedICUBedsPer1000Elderly65_plus": "0.81",
+          "LicensedAllBedsPer1000People": "0.679",
+          "LicensedAllBedsPer1000Adults20_plus": "0.918",
+          "LicensedAllBedsPer1000Elderly65_plus": "4.048"
+        },
+        {
+          "State": "AL",
+          "Population": "12841.0",
+          "CountyName": "Choctaw",
+          "StaffedAllBeds": "25.0",
+          "StaffedICUBeds": "0.0",
+          "LicensedAllBeds": "25.0",
+          "AllBedOccupancyRate": "0.23",
+          "ICUBedOccupancyRate": "",
+          "Population_20_plus": "10028.0",
+          "Population_65_plus": "2953.0",
+          "StaffedAllBedsPer1000People": "1.947",
+          "StaffedAllBedsPer1000Adults20_plus": "2.493",
+          "StaffedAllBedsPer1000Elderly65_plus": "8.466",
+          "StaffedICUBedsPer1000People": "0.0",
+          "StaffedICUBedsPer1000Adults20_plus": "0.0",
+          "StaffedICUBedsPer1000Elderly65_plus": "0.0",
+          "LicensedAllBedsPer1000People": "1.947",
+          "LicensedAllBedsPer1000Adults20_plus": "2.493",
+          "LicensedAllBedsPer1000Elderly65_plus": "8.466"
+        },
+        // .....
+      ]
+    }
+  ],
+]
+```
+
+---
+
+## <img src="https://img.icons8.com/color/48/000000/paypal.png"> **Donations**
+COVID19 API is an open source project licensed by MIT with continuous development. If you want me to continue maintaining this library and you are interested in continuing to use it, you can help me with a monetary help in the following link:
+
+
+- [One-time donation via PayPal.](https://paypal.me/chrismperezsantiago?locale.x=en_US)
+
+These are projects that take a lot of effort and time to maintain. So with your help I will be more motivated to continue maintaining the COVID19 API project. :)
 
 ## 💡 References
 - *worldometers. 2020. Coronavirus. [online] Available at: <https://www.worldometers.info/coronavirus/> [Accessed 16 March 2020].*
@@ -772,7 +935,7 @@
 - *[Report of the WHO-China Joint Mission on Coronavirus Disease 2019 (COVID-19)](https://www.who.int/docs/default-source/coronaviruse/who-china-joint-mission-on-covid-19-final-report.pdf) [Pdf] - World Health Organization, Feb. 28, 2020*
 - *paho(Organizacion Panamericano de la Salud). 2020. Enfermedad por el Coronavirus ‎‎(COVID-19)‎. [online] Available at: <https://www.paho.org/es/temas/coronavirus/enfermedad-por-coronavirus-covid-19/> [Accessed 21 Mar 2020]*
 - *salud.gov. 2020 . ESTATUS DE CASOS BAJO EVALUACIÓN POR COVID-19 [online] Available at: <http://www.salud.gov.pr/Pages/coronavirus.aspx/> [Accessed 22 Mar 2020]*
-
+- *covidcaremap.org. 2020. COVID CARE [online] Available at: <https://www.covidcaremap.org/#data/> [Accessed 26 Mar 2020]*
 
 ## **:handshake: Contributing**
 
