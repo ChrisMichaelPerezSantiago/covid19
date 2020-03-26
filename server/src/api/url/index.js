@@ -7,6 +7,8 @@ const TEMP_CDC_GOV_BASE_URL = 'https://wwwnc.cdc.gov';
 const PAHO_ORG_BASE_URL = 'https://www.paho.org';
 const ECDC_BASE_URL = 'https://www.ecdc.europa.eu/en/';
 const SALUD_GOV_BASE_URL = 'http://www.salud.gov.pr';
+const COVIDCAREMAP = 'https://www.covidcaremap.org'
+
 
 module.exports = {
   BASE_URL,
@@ -17,5 +19,6 @@ module.exports = {
   TEMP_CDC_GOV_BASE_URL,
   PAHO_ORG_BASE_URL,
   ECDC_BASE_URL,
-  SALUD_GOV_BASE_URL
+  SALUD_GOV_BASE_URL,
+  COVIDCAREMAP
 };

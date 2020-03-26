@@ -179,4 +179,26 @@ router.get('/CasesInAllUSStates' , (req , res) =>{
     });
 });
 
+router.get('/CapacityInfoUSHealthFacilities' , (req , res) =>{
+  PluginManager.capacityInfoUSHealthFacilities()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/AggregatedFacilityCapacityCounty' , (req , res) =>{
+  PluginManager.aggregatedFacilityCapacityCounty()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
 module.exports = router;

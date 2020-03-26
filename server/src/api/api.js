@@ -1,6 +1,8 @@
 const cloudscraper = require('cloudscraper');
 const cheerio = require('cheerio');
 const tabletojson = require('tabletojson').Tabletojson;
+const csv = require('csvtojson');
+const request = require('request');
 const {renameKey} = require('./utils/utils');
 const { 
   BASE_URL , 
@@ -11,7 +13,8 @@ const {
   TEMP_CDC_GOV_BASE_URL,
   PAHO_ORG_BASE_URL,
   ECDC_BASE_URL,
-  SALUD_GOV_BASE_URL
+  SALUD_GOV_BASE_URL,
+  COVIDCAREMAP
 } = require('./url/index');
 
 
@@ -488,6 +491,76 @@ const casesInAllUSStates = async() =>{
   return Promise.all(data);
 };
 
+const capacityInfoUSHealthFacilities = async() =>{
+  const url = `${COVIDCAREMAP}/data/published/us_healthcare_capacity-facility-CovidCareMap.csv`;
+  const table = await csv()
+    .fromStream(request.get(url))
+      .subscribe((json)=>{
+        return new Promise((resolve,reject)=>{          
+          resolve(json)     
+      });
+    });
+
+  table.forEach((obj) =>{
+    renameKey(obj , 'Staffed All Beds' , 'StaffedAllBeds'),
+    renameKey(obj , 'Staffed ICU Beds' , 'StaffedICUBeds'),
+    renameKey(obj , 'Licensed All Beds' , 'LicensedAllBeds'),
+    renameKey(obj , 'All Bed Occupancy Rate' , 'AllBedOccupancyRate'),
+    renameKey(obj , 'ICU Bed Occupancy Rate' , 'ICUBedOccupancyRate'),
+    renameKey(obj , 'Staffed All Beds - SOURCE' , 'StaffedAllBeds_SOURCE'),
+    renameKey(obj , 'Staffed ICU Beds - SOURCE' , 'StaffedICUBeds_SOURCE'),
+    renameKey(obj , 'Licensed All Beds - SOURCE' , 'LicensedAllBeds_SOURCE'),
+    renameKey(obj , 'All Bed Occupancy Rate - SOURCE' , 'AllBedOccupancyRate_SOURCE'),
+    renameKey(obj , 'ICU Bed Occupancy Rate - SOURCE' , 'ICUBedOccupancyRate_SOURCE')
+    renameKey(obj , 'DH-OBJECTID' , 'DH_OBJECTID'),
+    renameKey(obj , 'HCRIS-Provider Number' , 'HCRISProviderNumber'),
+    renameKey(obj , 'Hospital Type' , 'HospitalType')
+  });
+
+  const data = [{table: table}]
+  
+  return Promise.all(data);
+};
+
+const aggregatedFacilityCapacityCounty = async() =>{
+  const url = `${COVIDCAREMAP}/data/published/us_healthcare_capacity-county-CovidCareMap.csv`;
+  const table = await csv()
+    .fromStream(request.get(url))
+      .subscribe((json)=>{
+        return new Promise((resolve,reject)=>{          
+          resolve(json)     
+      });
+    });
+  
+  try{
+    table.forEach((obj) =>{
+      renameKey(obj , 'County Name' , 'CountyName'),
+      renameKey(obj , 'Staffed All Beds' , 'StaffedAllBeds'),
+      renameKey(obj , 'Staffed ICU Beds' , 'StaffedICUBeds'),
+      renameKey(obj , 'Licensed All Beds' , 'LicensedAllBeds'),
+      renameKey(obj , 'All Bed Occupancy Rate' , 'AllBedOccupancyRate'),
+      renameKey(obj , 'ICU Bed Occupancy Rate' , 'ICUBedOccupancyRate'),
+      renameKey(obj , 'Population (20+)' , 'Population_20_plus'),
+      renameKey(obj , 'Population (65+)' , 'Population_65_plus'),
+      renameKey(obj , 'Staffed All Beds [Per 1000 People]' , 'StaffedAllBedsPer1000People'),
+      renameKey(obj , 'Staffed All Beds [Per 1000 Adults (20+)]', 'StaffedAllBedsPer1000Adults20_plus'),
+      renameKey(obj , 'Staffed All Beds [Per 1000 Elderly (65+)]', 'StaffedAllBedsPer1000Elderly65_plus'),
+      renameKey(obj , 'Staffed ICU Beds [Per 1000 People]', 'StaffedICUBedsPer1000People'),
+      renameKey(obj , 'Staffed ICU Beds [Per 1000 Adults (20+)]', 'StaffedICUBedsPer1000Adults20_plus'),
+      renameKey(obj , 'Staffed ICU Beds [Per 1000 Elderly (65+)]', 'StaffedICUBedsPer1000Elderly65_plus'),
+      renameKey(obj , 'Licensed All Beds [Per 1000 People]', 'LicensedAllBedsPer1000People'),
+      renameKey(obj , 'Licensed All Beds [Per 1000 Adults (20+)]', 'LicensedAllBedsPer1000Adults20_plus'),
+      renameKey(obj , 'Licensed All Beds [Per 1000 Elderly (65+)]', 'LicensedAllBedsPer1000Elderly65_plus')
+    });
+  }catch(err){
+    console.log(err);
+  }
+
+  const data = [{table: table}]
+  
+  return Promise.all(data);
+};
+
 
 module.exports = {
   reports,
@@ -505,5 +578,8 @@ module.exports = {
   allCasesInAmerica,
   allCasesInEurope,
   caseStatusUndeEvalutationInPR,
-  casesInAllUSStates
+  casesInAllUSStates,
+  capacityInfoUSHealthFacilities,
+  aggregatedFacilityCapacityCounty
 };
+
