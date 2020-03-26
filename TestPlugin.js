@@ -17,4 +17,6 @@ const PluginManager = require('./src/api/index');
   //const getAllCasesInEurope = await PluginManager.getAllCasesInEurope();
   //const caseStatusUndeEvalutationInPR = await PluginManager.getCaseStatusUndeEvalutationInPR();
   //const casesInAllUSStates = await PluginManager.getCasesInAllUSStates();
+  //const capacityInfoUSHealthFacilities = await PluginManager.getCapacityInfoUSHealthFacilities();
+  //const aggregatedFacilityCapacityCounty = await PluginManager.getAggregatedFacilityCapacityCounty();
 })();

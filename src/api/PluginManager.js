@@ -83,6 +83,15 @@ class PluginManager {
     return res;
   };
 
+  async getCapacityInfoUSHealthFacilities(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.capacityInfoUSHealthFacilities()));
+    return res;
+  };
+
+  async getAggregatedFacilityCapacityCounty(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.aggregatedFacilityCapacityCounty()));
+    return res;
+  };
 }
 
 module.exports = PluginManager;
