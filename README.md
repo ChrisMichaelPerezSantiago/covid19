@@ -763,6 +763,14 @@
 ]
 ```
 
+## <img src="https://img.icons8.com/color/48/000000/paypal.png"> **Donations**
+COVID19 API is an open source project licensed by MIT with continuous development. If you want me to continue maintaining this library and you are interested in continuing to use it, you can help me with a monetary help in the following link:
+
+
+- [One-time donation via PayPal.](https://paypal.me/chrismperezsantiago?locale.x=en_US)
+
+These are projects that take a lot of effort and time to maintain. So with your help I will be more motivated to continue maintaining the COVID19 API project. :)
+
 
 ## 💡 References
 - *worldometers. 2020. Coronavirus. [online] Available at: <https://www.worldometers.info/coronavirus/> [Accessed 16 March 2020].*
