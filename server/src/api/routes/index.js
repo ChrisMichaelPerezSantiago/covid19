@@ -201,4 +201,15 @@ router.get('/AggregatedFacilityCapacityCounty' , (req , res) =>{
     });
 });
 
+router.get('/JohnsHopkinsDataDailyReport' , (req , res) =>{
+  PluginManager.johnsHopkinsDataDailyReport()
+    .then(data =>{
+      res.status(200).json({
+        data: data[0]
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
 module.exports = router;

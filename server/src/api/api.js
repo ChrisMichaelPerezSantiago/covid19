@@ -561,6 +561,39 @@ const aggregatedFacilityCapacityCounty = async() =>{
   return Promise.all(data);
 };
 
+const johnsHopkinsDataDailyReport = async() =>{
+  try{
+    const res1 = await cloudscraper('https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports',{
+      method: 'GET',
+    });
+    const $ = cheerio.load(res1);
+    const html = $.html();
+    const gitHubTable = tabletojson.convert(html);  
+    const N = gitHubTable[0].length;
+    const date = gitHubTable[0][N - 2].Name;
+
+    const url = `https://raw.githubusercontent.com/CSSEGISandData/COVID-19/master/csse_covid_19_data/csse_covid_19_daily_reports/${date}`;
+    const table = await csv()
+      .fromStream(request.get(url))
+        .subscribe((json)=>{
+          return new Promise((resolve,reject)=>{          
+            resolve(json)     
+        });
+      });
+
+    table.forEach((obj) =>{
+      delete obj.FIPS
+      delete obj.Admin2
+    });
+    
+    const data = [{table: table}]; 
+
+    return Promise.all(data);
+  
+  }catch(err){
+    console.log(err);
+  }
+};
 
 module.exports = {
   reports,
@@ -580,6 +613,7 @@ module.exports = {
   caseStatusUndeEvalutationInPR,
   casesInAllUSStates,
   capacityInfoUSHealthFacilities,
-  aggregatedFacilityCapacityCounty
+  aggregatedFacilityCapacityCounty,
+  johnsHopkinsDataDailyReport
 };
 

@@ -27,6 +27,7 @@ router.get('/', (req, res) => {
         'CasesInAllUSStates': '/api/v1/CasesInAllUSStates',
         'CapacityInfoUSHealthFacilities': '/api/v1/CapacityInfoUSHealthFacilities',
         'AggregatedFacilityCapacityCounty': '/api/v1/AggregatedFacilityCapacityCounty',
+        'JohnsHopkinsDataDailyReport': '/api/v1/JohnsHopkinsDataDailyReport'
       }
     ]
   });
