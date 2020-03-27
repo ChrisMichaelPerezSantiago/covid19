@@ -1,4 +1,4 @@
-# **🐛 COVID19** (version 1.0.9)
+# **🐛 COVID19** (version 1.1.0)
 
 ![node version](https://img.shields.io/badge/node->=10.16.x-brightgreen.svg)
 ![npm version](https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg)
@@ -58,12 +58,9 @@
 *Symptoms of the novel coronavirus (2019-nCoV) may appear in as few as `2` days or as long as `14` (estimated ranges vary from `2-10` days, `2-14` days, and `10-14` days, [see details](https://www.worldometers.info/coronavirus/coronavirus-incubation-period/)), during which the virus is contagious but the patient does not display any symptom (asymptomatic transmission).*
 
 
-## 🎉 COVID19 API - UPDATED v1.0.9
-- [x] *Capacity information for US Health Facilities* 
-  - `PluginManager.getCapacityInfoUSHealthFacilities()`
-- [x] *Aggregated facility capacity information by County*
-  - `PluginManager.getAggregatedFacilityCapacityCounty()`
-
+## 🎉 COVID19 API - UPDATED v1.1.0
+- [x] *Johns Hopkins - Coronavirus Resource Center (Daily Report)*
+  - `PluginManager.getJohnsHopkinsDataDailyReport()`
 
 
 ## 📖 API Documentation
@@ -768,7 +765,7 @@
 *For more information visit [COVID CARE MAP](https://www.covidcaremap.org/#data)*
 
 
-### PluginManager.getCapacityInfoUSHealthFacilities();
+### PluginManager.getCapacityInfoUSHealthFacilities()
 *Capacity information for US Health Facilities*
 - ***Name***: *Name of the facility, same as Definitive Healthcare data.*
 - ***Hospital Type***: *Hospital Type from Definititve Healthcare data. See Hospital Types.*
@@ -842,7 +839,7 @@
 ]
 ```
 
-### PluginManager.getAggregatedFacilityCapacityCounty();
+### PluginManager.getAggregatedFacilityCapacityCounty()
 *Aggregated facility capacity information by County*
 
 - ***Name***: *Name of the facility, same as Definitive Healthcare data.*
@@ -914,6 +911,47 @@
       ]
     }
   ],
+]
+```
+
+## Johns Hopkins - Coronavirus Resource Center (CSSE COVID-19 Dataset)
+*This is the data for the 2019 Novel Coronavirus Visual Dashboard operated by the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE). Also, Supported by ESRI Living Atlas Team and the Johns Hopkins University Applied Physics Lab (JHU APL).*
+
+### PluginManager.getJohnsHopkinsDataDailyReport()
+
+```json
+[ 
+  [ 
+    { 
+      table: [
+        {
+          "Province_State": "South Carolina",
+          "Country_Region": "US",
+          "Last_Update": "2020-03-26 23:48:35",
+          "Lat": "34.22333378",
+          "Long_": "-82.46170658",
+          "Confirmed": "3",
+          "Deaths": "0",
+          "Recovered": "0",
+          "Active": "0",
+          "Combined_Key": "Abbeville, South Carolina, US"
+        },
+        {
+          "Province_State": "Louisiana",
+          "Country_Region": "US",
+          "Last_Update": "2020-03-26 23:48:35",
+          "Lat": "30.295064899999996",
+          "Long_": "-92.41419698",
+          "Confirmed": "3",
+          "Deaths": "0",
+          "Recovered": "0",
+          "Active": "0",
+          "Combined_Key": "Acadia, Louisiana, US"
+        },
+        // .....
+      ] 
+    } 
+  ] 
 ]
 ```
 
