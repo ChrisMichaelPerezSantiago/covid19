@@ -92,6 +92,11 @@ class PluginManager {
     const res = await Promise.all(this.plugins.map(plugin => plugin.aggregatedFacilityCapacityCounty()));
     return res;
   };
+
+  async getJohnsHopkinsDataDailyReport(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.johnsHopkinsDataDailyReport()));
+    return res;
+  };
 }
 
 module.exports = PluginManager;

@@ -19,4 +19,6 @@ const PluginManager = require('./src/api/index');
   //const casesInAllUSStates = await PluginManager.getCasesInAllUSStates();
   //const capacityInfoUSHealthFacilities = await PluginManager.getCapacityInfoUSHealthFacilities();
   //const aggregatedFacilityCapacityCounty = await PluginManager.getAggregatedFacilityCapacityCounty();
+  //const johnsHopkinsDataDailyReport = await PluginManager.getJohnsHopkinsDataDailyReport();
+  //console.log(johnsHopkinsDataDailyReport);
 })();
