@@ -209,6 +209,8 @@
 ### PluginManager.getReportsByCountries([country])
 *Confirmed Cases and Deaths by Country*
 
+***Table List (params) Last update***: 3/28/2020
+
 | Countries     |
 | ------------- |
 |algeria , australia , austria |
@@ -217,12 +219,13 @@
 |denmark|
 |france|
 |germany , greece |
-|indonesia , iran , iraq , ireland , italy|
+|india , indonesia , iran , iraq , ireland , israel ,italy|
 |malaysia|
 |netherlands , norway|
 |philippines , poland , portugal|
 |south-korea , spain , sweden , switzerland|
 |uk , us|
+
 
 ```json
 [
