@@ -81,6 +81,8 @@ const reports = async() =>{
   });
 
   data[0].table.map(doc =>{
+    doc.forEach((obj) => renameKey(obj , 'Deaths/1M pop' , 'Deaths_1M_pop'));
+    doc.forEach((obj) => renameKey(obj , '1stcase' , 'FirstCase'));
     doc.forEach((obj) => renameKey(obj , 'Country,Other' , 'Country'));
     doc.forEach((obj) => renameKey(obj , 'Serious,Critical' , 'Serious_Critical'));
     doc.forEach((obj) => renameKey(obj , 'Tot Cases/1M pop' , 'TotCases_1M_Pop'));
