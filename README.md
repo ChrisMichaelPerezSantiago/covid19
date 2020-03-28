@@ -4,7 +4,9 @@
 ![npm version](https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg)
 <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" target="_blank" />          
 <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" target="_blank" />
-<img src="https://img.shields.io/badge/COVI19-API-brightgreen.svg" alt="">
+<img src="https://img.shields.io/badge/COVID19-API-brightgreen.svg" alt="">
+<img src="https://badgen.net/badge/icon/now?icon=now&label" alt="">
+
 
  <a href="https://nodei.co/npm/covid19-api/"><img src="https://nodei.co/npm/covid19-api.png"></a>
 
@@ -23,6 +25,11 @@
 *In turn, I have created a [website](https://covid19pr.chrismichael.now.sh/) to demonstrate the capabilities that this API has when using it to create web applications. I have only created it for demonstration, so it will serve as a prototype.*
 
 *Sorry for the inconvenience!*
+
+
+## API URL
+- [x] [COVID19 API URL now.sh](https://covid19-server.chrismichael.now.sh/api/v1/)
+- [x] [COVID19 API URL heroku](https://covid19-api-v1.herokuapp.com/api/v1/)
 
 ## 📝 Brief Information on COVID19
 
