@@ -4,6 +4,7 @@
   "description": "This API provides updated real-time data on coronavirus cases from the worldometers page and other important websites, provided by the most reputable organizations and statistical offices in the world.",
   "main": "./src/api/index.js",
   "scripts": {
+    "postinstall": "npm install ./server",
     "start": "node ./server/src/index.js",
     "start:api": "nodemon ./src/api/api",
     "start:plugin": "nodemon ./TestPlugin"
@@ -41,6 +42,7 @@
     "axios": "^0.19.2",
     "cheerio": "^1.0.0-rc.3",
     "cloudscraper": "^4.6.0",
+    "covid19-server": "file:server",
     "csvtojson": "^2.0.10",
     "https": "^1.0.0",
     "nodemon": "^2.0.2",
