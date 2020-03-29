@@ -1,4 +1,4 @@
-# **🐛 COVID19** (version 1.1.3)
+# **🐛 COVID19** (version 1.1.4)
 
 ![node version](https://img.shields.io/badge/node->=10.16.x-brightgreen.svg)
 ![npm version](https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg)
@@ -64,7 +64,7 @@
 *Symptoms of the novel coronavirus (2019-nCoV) may appear in as few as `2` days or as long as `14` (estimated ranges vary from `2-10` days, `2-14` days, and `10-14` days, [see details](https://www.worldometers.info/coronavirus/coronavirus-incubation-period/)), during which the virus is contagious but the patient does not display any symptom (asymptomatic transmission).*
 
 
-## 🎉 COVID19 API - UPDATED v1.1.3
+## 🎉 COVID19 API - UPDATED v1.1.4
 - [x] *posinstall and start script removed due to an error about*
  
 ```shell
