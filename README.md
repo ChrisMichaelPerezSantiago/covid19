@@ -29,7 +29,6 @@
 
 ## API URL
 - [x] [COVID19 API URL now.sh](https://covid19-server.chrismichael.now.sh/api/v1/)
-- [x] [COVID19 API URL heroku](https://covid19-api-v1.herokuapp.com/api/v1/)
 
 ## 📝 Brief Information on COVID19
 
@@ -66,10 +65,10 @@
 
 
 ## 🎉 COVID19 API - UPDATED v1.1.2
-- [x] *posinstall and start script removed due to an error about 
+- [x] *posinstall and start script removed due to an error about*
  
 ```shell
- Could not install from node_modules\covid19-api\server*
+ Could not install from node_modules\covid19-api\server
 ```
 - [x] *Deaths/M pop and 1stcase keys fixed in the `getReports` function.*
 
