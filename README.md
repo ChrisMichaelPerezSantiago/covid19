@@ -209,7 +209,7 @@
 ### PluginManager.getReportsByCountries([country])
 *Confirmed Cases and Deaths by Country*
 
-***Table List (params) Last update***: 3/28/2020
+***Table List (params) Last update***: 3/29/2020
 
 | Countries     |
 | ------------- |
@@ -224,6 +224,7 @@
 |netherlands , norway|
 |philippines , poland , portugal|
 |south-korea , spain , sweden , switzerland|
+|turkey|
 |uk , us|
 
 
