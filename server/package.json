@@ -1,0 +1,49 @@
+{
+  "name": "covid19-server",
+  "version": "1.0.3",
+  "description": "COVID19 Server",
+  "scripts": {
+    "start": "node src/index.js",
+    "start:api": "nodemon src/api/api.js",
+    "dev": "nodemon src/index.js"
+  },
+  "keywords": [
+    "COVID-19",
+    "coronavirus",
+    "pandemic"
+  ],
+  "author": {
+    "name": "Chris Michael",
+    "email": "chrisperezsantiago1@gmail.com",
+    "url": "http://personal-porfolio.chrismichael.now.sh",
+    "social": {
+      "github": "https://github.com/ChrisMichaelPerezSantiago",
+      "twitter": "https://twitter.com/Chris5855M"
+    }
+  },
+  "contributors": [
+    {
+      "name": "Chris Michael",
+      "url": "https://github.com/ChrisMichaelPerezSantiago",
+      "reason": "Project Leader, and Developer"
+    }
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "cloudscraper": "^4.6.0",
+    "compose-middleware": "^5.0.1",
+    "cors": "^2.8.5",
+    "csvtojson": "^2.0.10",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^3.21.3",
+    "mocha": "^7.1.0",
+    "morgan": "^1.9.1",
+    "nodemon": "^2.0.2",
+    "request": "^2.88.2",
+    "supertest": "^4.0.2",
+    "tabletojson": "^2.0.3"
+  }
+}
