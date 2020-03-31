@@ -993,6 +993,25 @@ These are projects that take a lot of effort and time to maintain. So with your 
 - *salud.gov. 2020 . ESTATUS DE CASOS BAJO EVALUACIÓN POR COVID-19 [online] Available at: <http://www.salud.gov.pr/Pages/coronavirus.aspx/> [Accessed 22 Mar 2020]*
 - *covidcaremap.org. 2020. COVID CARE [online] Available at: <https://www.covidcaremap.org/#data/> [Accessed 26 Mar 2020]*
 
+
+### **📚 Projects that use the API**
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/yenniejun/covid-texting-service">
+        <img src="https://avatars0.githubusercontent.com/u/9387924?s=400&u=cf7389c0603916a716f6f8308101dd34309493e5&v=4" width="75px;" alt="yenniejun"/><br />
+          <sub>
+            <b>yenniejun</b>
+          </sub>
+      </a><br/>
+        <sub>Covid Texting Service</sub>
+      </a>
+    </td>
+  </tr>
+</table>
+
+
 ## **:handshake: Contributing**
 
 - Fork it!
