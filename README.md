@@ -40,7 +40,7 @@
 - [x] [Case Fatality Rate (CFR)](https://www.worldometers.info/coronavirus/coronavirus-death-rate/) - percent of cases that result in death
 - [x] Determine whether [asymptomatic transmission](https://www.worldometers.info/coronavirus/coronavirus-incubation-period/#asy) is possible
 
-**How contagious is the Wuhan Coronavirus? (Ro)**
+**How contagious is the COVID19? (Ro)**
 *The attack rate or transmissibility (how rapidly the disease spreads) of a virus is indicated by its reproductive number (Ro, pronounced R-nought or r-zero), which represents the average number of people to which a single infected person will transmit the virus.*
 
 - [x] WHO's estimated (on Jan. 23) Ro to be between `1.4` and `2.5`.
@@ -49,8 +49,8 @@
 - [x] An outbreak with a reproductive number of below `1` will gradually disappear.
 - [x] For comparison, the Ro for the common flu is `1.3` and for SARS it was `2.0`.
 
-**Fatality Rate (case fatality ratio or CFR) of the Wuhan Coronavirus**
-*See full details:* [Wuhan Coronavirus Fatality Rate](https://www.worldometers.info/coronavirus/coronavirus-death-rate/)
+**Fatality Rate (case fatality ratio or CFR) of the COVID19**
+*See full details:* [COVID19 Fatality Rate](https://www.worldometers.info/coronavirus/coronavirus-death-rate/)
 
 *The novel coronavirus' case fatality rate has been estimated at around `2%`, in the WHO press conference held on January 29, 2020 . However, it noted that, without knowing how many were infected, it was too early to be able to put a percentage on the mortality rate figure.*
 
