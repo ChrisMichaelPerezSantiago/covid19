@@ -5,7 +5,8 @@
   "main": "./src/api/index.js",
   "scripts": {
     "start:api": "nodemon ./src/api/api",
-    "start:plugin": "nodemon ./TestPlugin"
+    "start:plugin": "nodemon ./TestPlugin",
+    "test": "mocha"
   },
   "keywords": [
     "COVID-19",
@@ -38,10 +39,13 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.19.2",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
     "cheerio": "^1.0.0-rc.3",
     "cloudscraper": "^4.6.0",
     "csvtojson": "^2.0.10",
     "https": "^1.0.0",
+    "mocha": "^7.1.1",
     "nodemon": "^2.0.2",
     "path": "^0.12.7",
     "request": "^2.88.2",
