@@ -56,25 +56,24 @@ describe('COVID19 API' , () =>{
   }).timeout(10000);
 
   
-  it('GET METHOD /api/v1/TestsInUS' , (ok) =>{
+  it('GET METHOD /api/v1/JohnsHopkinsDataDailyReport' , (ok) =>{
     chai
       .request(URL)
-      .get('/TestsInUS')
+      .get('/JohnsHopkinsDataDailyReport')
       .end((err , res) =>{      
         expect(res.status).to.be.equal(200);
-        expect(res.body.tests).to.be.an('Object');
+        expect(res.body.data).to.be.an('object');
 
-        const keys = [
-          "lastUpdatedDay" , "table"
-        ]
         const tableKeys = [
-          "DateCollected" , "CDCLabs",
-          "USPublicHealthLabs" , 
+          "Province_State" ,  "Country_Region",
+          "Last_Update"    ,  "Lat",
+          "Long_"          ,  "Confirmed",
+          "Deaths"         ,  "Recovered",
+          "Active"         ,  "Combined_Key"
         ]
 
-        expect(res.body.tests).to.have.keys(keys);
-        expect(res.body.tests.table[0]).to.have.keys(tableKeys);
+        expect(res.body.data.table[0]).to.have.keys(tableKeys);
         ok();
       })
-  }).timeout(10000);
+  }).timeout(15000);
 })
