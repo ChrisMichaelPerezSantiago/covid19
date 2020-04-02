@@ -54,4 +54,27 @@ describe('COVID19 API' , () =>{
         ok();
       })
   }).timeout(10000);
+
+  
+  it('GET METHOD /api/v1/TestsInUS' , (ok) =>{
+    chai
+      .request(URL)
+      .get('/TestsInUS')
+      .end((err , res) =>{      
+        expect(res.status).to.be.equal(200);
+        expect(res.body.tests).to.be.an('Object');
+
+        const keys = [
+          "lastUpdatedDay" , "table"
+        ]
+        const tableKeys = [
+          "DateCollected" , "CDCLabs",
+          "USPublicHealthLabs" , 
+        ]
+
+        expect(res.body.tests).to.have.keys(keys);
+        expect(res.body.tests.table[0]).to.have.keys(tableKeys);
+        ok();
+      })
+  }).timeout(10000);
 })
