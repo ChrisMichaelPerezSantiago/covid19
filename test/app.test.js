@@ -31,5 +31,27 @@ describe('COVID19 API' , () =>{
         });
         ok();
       })
-  }).timeout(10000)
+  }).timeout(10000);
+
+  it('GET METHOD /api/v1/Deaths' , (ok) =>{
+    chai
+      .request(URL)
+      .get('/Deaths')
+      .end((err , res) =>{      
+        expect(res.status).to.be.equal(200);
+        expect(res.body.deaths).to.be.an('Object');
+
+        const keys = [
+          "deaths" , "table"
+        ]
+        const tableKeys = [
+          "Date" ,          "TotalDeaths",
+          "ChangeInTotal" , "ChangeTotalInPercent"
+        ]
+
+        expect(res.body.deaths).to.have.keys(keys);
+        expect(res.body.deaths.table[0]).to.have.keys(tableKeys);
+        ok();
+      })
+  }).timeout(10000);
 })
