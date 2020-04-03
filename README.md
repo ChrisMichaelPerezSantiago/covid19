@@ -973,6 +973,139 @@
 
 *Data at the following [URL](./EstatidistcasPuertoRico/README.md)*
 
+### PluginManager.getPRGeneralResults()
+*Quantity and Percentage Distribution*
+
+```json
+[
+  [
+    {
+      "table": [
+        {
+          "type": "Positivos",
+          "tests_result": "378",
+          "tests_result_percent": "10.80%"
+        },
+        {
+          "type": "Negativos",
+          "tests_result": "2049",
+          "tests_result_percent": "58.80%"
+        },
+        {
+          "type": "Pendientes",
+          "tests_result": "1055",
+          "tests_result_percent": "30.30%"
+        },
+        {
+          "type": "Inconcluso",
+          "tests_result": "4",
+          "tests_result_percent": "0.10%"
+        }
+      ]
+    }
+  ]
+]
+```
+
+### PluginManager.getPRDataByRegion()
+*Distribution by Health Region*
+
+```json
+[
+  [
+    {
+      "table": [
+        {
+          "type": "Arecibo",
+          "evaluated": "",
+          "positive": "9",
+          "negatives": "",
+          "pending": ""
+        },
+        {
+          "type": "Bayamón",
+          "evaluated": "",
+          "positive": "38",
+          "negatives": "",
+          "pending": ""
+        },
+        {
+          "type": "Caguas",
+          "evaluated": "",
+          "positive": "26",
+          "negatives": "",
+          "pending": ""
+        },
+        {
+          "type": "Fajardo",
+          "evaluated": "",
+          "positive": "7",
+          "negatives": "",
+          "pending": ""
+        },
+        {
+          "type": "Mayaguez",
+          "evaluated": "",
+          "positive": "26",
+          "negatives": "",
+          "pending": ""
+        },
+        {
+          "type": "Metro",
+          "evaluated": "",
+          "positive": "76",
+          "negatives": "",
+          "pending": ""
+        },
+        {
+          "type": "Ponce",
+          "evaluated": "",
+          "positive": "10",
+          "negatives": "",
+          "pending": ""
+        },
+        {
+          "type": "USA",
+          "evaluated": "",
+          "positive": "4",
+          "negatives": "",
+          "pending": ""
+        },
+        {
+          "type": "No Disponible",
+          "evaluated": "",
+          "positive": "182",
+          "negatives": "",
+          "pending": ""
+        }
+      ]
+    }
+  ]
+]
+```
+
+### PluginManager.getPRDataBySex()
+*According to the Reported Sex*
+
+```json
+[
+  [
+    {
+      "table": [
+        {
+          "genre": "Femenino",
+          "total": "184"
+        },
+        {
+          "genre": "Masculino",
+          "total": "194"
+        }
+      ]
+    }
+  ]
+]
+```
+
 ---
 
 
