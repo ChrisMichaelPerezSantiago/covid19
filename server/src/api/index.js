@@ -27,7 +27,10 @@ router.get('/', (req, res) => {
         'CasesInAllUSStates': '/api/v1/CasesInAllUSStates',
         'CapacityInfoUSHealthFacilities': '/api/v1/CapacityInfoUSHealthFacilities',
         'AggregatedFacilityCapacityCounty': '/api/v1/AggregatedFacilityCapacityCounty',
-        'JohnsHopkinsDataDailyReport': '/api/v1/JohnsHopkinsDataDailyReport'
+        'JohnsHopkinsDataDailyReport': '/api/v1/JohnsHopkinsDataDailyReport',
+        'PRGeneralResults': '/api/v1/PRGeneralResults',
+        'PRDataByRegions': '/api/v1/PRDataByRegions',
+        'PRDataBySex': '/api/v1/PRDataBySex',
       }
     ]
   });

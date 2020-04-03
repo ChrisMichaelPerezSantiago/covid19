@@ -586,6 +586,128 @@ const johnsHopkinsDataDailyReport = async() =>{
   }
 };
   
+const prGeneralResults = async() =>{
+  try{
+    const res1 = await cloudscraper('https://github.com/ChrisMichaelPerezSantiago/covid19/tree/master/EstatidistcasPuertoRico/resultados/datos_en_general',{
+      method: 'GET',
+    });
+    const $ = cheerio.load(res1);
+    const html = $.html();
+    const gitHubTable = tabletojson.convert(html);
+    const r = new RegExp(/.+(\.csv)$/);
+    const N = gitHubTable[0].filter(doc => {
+      return r.test(doc.Name)
+    }).length;
+    const gitHubTableFilterCSV = gitHubTable[0].filter(doc => {
+      return r.test(doc.Name)
+    }) 
+    const date = gitHubTableFilterCSV[N - 1].Name;
+
+    const url = `https://raw.githubusercontent.com/ChrisMichaelPerezSantiago/covid19/master/EstatidistcasPuertoRico/resultados/datos_en_general/${date}`;
+    const table = await csv()
+      .fromStream(request.get(url))
+        .subscribe((json)=>{
+          return new Promise((resolve,reject)=>{          
+            resolve(json)     
+        });
+      });
+    
+    table.forEach((obj) =>{
+      renameKey(obj , 'field1' , 'type')
+      renameKey(obj , 'Resultados de las Pruebas (n)' , 'tests_result')
+      renameKey(obj ,'Resultados de las Pruebas (%)' , 'tests_result_percent')
+    });
+
+    const data = [{table: table}]; 
+
+    return Promise.all(data);
+    }catch(err){
+    console.log(err)
+  }
+};
+
+const prDataByRegion = async() =>{
+  try{
+    const res1 = await cloudscraper('https://github.com/ChrisMichaelPerezSantiago/covid19/tree/master/EstatidistcasPuertoRico/resultados/datos_por_region',{
+      method: 'GET',
+    });
+    const $ = cheerio.load(res1);
+    const html = $.html();
+    const gitHubTable = tabletojson.convert(html);
+    const r = new RegExp(/.+(\.csv)$/);
+    const N = gitHubTable[0].filter(doc => {
+      return r.test(doc.Name)
+    }).length;
+    const gitHubTableFilterCSV = gitHubTable[0].filter(doc => {
+      return r.test(doc.Name)
+    }) 
+    const date = gitHubTableFilterCSV[N - 1].Name;
+    
+    const url = `https://raw.githubusercontent.com/ChrisMichaelPerezSantiago/covid19/master/EstatidistcasPuertoRico/resultados/datos_por_region/${date}`;
+    const table = await csv()
+      .fromStream(request.get(url))
+        .subscribe((json)=>{
+          return new Promise((resolve,reject)=>{          
+            resolve(json)     
+        });
+      });
+        
+    table.forEach((obj) =>{
+      renameKey(obj , 'field1' , 'type')
+      renameKey(obj , 'Evaluados' , 'evaluated')
+      renameKey(obj , 'Positivos' , 'positive')
+      renameKey(obj , 'Negativos' , 'negatives')
+      renameKey(obj , 'Pendientes' , 'pending')
+    });
+    
+    const data = [{table: table}]; 
+
+    return Promise.all(data);
+    }catch(err){
+      console.log(err)
+    }
+};
+
+const prDataBySex = async() =>{
+  try{
+    const res1 = await cloudscraper('https://github.com/ChrisMichaelPerezSantiago/covid19/tree/master/EstatidistcasPuertoRico/resultados/datos_por_sexo',{
+      method: 'GET',
+    });
+    const $ = cheerio.load(res1);
+    const html = $.html();
+    const gitHubTable = tabletojson.convert(html);
+    const r = new RegExp(/.+(\.csv)$/);
+    const N = gitHubTable[0].filter(doc => {
+      return r.test(doc.Name)
+    }).length;
+    const gitHubTableFilterCSV = gitHubTable[0].filter(doc => {
+      return r.test(doc.Name)
+    }) 
+    const date = gitHubTableFilterCSV[N - 1].Name;
+    
+    const url = `https://raw.githubusercontent.com/ChrisMichaelPerezSantiago/covid19/master/EstatidistcasPuertoRico/resultados/datos_por_sexo/${date}`;
+    const table = await csv()
+      .fromStream(request.get(url))
+        .subscribe((json)=>{
+          return new Promise((resolve,reject)=>{          
+            resolve(json)     
+        });
+      });
+        
+    table.forEach((obj) =>{
+      renameKey(obj , 'field1' , 'genre')
+      renameKey(obj , 'Sexo' , 'total')
+    });
+    
+    const data = [{table: table}]; 
+
+    return Promise.all(data);
+    
+    }catch(err){
+      console.log(err)
+    }
+};
+
 
 module.exports = {
   reports,
@@ -606,5 +728,9 @@ module.exports = {
   casesInAllUSStates,
   capacityInfoUSHealthFacilities,
   aggregatedFacilityCapacityCounty,
-  johnsHopkinsDataDailyReport
+  johnsHopkinsDataDailyReport,
+  prGeneralResults,
+  prDataByRegion,
+  prDataBySex
 };
+

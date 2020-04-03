@@ -212,4 +212,37 @@ router.get('/JohnsHopkinsDataDailyReport' , (req , res) =>{
     });
 });
 
+router.get('/PRGeneralResults' , (req , res) =>{
+  PluginManager.prGeneralResults()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/PRDataByRegions' , (req , res) =>{
+  PluginManager.prDataByRegion()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/PRDataBySex' , (req , res) =>{
+  PluginManager.prDataBySex()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
 module.exports = router;
