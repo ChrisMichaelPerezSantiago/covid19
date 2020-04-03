@@ -73,10 +73,6 @@
   - `getPRDataByRegion()`
 
 
-//const prGeneralResults = await PluginManager.getPRGeneralResults();
-  //const prDataByRegion = await PluginManager.getPRDataByRegion();
-  //const prDataBySex = await PluginManager.getPRDataBySex();
-
 ## 📖 API Documentation
 
 ### PluginManager.getReports()
