@@ -1,4 +1,4 @@
-# **🐛 COVID19** (version 1.1.6)
+# **🐛 COVID19** (version 1.1.7)
 
 ![node version](https://img.shields.io/badge/node->=10.16.x-brightgreen.svg)
 ![npm version](https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg)
@@ -64,10 +64,18 @@
 *Symptoms of the novel coronavirus (2019-nCoV) may appear in as few as `2` days or as long as `14` (estimated ranges vary from `2-10` days, `2-14` days, and `10-14` days, [see details](https://www.worldometers.info/coronavirus/coronavirus-incubation-period/)), during which the virus is contagious but the patient does not display any symptom (asymptomatic transmission).*
 
 
-## 🎉 COVID19 API - UPDATED v1.1.6
-- [x] *The `FirstCase` column was removed from the worldometers website, this fixes the error accessing data from the server and the api*
+## 🎉 COVID19 API - UPDATED v1.1.7
+- [x] *Current Test Results - Quantity and Percentage Distribution*
+  - `.getPRGeneralResults()`
+- [x] *Positive results - According to the Reported Sex*
+  - `getPRDataBySex()`
+- [x] *Positive results - Distribution by Health Region*
+  - `getPRDataByRegion()`
 
 
+//const prGeneralResults = await PluginManager.getPRGeneralResults();
+  //const prDataByRegion = await PluginManager.getPRDataByRegion();
+  //const prDataBySex = await PluginManager.getPRDataBySex();
 
 ## 📖 API Documentation
 
