@@ -76,5 +76,5 @@ describe('COVID19 API' , () =>{
         expect(res.body.data.table[0]).to.have.keys(tableKeys);
         ok();
       })
-  }).timeout(15000);
+  }).timeout(10000);
 })
