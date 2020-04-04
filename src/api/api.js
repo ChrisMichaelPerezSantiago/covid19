@@ -85,11 +85,16 @@ const reports = async() =>{
     //doc.forEach((obj) => renameKey(obj , 'Reported1st case' , 'FirstCase'));
     doc.forEach((obj) => renameKey(obj , 'Country,Other' , 'Country'));
     doc.forEach((obj) => renameKey(obj , 'Serious,Critical' , 'Serious_Critical'));
+    doc.forEach((obj) => renameKey(obj , 'Tests/\n1M pop' , 'Tests_1M_Pop'));
     doc.forEach((obj) => renameKey(obj , 'Tot Cases/1M pop' , 'TotCases_1M_Pop'));
   });
 
   return Promise.all(data);
 };
+
+reports().then(res =>{
+  console.log(res[0].table)
+})
 
 const reportsByCountries = async(country) =>{
   const res = await cloudscraper(`${BASE_URL}/coronavirus/country/${country}` , {
