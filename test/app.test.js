@@ -21,7 +21,8 @@ describe('COVID19 API' , () =>{
           "TotalDeaths"      , "NewDeaths",
           "TotalRecovered"   , "ActiveCases",
           "Deaths_1M_pop"    , "Country",
-          "Serious_Critical" , "TotCases_1M_Pop"
+          "Serious_Critical" , "Tests_1M_Pop",
+          "TotCases_1M_Pop"  , "TotalTests"
         ]
 
         Array.from({length: table.length} , (v , i) =>{
