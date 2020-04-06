@@ -4,7 +4,7 @@ const tabletojson = require('tabletojson').Tabletojson;
 const _ = require('lodash');
 const csv = require('csvtojson');
 const request=require('request')
-const {renameKey} = require('./utils/utils');
+const {renameKey , exportCSVFile} = require('./utils/utils');
 const { 
   BASE_URL , 
   WHO_BASE_URL,
@@ -710,6 +710,23 @@ const prDataBySex = async() =>{
     }
 };
 
+
+const reportsToCSV = () =>{
+  try{
+    setTimeout(async() => {
+       reports()
+        .then(res =>{
+          const table = res[0].table[0];
+          const header = Object.keys(res[0].table[0][0]);
+          const title = 'Confirmed Cases and Deaths by Country, Territory, or Conveyance';
+          exportCSVFile(table, header , title)       
+        })
+    }, 100);
+  }catch(err){
+    console.log(err)
+  }
+}
+
 module.exports = {
   reports,
   reportsByCountries,
@@ -732,5 +749,6 @@ module.exports = {
   johnsHopkinsDataDailyReport,
   prGeneralResults,
   prDataByRegion,
-  prDataBySex
+  prDataBySex,
+  reportsToCSV
 };

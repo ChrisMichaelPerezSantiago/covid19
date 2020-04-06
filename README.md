@@ -979,6 +979,16 @@
 ]
 ```
 
+### PluginManager.downloadReportsToCSV()
+*Download report of all cases confirmed by each country in CSV format*
+*It will download the file to the **Desktop** directory with the name **reports.csv***
+
+*You should execute the function as follows*
+
+```javascript
+await PluginManager.downloadReportsToCSV();
+```
+
 ---
 
 # 🐛 COVID-19 Puerto Rico Data

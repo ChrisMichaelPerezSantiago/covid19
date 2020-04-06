@@ -112,6 +112,11 @@ class PluginManager {
     const res = await Promise.all(this.plugins.map(plugin => plugin.prDataBySex()));
     return res;
   };
+
+  async downloadReportsToCSV(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.reportsToCSV()));
+    return res;
+  };
 }
 
 module.exports = PluginManager;

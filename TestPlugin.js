@@ -23,5 +23,6 @@ const PluginManager = require('./src/api/index');
   //const prGeneralResults = await PluginManager.getPRGeneralResults();
   //const prDataByRegion = await PluginManager.getPRDataByRegion();
   //const prDataBySex = await PluginManager.getPRDataBySex();
+  //await PluginManager.downloadReportsToCSV();
   //console.log(JSON.stringify(prDataBySex, null , 2 ));
 })();
