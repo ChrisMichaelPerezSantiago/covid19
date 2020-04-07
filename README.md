@@ -1,7 +1,5 @@
 # **🐛 COVID19** (version 1.1.8)
 
-![node version](https://img.shields.io/badge/node->=10.16.x-brightgreen.svg)
-![npm version](https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg)
 <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" target="_blank" />          
 <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" target="_blank" />
 <img src="https://img.shields.io/badge/COVID19-API-brightgreen.svg" alt="">
@@ -10,14 +8,14 @@
 
  <a href="https://nodei.co/npm/covid19-api/"><img src="https://nodei.co/npm/covid19-api.png"></a>
 
-
-> This API provides updated real-time data on coronavirus cases from the worldometers page and other important websites, provided by the most reputable organizations and statistical offices in the world.
-
 ---
 
  <p align="center"> 
   <img style="" src="./assets/img/logo.png"/>
 </p> 
+
+> This API provides updated real-time data on coronavirus cases from the worldometers page and other important websites, provided by the most reputable organizations and statistical offices in the world.
+
 
 ## 🚨 Important Information 🚨
 *If you notice that I make and publish many updates / versions in the api, it is due to all the data that is reaching the public. This helps me create a more complete API, with accurate data.*
