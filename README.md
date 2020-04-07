@@ -4,6 +4,7 @@
 <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" target="_blank" />
 <img src="https://img.shields.io/badge/COVID19-API-brightgreen.svg" alt="">
 <img src="https://badgen.net/badge/icon/now?icon=now&label" alt="">
+
 [![Build Status](https://travis-ci.com/ChrisMichaelPerezSantiago/covid19.svg?branch=master)](https://travis-ci.com/ChrisMichaelPerezSantiago/covid19)
 
  <a href="https://nodei.co/npm/covid19-api/"><img src="https://nodei.co/npm/covid19-api.png"></a>
