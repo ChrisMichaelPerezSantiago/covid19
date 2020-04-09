@@ -1136,6 +1136,8 @@ COVID19 API is an open source project licensed by MIT with continuous developmen
 
 - [One-time donation via PayPal.](https://paypal.me/chrismperezsantiago?locale.x=en_US)
 
+<a href="https://www.buymeacoffee.com/chrismichael" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" style="height: 51px !important;width: 217px !important;" ></a>
+
 These are projects that take a lot of effort and time to maintain. So with your help I will be more motivated to continue maintaining the COVID19 API project.
 
 
