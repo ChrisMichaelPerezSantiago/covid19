@@ -22,7 +22,8 @@ describe('COVID19 API' , () =>{
           "TotalRecovered"   , "ActiveCases",
           "Deaths_1M_pop"    , "Country",
           "Serious_Critical" , "Tests_1M_Pop",
-          "TotCases_1M_Pop"  , "TotalTests"
+          "TotCases_1M_Pop"  , "TotalTests",
+          "Continent"
         ]
 
         Array.from({length: table.length} , (v , i) =>{
