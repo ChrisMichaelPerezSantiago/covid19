@@ -31,6 +31,8 @@ router.get('/', (req, res) => {
         'PRGeneralResults': '/api/v1/PRGeneralResults',
         'PRDataByRegions': '/api/v1/PRDataByRegions',
         'PRDataBySex': '/api/v1/PRDataBySex',
+        'PRDataByTowns': '/api/v1/PRDataByTowns',
+        'PRExtraData': '/api/v1/PRExtraData'
       }
     ]
   });
