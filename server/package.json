@@ -1,6 +1,6 @@
 {
   "name": "covid19-server",
-  "version": "1.0.3",
+  "version": "1.1.9",
   "description": "COVID19 Server",
   "scripts": {
     "start": "node src/index.js",
