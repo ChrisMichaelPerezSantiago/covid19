@@ -245,4 +245,25 @@ router.get('/PRDataBySex' , (req , res) =>{
     });
 });
 
+router.get('/PRDataByTowns' , (req , res) =>{
+  PluginManager.prDataByTowns()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/PRExtraData' , (req , res) =>{
+  PluginManager.prExtraData()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
 module.exports = router;
