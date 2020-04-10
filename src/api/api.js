@@ -1,4 +1,5 @@
-const cloudscraper = require('cloudscraper');
+//const cloudscraper = require('cloudscraper');
+const axios = require('axios').default;
 const cheerio = require('cheerio');
 const tabletojson = require('tabletojson').Tabletojson;
 const _ = require('lodash');
@@ -20,10 +21,12 @@ const {
 
 
 const reports = async() =>{
-  const res = await cloudscraper(`${BASE_URL}/coronavirus` , {
-    method: 'GET',
-  });
-  const $ = cheerio.load(res);
+  //const res = await cloudscraper(`${BASE_URL}/coronavirus` , {
+  //  method: 'GET',
+  //});
+  const res = await axios.get(`${BASE_URL}/coronavirus`)
+  const body = await res.data;
+  const $ = cheerio.load(body);
   const html = $.html();
   const data = [];
 
@@ -93,10 +96,12 @@ const reports = async() =>{
 };
 
 const reportsByCountries = async(country) =>{
-  const res = await cloudscraper(`${BASE_URL}/coronavirus/country/${country}` , {
-    method: 'GET',
-  });
-  const $ = cheerio.load(res);
+  //const res = await cloudscraper(`${BASE_URL}/coronavirus/country/${country}` , {
+  //  method: 'GET',
+  //});
+  const res = await axios.get(`${BASE_URL}/coronavirus/country/${country}`)
+  const body = await res.data;
+  const $ = cheerio.load(body);
   
   const img = `${BASE_URL}` + $('h1 div img').attr('src');
   const tempCases = $('div#maincounter-wrap').eq(0).text().split(':')[1].trim();
@@ -153,12 +158,13 @@ const reportsByCountries = async(country) =>{
   return Promise.all(data);
 };
 
-
 const deaths = async() =>{
-  const res = await cloudscraper(`${BASE_URL}/coronavirus/coronavirus-death-toll/` , {
-    method: 'GET',
-  });
-  const $ = cheerio.load(res);
+  //const res = await cloudscraper(`${BASE_URL}/coronavirus/coronavirus-death-toll/` , {
+  //  method: 'GET',
+  //});
+  const res = await axios.get(`${BASE_URL}/coronavirus/coronavirus-death-toll/`)
+  const body = await res.data;
+  const $ = cheerio.load(body);
   const html = $.html();
   const data = [];
 
@@ -179,10 +185,12 @@ const deaths = async() =>{
 };
 
 const situationReports = async() =>{
-  const res = await cloudscraper(`${WHO_BASE_URL}/emergencies/diseases/novel-coronavirus-2019/situation-reports` , {
-    method: 'GET',
-  });
-  const $ = cheerio.load(res);
+  //const res = await cloudscraper(`${WHO_BASE_URL}/emergencies/diseases/novel-coronavirus-2019/situation-reports` , {
+  //  method: 'GET',
+  //});
+  const res = await axios.get(`${WHO_BASE_URL}/emergencies/diseases/novel-coronavirus-2019/situation-reports`);
+  const body = await res.data;
+  const $ = cheerio.load(body);
   const doc = [];
 
   $('div.row div p').each((index , element) =>{
@@ -203,10 +211,12 @@ const situationReports = async() =>{
 };
 
 const TaskForceUS = async() =>{
-  const res = await cloudscraper(`${CDC_GOV_BASE_URL}/coronavirus/2019-ncov/cases-updates/from-the-white-house-task-force.html` , {
-    method: 'GET',
-  });
-  const $ = cheerio.load(res);
+  //const res = await cloudscraper(`${CDC_GOV_BASE_URL}/coronavirus/2019-ncov/cases-updates/from-the-white-house-task-force.html` , {
+  //  method: 'GET',
+  //});
+  const res = await axios.get(`${CDC_GOV_BASE_URL}/coronavirus/2019-ncov/cases-updates/from-the-white-house-task-force.html`);
+  const body = await res.data; 
+  const $ = cheerio.load(body);
   const data = [];
 
   $('div.col ul li').each((index , element) =>{
@@ -223,8 +233,10 @@ const TaskForceUS = async() =>{
 };
 
 const globalData  = async() =>{
-  const res = await cloudscraper(`${COVID19_SPREADSHEETS_BASE_URL}` , {method: 'GET'})
-  const $ = cheerio.load(res);
+  //const res = await cloudscraper(`${COVID19_SPREADSHEETS_BASE_URL}` , {method: 'GET'})
+  const res = await axios.get(`${COVID19_SPREADSHEETS_BASE_URL}`);
+  const body = await res.data;
+  const $ = cheerio.load(body);
   const html = $.html();
   const table = tabletojson.convert(html);  
 
@@ -232,8 +244,10 @@ const globalData  = async() =>{
 };
 
 const testsInUS  = async() =>{
-  const res = await cloudscraper(`${CDC_GOV_BASE_URL}/coronavirus/2019-ncov/cases-updates/testing-in-us.html` , {method: 'GET'})
-  const $ = cheerio.load(res);
+  //const res = await cloudscraper(`${CDC_GOV_BASE_URL}/coronavirus/2019-ncov/cases-updates/testing-in-us.html` , {method: 'GET'})
+  const res = await axios.get(`${CDC_GOV_BASE_URL}/coronavirus/2019-ncov/cases-updates/testing-in-us.html`);
+  const body = await res.data;
+  const $ = cheerio.load(body);
   const html = $.html();
   const data = [];
   
@@ -253,8 +267,10 @@ const testsInUS  = async() =>{
 };
 
 const fatalityRateByAge  = async() =>{
-  const res = await cloudscraper(`${BASE_URL}/coronavirus/coronavirus-age-sex-demographics/` , {method: 'GET'})
-  const $ = cheerio.load(res);
+  //const res = await cloudscraper(`${BASE_URL}/coronavirus/coronavirus-age-sex-demographics/` , {method: 'GET'})
+  const res = await axios.get(`${BASE_URL}/coronavirus/coronavirus-age-sex-demographics/`)
+  const body = res.data;
+  const $ = cheerio.load(body);
   const html = $.html();
   const table = tabletojson.convert(html);  
   const data = table[0];
@@ -273,8 +289,10 @@ const fatalityRateByAge  = async() =>{
 };
 
 const fatalityRateBySex  = async() =>{
-  const res = await cloudscraper(`${BASE_URL}/coronavirus/coronavirus-age-sex-demographics/` , {method: 'GET'})
-  const $ = cheerio.load(res);
+  //const res = await cloudscraper(`${BASE_URL}/coronavirus/coronavirus-age-sex-demographics/` , {method: 'GET'})
+  const res = await axios.get(`${BASE_URL}/coronavirus/coronavirus-age-sex-demographics/`)
+  const body = await res.data;
+  const $ = cheerio.load(body);
   const html = $.html();
   const table = tabletojson.convert(html);  
   const data = table[1];
@@ -293,8 +311,10 @@ const fatalityRateBySex  = async() =>{
 };
 
 const fatalityRateByComorbidities  = async() =>{
-  const res = await cloudscraper(`${BASE_URL}/coronavirus/coronavirus-age-sex-demographics/` , {method: 'GET'})
-  const $ = cheerio.load(res);
+  //const res = await cloudscraper(`${BASE_URL}/coronavirus/coronavirus-age-sex-demographics/` , {method: 'GET'})
+  const res = await axios.get(`${BASE_URL}/coronavirus/coronavirus-age-sex-demographics/`);
+  const body = await res.data;
+  const $ = cheerio.load(body);
   const html = $.html();
   const table = tabletojson.convert(html);  
   const data = table[2];
@@ -313,8 +333,10 @@ const fatalityRateByComorbidities  = async() =>{
 };
 
 const countriesWhereCoronavirusHasSpread  = async() =>{
-  const res = await cloudscraper(`${BASE_URL}/coronavirus/countries-where-coronavirus-has-spread/` , {method: 'GET'})
-  const $ = cheerio.load(res);
+  //const res = await cloudscraper(`${BASE_URL}/coronavirus/countries-where-coronavirus-has-spread/` , {method: 'GET'})
+  const res = await axios.get(`${BASE_URL}/coronavirus/countries-where-coronavirus-has-spread/`);
+  const body = await res.data;
+  const $ = cheerio.load(body);
   const html = $.html();
   const table = tabletojson.convert(html);  
   const data = table[0];
@@ -323,8 +345,10 @@ const countriesWhereCoronavirusHasSpread  = async() =>{
 };
 
 const travelHealthNotices = async() =>{
-  const res = await cloudscraper(`${TEMP_CDC_GOV_BASE_URL}/travel/notices` , {method: 'GET'})
-  const $ = cheerio.load(res);
+  //const res = await cloudscraper(`${TEMP_CDC_GOV_BASE_URL}/travel/notices` , {method: 'GET'})
+  const res = await axios.get(`${TEMP_CDC_GOV_BASE_URL}/travel/notices`);
+  const body = await res.data;
+  const $ = cheerio.load(body);
   const data = [];
   const doc = {
     warning: [],
@@ -381,8 +405,10 @@ const travelHealthNotices = async() =>{
 };
 
 const travelAdvisoriesHelper = async() =>{
-  const res = await cloudscraper(`${TRAVEL_ADVISORIES_BASE_URL}/content/travel/en/traveladvisories/traveladvisories.html` , {method: 'GET'})
-  const $ = cheerio.load(res);
+  //const res = await cloudscraper(`${TRAVEL_ADVISORIES_BASE_URL}/content/travel/en/traveladvisories/traveladvisories.html` , {method: 'GET'})
+  const res = await axios.get(`${TRAVEL_ADVISORIES_BASE_URL}/content/travel/en/traveladvisories/traveladvisories.html`);
+  const body = await res.data;
+  const $ = cheerio.load(body);
   const html = $.html();
   const table = tabletojson.convert(html);  
   const data = table;
@@ -394,8 +420,10 @@ const travelAdvisoriesHelper = async() =>{
 };
 
 const allCasesInAmerica = async() =>{
-  const res = await cloudscraper(`${PAHO_ORG_BASE_URL}/es/temas/coronavirus/enfermedad-por-coronavirus-covid-19` , {method: 'GET'})
-  const $ = cheerio.load(res);
+  //const res = await cloudscraper(`${PAHO_ORG_BASE_URL}/es/temas/coronavirus/enfermedad-por-coronavirus-covid-19` , {method: 'GET'})
+  const res = await axios.get(`${PAHO_ORG_BASE_URL}/es/temas/coronavirus/enfermedad-por-coronavirus-covid-19`);
+  const body = await res.data;
+  const $ = cheerio.load(body);
   const html = $.html();
   const table = tabletojson.convert(html);
   const data = table;
@@ -415,8 +443,10 @@ const allCasesInAmerica = async() =>{
 };
 
 const allCasesInEurope = async() =>{
-  const res = await cloudscraper(`${ECDC_BASE_URL}cases-2019-ncov-eueea` , {method: 'GET'})
-  const $ = cheerio.load(res);
+  //const res = await cloudscraper(`${ECDC_BASE_URL}cases-2019-ncov-eueea` , {method: 'GET'})
+  const res = await axios.get(`${ECDC_BASE_URL}cases-2019-ncov-eueea`);
+  const body = await res.data;
+  const $ = cheerio.load(body);
   const html = $.html();
   const table = tabletojson.convert(html);
   const data = table;
@@ -435,8 +465,10 @@ const allCasesInEurope = async() =>{
 };
 
 const caseStatusUndeEvalutationInPR = async() =>{
-  const res = await cloudscraper(`${SALUD_GOV_BASE_URL}/Pages/coronavirus.aspx`);
-  const $ = cheerio.load(res);
+  //const res = await cloudscraper(`${SALUD_GOV_BASE_URL}/Pages/coronavirus.aspx`);
+  const res = await axios.get(`${SALUD_GOV_BASE_URL}/Pages/coronavirus.aspx`);
+  const body = await res.data;
+  const $ = cheerio.load(body);
   const html = $.html();
   const x = [] , y = [] , z = [];
 
@@ -471,13 +503,18 @@ const caseStatusUndeEvalutationInPR = async() =>{
   return Promise.all(data);
 };
 
-
 const casesInAllUSStates = async() =>{
-  const res = await cloudscraper(`${BASE_URL}/coronavirus/country/us` , {method: 'GET'})
-  const $ = cheerio.load(res);
+  //const res = await cloudscraper(`${BASE_URL}/coronavirus/country/us` , {method: 'GET'});
+  const res = await axios.get(`${BASE_URL}/coronavirus/country/us` , {method: 'GET'})
+  const body = await res.data;
+  const $ = cheerio.load(body);
   const html = $.html();
   const table = tabletojson.convert(html);
   table[0].map(doc =>  delete doc.Source);
+  table[0].forEach((obj) => renameKey(obj , "Tot Cases/1M pop" , "Tot_Cases_1M_Pop"));
+  table[0].forEach((obj) => renameKey(obj , "Deaths/1M pop" , "Deaths_1M_Pop"))
+
+  table[0].forEach((obj) => renameKey(obj , "Tests/\n1M pop" , "Tests_1M_Pop"))
   const data = [{table: table[0]}];
 
   return Promise.all(data);
@@ -504,8 +541,8 @@ const capacityInfoUSHealthFacilities = async() =>{
     renameKey(obj , 'Licensed All Beds - SOURCE' , 'LicensedAllBeds_SOURCE'),
     renameKey(obj , 'All Bed Occupancy Rate - SOURCE' , 'AllBedOccupancyRate_SOURCE'),
     renameKey(obj , 'ICU Bed Occupancy Rate - SOURCE' , 'ICUBedOccupancyRate_SOURCE')
-    renameKey(obj , 'DH-OBJECTID' , 'DH_OBJECTID'),
-    renameKey(obj , 'HCRIS-Provider Number' , 'HCRISProviderNumber'),
+    //renameKey(obj , 'DH-OBJECTID' , 'DH_OBJECTID'),
+    //renameKey(obj , 'HCRIS-Provider Number' , 'HCRISProviderNumber'),
     renameKey(obj , 'Hospital Type' , 'HospitalType')
   });
 
@@ -555,10 +592,13 @@ const aggregatedFacilityCapacityCounty = async() =>{
 
 const johnsHopkinsDataDailyReport = async() =>{
   try{
-    const res1 = await cloudscraper('https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports',{
-      method: 'GET',
-    });
-    const $ = cheerio.load(res1);
+    //const res1 = await cloudscraper('https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports',{
+    //  method: 'GET',
+    //});
+    const res1 = await axios.get('https://github.com/CSSEGISandData/COVID-19/tree/master/csse_covid_19_data/csse_covid_19_daily_reports');
+    const body = await res1.data;
+
+    const $ = cheerio.load(body);
     const html = $.html();
     const gitHubTable = tabletojson.convert(html);  
     const N = gitHubTable[0].length;
@@ -587,13 +627,14 @@ const johnsHopkinsDataDailyReport = async() =>{
   }
 };
   
-
 const prGeneralResults = async() =>{
   try{
-    const res1 = await cloudscraper('https://github.com/ChrisMichaelPerezSantiago/covid19/tree/master/EstatidistcasPuertoRico/resultados/datos_en_general',{
-      method: 'GET',
-    });
-    const $ = cheerio.load(res1);
+    //const res1 = await cloudscraper('https://github.com/ChrisMichaelPerezSantiago/covid19/tree/master/EstatidistcasPuertoRico/resultados/datos_en_general',{
+    //  method: 'GET',
+    //});
+    const res1 = await axios.get('https://github.com/ChrisMichaelPerezSantiago/covid19/tree/master/EstatidistcasPuertoRico/resultados/datos_en_general');
+    const body = await res1.data;
+    const $ = cheerio.load(body);
     const html = $.html();
     const gitHubTable = tabletojson.convert(html);
     const r = new RegExp(/.+(\.csv)$/);
@@ -630,10 +671,12 @@ const prGeneralResults = async() =>{
 
 const prDataByRegion = async() =>{
   try{
-    const res1 = await cloudscraper('https://github.com/ChrisMichaelPerezSantiago/covid19/tree/master/EstatidistcasPuertoRico/resultados/datos_por_region',{
-      method: 'GET',
-    });
-    const $ = cheerio.load(res1);
+    //const res1 = await cloudscraper('https://github.com/ChrisMichaelPerezSantiago/covid19/tree/master/EstatidistcasPuertoRico/resultados/datos_por_region',{
+    //  method: 'GET',
+    //});
+    const res1 = await axios.get('https://github.com/ChrisMichaelPerezSantiago/covid19/tree/master/EstatidistcasPuertoRico/resultados/datos_por_region');
+    const body = await res1.data;
+    const $ = cheerio.load(body);
     const html = $.html();
     const gitHubTable = tabletojson.convert(html);
     const r = new RegExp(/.+(\.csv)$/);
@@ -672,10 +715,12 @@ const prDataByRegion = async() =>{
 
 const prDataBySex = async() =>{
   try{
-    const res1 = await cloudscraper('https://github.com/ChrisMichaelPerezSantiago/covid19/tree/master/EstatidistcasPuertoRico/resultados/datos_por_sexo',{
-      method: 'GET',
-    });
-    const $ = cheerio.load(res1);
+    //const res1 = await cloudscraper('https://github.com/ChrisMichaelPerezSantiago/covid19/tree/master/EstatidistcasPuertoRico/resultados/datos_por_sexo',{
+    //  method: 'GET',
+    //});
+    const res1 = await axios.get('https://github.com/ChrisMichaelPerezSantiago/covid19/tree/master/EstatidistcasPuertoRico/resultados/datos_por_sexo');
+    const body = await res1.data;
+    const $ = cheerio.load(body);
     const html = $.html();
     const gitHubTable = tabletojson.convert(html);
     const r = new RegExp(/.+(\.csv)$/);
@@ -709,7 +754,6 @@ const prDataBySex = async() =>{
       console.log(err)
     }
 };
-
 
 const reportsToCSV = () =>{
   try{
