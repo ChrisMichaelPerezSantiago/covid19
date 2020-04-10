@@ -4,8 +4,8 @@ const cheerio = require('cheerio');
 const tabletojson = require('tabletojson').Tabletojson;
 const _ = require('lodash');
 const csv = require('csvtojson');
-const request=require('request')
-const {renameKey} = require('./utils/utils');
+const request = require('request')
+const {renameKey , requests} = require('./utils/utils');
 const { 
   BASE_URL , 
   WHO_BASE_URL,
@@ -755,6 +755,50 @@ const prDataBySex = async() =>{
     }
 };
 
+const prDataByTowns = async() =>{
+  const url = 'https://services5.arcgis.com/klquQoHA0q9zjblu/arcgis/rest/services/Municipios_Joined/FeatureServer/0/query?f=json&where=Total%3C%3E0&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Total%20desc&outSR=102100&resultOffset=0&resultRecordCount=80&cacheHint=true'
+  const body = await requests(url);
+  const data = body.features;
+  
+  data.forEach((doc) =>{
+    delete doc.attributes.abrev
+    delete doc.attributes.Shape__Area
+    delete doc.attributes.Shape__Length
+    delete doc.attributes.date
+    delete doc.attributes.Shape__Area_2
+    delete doc.attributes.Shape__Length_2
+    delete doc.attributes.IDMuni
+    delete doc.attributes.poisitvosCOVID
+    delete doc.attributes.ObjectId
+  });
+
+  data.forEach((obj) => {
+    renameKey(obj.attributes , 'municipio' , 'town')
+    renameKey(obj.attributes , 'RegionSalud' , 'health_region')
+    renameKey(obj.attributes , 'Total' , 'total_cases')
+
+  })
+
+  const table = [{table: data}];
+
+  return Promise.all(table);
+};
+
+const prExtraData = async() =>{
+  const url = 'https://services5.arcgis.com/klquQoHA0q9zjblu/arcgis/rest/services/Datos_Totales/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&outSR=102100&resultOffset=0&resultRecordCount=50&cacheHint=true';
+  const body = await requests(url);
+  const data = body.features;
+  
+  data.forEach((doc) =>{
+    delete doc.attributes.OBJECTID
+    delete doc.attributes.IDNumber
+  });
+
+  const table = [{table: data}];
+
+  return Promise.all(table);
+};
+
 //const reportsToCSV = () =>{
 //  try{
 //    setTimeout(async() => {
@@ -794,4 +838,6 @@ module.exports = {
   prGeneralResults,
   prDataByRegion,
   prDataBySex,
+  prDataByTowns,
+  prExtraData
 };
