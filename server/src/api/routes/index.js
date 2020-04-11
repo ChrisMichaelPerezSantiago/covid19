@@ -238,6 +238,28 @@ router.get('/AggregatedFacilityCapacityCounty' , (req , res) =>{
     });
 });
 
+/**
+ *  @api {get} /JohnsHopkinsDataDailyReport Johns Hopkins - Coronavirus Resource Center (CSSE COVID-19 Dataset)
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/JohnsHopkinsDataDailyReport
+ *  @apiVersion 1.1.9
+ *  @apiName GetJohnsHopkinsDataDailyReport
+ *  @apiGroup JohnsHopkinsDataDailyReport
+ *  @apiDescription This is the data for the 2019 Novel Coronavirus Visual Dashboard operated by the Johns Hopkins University Center for Systems Science and Engineering (JHU CSSE). Also, Supported by ESRI Living Atlas Team and the Johns Hopkins University Applied Physics Lab (JHU APL).
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.Province_State
+ *  @apiSuccess {String} table.Country_Region
+ *  @apiSuccess {String} table.Last_Update
+ *  @apiSuccess {String} table.Lat
+ *  @apiSuccess {String} table.Long_
+ *  @apiSuccess {String} table.Confirmed
+ *  @apiSuccess {String} table.Deaths
+ *  @apiSuccess {String} table.Recovered
+ *  @apiSuccess {String} table.Active
+ *  @apiSuccess {String} table.Combined_Key
+ * 
+ **/ 
+
 router.get('/JohnsHopkinsDataDailyReport' , (req , res) =>{
   PluginManager.johnsHopkinsDataDailyReport()
     .then(data =>{
