@@ -1177,5 +1177,55 @@
     },
     "filename": "./server/src/api/routes/index.js",
     "groupTitle": "PRGeneralResults"
+  },
+  {
+    "type": "get",
+    "url": "/SituationReports",
+    "title": "Coronavirus disease (COVID-2019) situation reports",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/SituationReports"
+      }
+    ],
+    "version": "1.1.9",
+    "name": "GetSituationReports",
+    "group": "SituationReports",
+    "description": "<p>Data as received by WHO from national authorities</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "reports",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "reports.report",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "reports.date",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "reports.pdf",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "SituationReports"
   }
 ]

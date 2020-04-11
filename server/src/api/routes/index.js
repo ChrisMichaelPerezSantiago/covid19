@@ -73,6 +73,21 @@ router.get('/ReportsByCountries/:country' , (req , res) =>{
     });
 });
 
+/**
+ *  @api {get} /SituationReports Coronavirus disease (COVID-2019) situation reports
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/SituationReports
+ *  @apiVersion 1.1.9
+ *  @apiName GetSituationReports
+ *  @apiGroup SituationReports
+ *  @apiDescription Data as received by WHO from national authorities 
+ * 
+ *  @apiSuccess {Object[]} reports
+ *  @apiSuccess {String} reports.report
+ *  @apiSuccess {String} reports.date
+ *  @apiSuccess {String} reports.pdf
+ * 
+ **/
+
 router.get('/SituationReports' , (req , res) =>{
   PluginManager.situationReports()
     .then(reports =>{
