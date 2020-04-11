@@ -1,6 +1,56 @@
 [
   {
     "type": "get",
+    "url": "/AllCasesInAmerica",
+    "title": "Number of COVID-19 cases in the Americas region",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/AllCasesInAmerica"
+      }
+    ],
+    "version": "1.1.9",
+    "name": "GetAllCasesInAmerica",
+    "group": "AllCasesInAmerica",
+    "description": "<p>COVID 19 cases in Americas region</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.Country",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.Confirmed",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.Deaths",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "AllCasesInAmerica"
+  },
+  {
+    "type": "get",
     "url": "/AllReports",
     "title": "Get list of all reports",
     "sampleRequest": [

@@ -172,6 +172,21 @@ router.get('/TravelHealthNotices' , (req , res) =>{
     });
 });
 
+/**
+ *  @api {get} /AllCasesInAmerica Number of COVID-19 cases in the Americas region
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/AllCasesInAmerica
+ *  @apiVersion 1.1.9
+ *  @apiName GetAllCasesInAmerica
+ *  @apiGroup AllCasesInAmerica
+ *  @apiDescription COVID 19 cases in Americas region
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.Country
+ *  @apiSuccess {String} table.Confirmed
+ *  @apiSuccess {String} table.Deaths
+ * 
+ **/
+
 router.get('/AllCasesInAmerica' , (req , res) =>{
   PluginManager.allCasesInAmerica()
     .then(data =>{
