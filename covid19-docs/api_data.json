@@ -226,6 +226,105 @@
   },
   {
     "type": "get",
+    "url": "/CasesInAllUSStates",
+    "title": "Coronavirus cases in all US states",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/CasesInAllUSStates"
+      }
+    ],
+    "version": "1.1.9",
+    "name": "GetCasesInAllUSStates",
+    "group": "CasesInAllUSStates",
+    "description": "<p>COVID 19 cases in all states of the United States</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.USAState",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.TotalCases",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.NewCases",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.TotalDeaths",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.NewDeaths",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.ActiveCases",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.TotalTests",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.Tot_Cases_1M_Pop",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.Deaths_1M_Pop",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.Tests_1M_Pop",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "CasesInAllUSStates"
+  },
+  {
+    "type": "get",
     "url": "/JohnsHopkinsDataDailyReport",
     "title": "Johns Hopkins - Coronavirus Resource Center (CSSE COVID-19 Dataset)",
     "sampleRequest": [

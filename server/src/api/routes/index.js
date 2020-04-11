@@ -205,6 +205,29 @@ router.get('/AllCasesInEurope' , (req , res) =>{
 //    });
 //});
 
+
+/**
+ *  @api {get} /CasesInAllUSStates Coronavirus cases in all US states
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/CasesInAllUSStates
+ *  @apiVersion 1.1.9
+ *  @apiName GetCasesInAllUSStates
+ *  @apiGroup CasesInAllUSStates
+ *  @apiDescription COVID 19 cases in all states of the United States
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.USAState
+ *  @apiSuccess {String} table.TotalCases
+ *  @apiSuccess {String} table.NewCases
+ *  @apiSuccess {String} table.TotalDeaths
+ *  @apiSuccess {String} table.NewDeaths
+ *  @apiSuccess {String} table.ActiveCases
+ *  @apiSuccess {String} table.TotalTests
+ *  @apiSuccess {String} table.Tot_Cases_1M_Pop
+ *  @apiSuccess {String} table.Deaths_1M_Pop
+ *  @apiSuccess {String} table.Tests_1M_Pop
+ * 
+ **/ 
+
 router.get('/CasesInAllUSStates' , (req , res) =>{
   PluginManager.casesInAllUSStates()
     .then(data =>{
