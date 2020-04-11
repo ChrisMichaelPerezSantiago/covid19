@@ -2,6 +2,43 @@ const express = require('express');
 const router = express.Router();
 const PluginManager = require('../api');
 
+
+/**
+ *  @api {get} /AllReports Get list of all reports
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/AllReports
+ *  @apiVersion 1.1.9
+ *  @apiName GetAllReports
+ *  @apiGroup AllReports
+ *  @apiDescription Confirmed Cases and Deaths All over the world
+ *  Data provided by the worldometers website
+ *  
+ *  @apiSuccess {Number} cases
+ *  @apiSuccess {Number} deaths
+ *  @apiSuccess {Number} recovered
+ *  @apiSuccess {Object[]} active_cases
+ *  @apiSuccess {Number} active_cases.currently_infected_patients
+ *  @apiSuccess {Number} active_cases.inMidCondition
+ *  @apiSuccess {Number} active_cases.criticalStates
+ *  @apiSuccess {Object[]} closed_cases
+ *  @apiSuccess {Number} closed_cases.cases_which_had_an_outcome
+ *  @apiSuccess {Number} closed_cases.recovered
+ *  @apiSuccess {Number} closed_cases.deaths
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.TotalCases
+ *  @apiSuccess {String} table.NewCases
+ *  @apiSuccess {String} table.TotalDeaths
+ *  @apiSuccess {String} table.NewDeaths
+ *  @apiSuccess {String} table.TotalRecovered
+ *  @apiSuccess {String} table.ActiveCases
+ *  @apiSuccess {String} table.TotalTests
+ *  @apiSuccess {String} table.Continent
+ *  @apiSuccess {String} table.Deaths_1M_pop
+ *  @apiSuccess {String} table.Country
+ *  @apiSuccess {String} table.Serious_Critical
+ *  @apiSuccess {String} table.Tests_1M_Pop
+ *  @apiSuccess {String} table.TotCases_1M_Pop
+ * 
+ **/
 router.get('/AllReports' , (req , res) =>{
   PluginManager.reports()
     .then(reports =>{
