@@ -260,6 +260,24 @@ router.get('/PRGeneralResults' , (req , res) =>{
     });
 });
 
+
+/**
+ *  @api {get} /PRDataByRegions Distribution by Health Region
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/PRDataByRegions
+ *  @apiVersion 1.1.9
+ *  @apiName GetPRDataByRegions
+ *  @apiGroup PRDataByRegions
+ *  @apiDescription Confirmed cases by region in Puerto Rico Data provided by the PR Statistics website
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.type
+ *  @apiSuccess {String} table.evaluated
+ *  @apiSuccess {String} table.positive
+ *  @apiSuccess {String} table.negatives
+ *  @apiSuccess {String} table.pending
+ * 
+ **/ 
+
 router.get('/PRDataByRegions' , (req , res) =>{
   PluginManager.prDataByRegion()
     .then(data =>{
@@ -303,4 +321,5 @@ router.get('/PRExtraData' , (req , res) =>{
       console.error(err);
     });
 });
+
 module.exports = router;

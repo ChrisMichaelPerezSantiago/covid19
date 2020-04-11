@@ -223,5 +223,69 @@
     "group": "C:\\Users\\c\\Desktop\\COVID-19\\covid19-docs\\main.js",
     "groupTitle": "C:\\Users\\c\\Desktop\\COVID-19\\covid19-docs\\main.js",
     "name": ""
+  },
+  {
+    "type": "get",
+    "url": "/PRDataByRegions",
+    "title": "Distribution by Health Region",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/PRDataByRegions"
+      }
+    ],
+    "version": "1.1.9",
+    "name": "GetPRDataByRegions",
+    "group": "PRDataByRegions",
+    "description": "<p>Confirmed cases by region in Puerto Rico Data provided by the PR Statistics website</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.type",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.evaluated",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.positive",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.negatives",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.pending",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "PRDataByRegions"
   }
 ]
