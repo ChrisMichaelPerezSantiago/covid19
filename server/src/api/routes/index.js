@@ -148,6 +148,23 @@ router.get('/TestsInUS' , (req , res) =>{
     });
 });
 
+/**
+ *  @api {get} /FatalityRateByAge Age of Coronavirus Deaths - COVID-19 Fatality Rate by AGE
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/FatalityRateByAge
+ *  @apiVersion 1.1.9
+ *  @apiName GetFatalityRateByAge
+ *  @apiGroup FatalityRateByAge
+ *  @apiDescription 
+ *  Death Rate = (number of deaths / number of cases) = probability of dying if infected by the virus (%). This probability differs depending on the age group. The percentages shown below do not have to add up to 100%, as they do NOT represent share of deaths by age group. Rather, it represents, for a person in a given age group, the risk of dying if infected with COVID-19.
+ *  Death Rate = (number of deaths / number of cases) = probability of dying if infected by the virus (%). The percentages do not have to add up to 100%, as they do NOT represent share of deaths by age group.
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.Age
+ *  @apiSuccess {String} table.DeathRateConfirmedCases
+ *  @apiSuccess {String} table.DeathRateAllCases
+ * 
+ **/
+
 router.get('/FatalityRateByAge' , (req , res) =>{
   PluginManager.fatalityRateByAge()
     .then(table =>{

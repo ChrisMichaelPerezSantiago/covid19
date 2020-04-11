@@ -425,6 +425,56 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/FatalityRateByAge",
+    "title": "Age of Coronavirus Deaths - COVID-19 Fatality Rate by AGE",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/FatalityRateByAge"
+      }
+    ],
+    "version": "1.1.9",
+    "name": "GetFatalityRateByAge",
+    "group": "FatalityRateByAge",
+    "description": "<p>Death Rate = (number of deaths / number of cases) = probability of dying if infected by the virus (%). This probability differs depending on the age group. The percentages shown below do not have to add up to 100%, as they do NOT represent share of deaths by age group. Rather, it represents, for a person in a given age group, the risk of dying if infected with COVID-19. Death Rate = (number of deaths / number of cases) = probability of dying if infected by the virus (%). The percentages do not have to add up to 100%, as they do NOT represent share of deaths by age group.</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.Age",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.DeathRateConfirmedCases",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.DeathRateAllCases",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "FatalityRateByAge"
+  },
+  {
+    "type": "get",
     "url": "/JohnsHopkinsDataDailyReport",
     "title": "Johns Hopkins - Coronavirus Resource Center (CSSE COVID-19 Dataset)",
     "sampleRequest": [
