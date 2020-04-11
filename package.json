@@ -6,6 +6,8 @@
   "scripts": {
     "start:api": "nodemon ./src/api/api",
     "start:plugin": "nodemon ./TestPlugin",
+    "start:generate-doc": "bash ./apidoc.sh",
+    "start:logs": "bash ./logs.sh",
     "test": "mocha"
   },
   "keywords": [
@@ -38,6 +40,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "apidoc": "^0.20.1",
     "axios": "^0.19.2",
     "chai": "^4.2.0",
     "chai-http": "^4.3.0",
