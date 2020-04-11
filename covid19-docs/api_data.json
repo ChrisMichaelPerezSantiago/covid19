@@ -1330,6 +1330,135 @@
   },
   {
     "type": "get",
+    "url": "/ReportsByCountries/:country",
+    "title": "Confirmed Cases and Deaths by Country",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/ReportsByCountries/:country"
+      }
+    ],
+    "version": "1.1.9",
+    "name": "GetReportsByCountries",
+    "group": "ReportsByCountries",
+    "description": "<p>Confirmed Cases and Deaths by Country</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "country",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "flag",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "cases",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "deaths",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "recovered",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "active_cases",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "active_cases.currently_infected_patients",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "active_cases.inMidCondition",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "active_cases.criticalStates",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "closed_cases",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "closed_cases.cases_which_had_an_outcome",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "closed_cases.recovered",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "closed_cases.deaths",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "parameter": {
+      "fields": {
+        "Parameter": [
+          {
+            "group": "Parameter",
+            "type": "String",
+            "allowedValues": [
+              "\"\n     afghanistan, albania, algeria, andorra, angola, anguilla, antigua-and-barbuda, argentina, armenia, aruba, australia, austria, azerbaijan,\n     bahamas, bahrain, bangladesh, barbados, belarus, belgium, belize, benin, bermuda, bhutan, bolivia, bosnia-and-herzegovina, botswana, brazil, british-virgin-islands, brunei-darussalam, bulgaria, burkina-faso, burundi,\n     cabo-verde, cambodia, cameroon, canada, caribbean-netherlands, cayman-islands, central-african-republic, chad, channel-islands, chile, china, china-hong-kong-sar, china-macao-sar, colombia, congo, costa-rica, cote-d-ivoire, croatia, cuba, curacao, cyprus, czech-republic,\n     democratic-republic-of-the-congo, denmark, djibouti, dominica, dominican-republic,\n     ecuador, egypt, el-salvador, equatorial-guinea, eritrea, estonia, ethiopia,\n     faeroe-islands, falkland-islands-malvinas, fiji, finland, france, french-guiana, french-polynesia,\n     gabon, gambia, georgia, germany, ghana, gibraltar, greece, greenland, grenada, guadeloupe, guatemala, guinea, guinea-bissau, guyana,\n     haiti, holy-see, honduras, hungary,\n     iceland, india, indonesia, iran, iraq, ireland, isle-of-man, israel, italy,\n     jamaica, japan, jordan,\n     kazakhstan, kenya, kuwait, kyrgyzstan,\n     laos, latvia, lebanon, liberia, libya, liechtenstein, lithuania, luxembourg,\n     macedonia, madagascar, malawi, malaysia, maldives, mali, malta, martinique, mauritania, mauritius, mayotte, mexico, moldova, monaco, mongolia, montenegro, montserrat, morocco, mozambique, myanmar,\n     namibia, nepal, netherlands, new-caledonia, new-zealand, nicaragua, niger, nigeria, norway,\n     oman,\n     pakistan, panama, papua-new-guinea, paraguay, peru, philippines, poland, portugal,\n     qatar,\n     reunion, romania, russia, rwanda,\n     saint-barthelemy, saint-kitts-and-nevis, saint-lucia, saint-martin, saint-vincent-and-the-grenadines, san-marino, saudi-arabia, senegal, serbia, seychelles, sierra-leone, singapore, sint-maarten, slovakia, slovenia, somalia, south-africa, south-korea, spain, sri-lanka, state-of-palestine, sudan, suriname, swaziland, sweden, switzerland, syria,\n     taiwan, tanzania, thailand, timor-leste, togo, trinidad-and-tobago, tunisia, turkey, turks-and-caicos-islands,\n     uganda uk ukraine united-arab-emirates uruguay us uzbekistan,\n     venezuela, viet-nam,\n     zambia, zimbabwe\n \""
+            ],
+            "optional": false,
+            "field": "country",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "ReportsByCountries"
+  },
+  {
+    "type": "get",
     "url": "/SituationReports",
     "title": "Coronavirus disease (COVID-2019) situation reports",
     "sampleRequest": [
