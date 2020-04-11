@@ -198,6 +198,21 @@ router.get('/AllCasesInAmerica' , (req , res) =>{
     });
 });
 
+/**
+ *  @api {get} /AllCasesInEurope Situation update for the EU/EEA and the UK
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/AllCasesInEurope
+ *  @apiVersion 1.1.9
+ *  @apiName GetAllCasesInEurope
+ *  @apiGroup AllCasesInEurope
+ *  @apiDescription COVID 19 cases in Europe region
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.Cases
+ *  @apiSuccess {String} table.Deaths
+ *  @apiSuccess {String} table.Country
+ * 
+ **/
+
 router.get('/AllCasesInEurope' , (req , res) =>{
   PluginManager.allCasesInEurope()
     .then(data =>{

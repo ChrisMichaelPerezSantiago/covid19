@@ -51,6 +51,56 @@
   },
   {
     "type": "get",
+    "url": "/AllCasesInEurope",
+    "title": "Situation update for the EU/EEA and the UK",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/AllCasesInEurope"
+      }
+    ],
+    "version": "1.1.9",
+    "name": "GetAllCasesInEurope",
+    "group": "AllCasesInEurope",
+    "description": "<p>COVID 19 cases in Europe region</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.Cases",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.Deaths",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.Country",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "AllCasesInEurope"
+  },
+  {
+    "type": "get",
     "url": "/AllReports",
     "title": "Get list of all reports",
     "sampleRequest": [
