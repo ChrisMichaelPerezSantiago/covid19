@@ -30,6 +30,9 @@
 ## API URL
 - [x] [COVID19 API URL now.sh](https://covid19-server.chrismichael.now.sh/api/v1/)
 
+## 🚀 COVID19 API Documentation
+- [x] [COVID19 API DOC](https://covid19-docs.chrismichael.now.sh)
+
 ## 📝 Brief Information on COVID19
 
 
