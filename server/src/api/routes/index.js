@@ -271,6 +271,21 @@ router.get('/JohnsHopkinsDataDailyReport' , (req , res) =>{
     });
 });
 
+/**
+ *  @api {get} /PRGeneralResults Quantity and Percentage Distribution
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/PRGeneralResults
+ *  @apiVersion 1.1.9
+ *  @apiName GetPRGeneralResults
+ *  @apiGroup PRGeneralResults
+ *  @apiDescription Data provided by the Puerto Rico Institute of Statistics, based on official data provided by the Puerto Rico Department of Health.
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.type
+ *  @apiSuccess {String} table.tests_result
+ *  @apiSuccess {String} table.tests_result_percent
+ * 
+ **/ 
+
 router.get('/PRGeneralResults' , (req , res) =>{
   PluginManager.prGeneralResults()
     .then(data =>{

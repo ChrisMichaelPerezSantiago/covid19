@@ -928,5 +928,55 @@
     },
     "filename": "./server/src/api/routes/index.js",
     "groupTitle": "PRExtraData"
+  },
+  {
+    "type": "get",
+    "url": "/PRGeneralResults",
+    "title": "Quantity and Percentage Distribution",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/PRGeneralResults"
+      }
+    ],
+    "version": "1.1.9",
+    "name": "GetPRGeneralResults",
+    "group": "PRGeneralResults",
+    "description": "<p>Data provided by the Puerto Rico Institute of Statistics, based on official data provided by the Puerto Rico Department of Health.</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.type",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.tests_result",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.tests_result_percent",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "PRGeneralResults"
   }
 ]
