@@ -1227,5 +1227,62 @@ define({ "api": [
     },
     "filename": "./server/src/api/routes/index.js",
     "groupTitle": "SituationReports"
+  },
+  {
+    "type": "get",
+    "url": "/TestsInUS",
+    "title": "Reporting public health labs are 48 state public health labs",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/TestsInUS"
+      }
+    ],
+    "version": "1.1.9",
+    "name": "GetTestsInUS",
+    "group": "TestsInUS",
+    "description": "<p>Reporting public health labs are 48 state public health labs (AK, AL, AR, AZ, CA, CO, CT, DE, FL, GA, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO, MS, MT, NC, ND, NE, NH, NJ, NM, NV, NY, OH, OK, OR, PA, RI, SC, SD, TN, TX, VT, WA, WI, WV and WY), New York City, USAF, and 9 California counties.</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "lastUpdatedDay",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.DateCollected",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.CDCLabs",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.USPublicHealthLabs",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "TestsInUS"
   }
 ] });

@@ -121,6 +121,22 @@ router.get('/GlobalDataReports' , (req , res) =>{
     });
 });
 
+/**
+ *  @api {get} /TestsInUS Reporting public health labs are 48 state public health labs
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/TestsInUS
+ *  @apiVersion 1.1.9
+ *  @apiName GetTestsInUS
+ *  @apiGroup TestsInUS
+ *  @apiDescription Reporting public health labs are 48 state public health labs (AK, AL, AR, AZ, CA, CO, CT, DE, FL, GA, HI, IA, ID, IL, IN, KS, KY, LA, MA, MD, ME, MI, MN, MO, MS, MT, NC, ND, NE, NH, NJ, NM, NV, NY, OH, OK, OR, PA, RI, SC, SD, TN, TX, VT, WA, WI, WV and WY), New York City, USAF, and 9 California counties.
+ * 
+ *  @apiSuccess {String} lastUpdatedDay
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.DateCollected
+ *  @apiSuccess {String} table.CDCLabs
+ *  @apiSuccess {String} table.USPublicHealthLabs
+ * 
+ **/
+
 router.get('/TestsInUS' , (req , res) =>{
   PluginManager.testsInUS()
     .then(tests =>{
