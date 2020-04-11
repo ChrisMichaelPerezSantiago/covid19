@@ -475,6 +475,106 @@
   },
   {
     "type": "get",
+    "url": "/FatalityRateByComorbidities",
+    "title": "COVID-19 Fatality Rate by COMORBIDITY",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/FatalityRateByComorbidities"
+      }
+    ],
+    "version": "1.1.9",
+    "name": "GetFatalityRateByComorbidities",
+    "group": "FatalityRateByComorbidities",
+    "description": "<p>Death Rate = (number of deaths / number of cases) = probability of dying if infected by the virus (%). This probability differs depending on pre-existing condition. The percentage shown below does NOT represent in any way the share of deaths by pre-existing condition. Rather, it represents, for a patient with a given pre-existing condition, the risk of dying if infected by COVID-19.</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.PreExistingCondition",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.DeathRateConfirmedCases",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.DeathRateAllCases",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "FatalityRateByComorbidities"
+  },
+  {
+    "type": "get",
+    "url": "/FatalityRateBySex",
+    "title": "Sex ratio - COVID-19 Fatality Rate by SEX",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/FatalityRateBySex"
+      }
+    ],
+    "version": "1.1.9",
+    "name": "GetFatalityRateBySex",
+    "group": "FatalityRateBySex",
+    "description": "<p>Death Rate = (number of deaths / number of cases) = probability of dying if infected by the virus (%). This probability differs depending on sex. When reading these numbers, it must be taken into account that smoking in China is much more prevalent among males. Smoking increases the risks of respiratory complications. Death Rate = (number of deaths / number of cases) = probability of dying if infected by the virus (%). The percentages do not have to add up to 100%, as they do NOT represent share of deaths by se</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.Sex",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.DeathRateConfirmedCases",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.DeathRateAllCases",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "FatalityRateBySex"
+  },
+  {
+    "type": "get",
     "url": "/JohnsHopkinsDataDailyReport",
     "title": "Johns Hopkins - Coronavirus Resource Center (CSSE COVID-19 Dataset)",
     "sampleRequest": [

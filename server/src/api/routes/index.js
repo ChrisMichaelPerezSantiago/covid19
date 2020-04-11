@@ -176,6 +176,23 @@ router.get('/FatalityRateByAge' , (req , res) =>{
     });
 });
 
+/**
+ *  @api {get} /FatalityRateBySex Sex ratio - COVID-19 Fatality Rate by SEX
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/FatalityRateBySex
+ *  @apiVersion 1.1.9
+ *  @apiName GetFatalityRateBySex
+ *  @apiGroup FatalityRateBySex
+ *  @apiDescription 
+ *  Death Rate = (number of deaths / number of cases) = probability of dying if infected by the virus (%). This probability differs depending on sex. When reading these numbers, it must be taken into account that smoking in China is much more prevalent among males. Smoking increases the risks of respiratory complications.
+ *  Death Rate = (number of deaths / number of cases) = probability of dying if infected by the virus (%). The percentages do not have to add up to 100%, as they do NOT represent share of deaths by se
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.Sex
+ *  @apiSuccess {String} table.DeathRateConfirmedCases
+ *  @apiSuccess {String} table.DeathRateAllCases
+ * 
+ **/
+
 router.get('/FatalityRateBySex' , (req , res) =>{
   PluginManager.fatalityRateBySex()
     .then(table =>{
@@ -186,6 +203,22 @@ router.get('/FatalityRateBySex' , (req , res) =>{
       console.error(err);
     });
 });
+
+/**
+ *  @api {get} /FatalityRateByComorbidities COVID-19 Fatality Rate by COMORBIDITY
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/FatalityRateByComorbidities
+ *  @apiVersion 1.1.9
+ *  @apiName GetFatalityRateByComorbidities
+ *  @apiGroup FatalityRateByComorbidities
+ *  @apiDescription 
+ *  Death Rate = (number of deaths / number of cases) = probability of dying if infected by the virus (%). This probability differs depending on pre-existing condition. The percentage shown below does NOT represent in any way the share of deaths by pre-existing condition. Rather, it represents, for a patient with a given pre-existing condition, the risk of dying if infected by COVID-19.
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.PreExistingCondition
+ *  @apiSuccess {String} table.DeathRateConfirmedCases
+ *  @apiSuccess {String} table.DeathRateAllCases
+ * 
+ **/
 
 router.get('/FatalityRateByComorbidities' , (req , res) =>{
   PluginManager.fatalityRateByComorbidities()
