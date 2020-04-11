@@ -289,6 +289,20 @@ router.get('/PRDataByRegions' , (req , res) =>{
     });
 });
 
+/**
+ *  @api {get} /PRDataBySex According to the Reported Sex
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/PRDataBySex
+ *  @apiVersion 1.1.9
+ *  @apiName GetPRDataBySex
+ *  @apiGroup PRDataBySex
+ *  @apiDescription Positive results according to reported sex in Puerto Rico Data provided by the PR Statistics website
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.genre
+ *  @apiSuccess {String} table.total
+ * 
+ **/ 
+
 router.get('/PRDataBySex' , (req , res) =>{
   PluginManager.prDataBySex()
     .then(data =>{
@@ -300,6 +314,21 @@ router.get('/PRDataBySex' , (req , res) =>{
     });
 });
 
+/**
+ *  @api {get} /PRDataByTowns Positive Cases by Municipality of Residence
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/PRDataByTowns
+ *  @apiVersion 1.1.9
+ *  @apiName GetPRDataByTowns
+ *  @apiGroup PRDataByTowns
+ *  @apiDescription Positive results by Municipality of Residence in Puerto Rico Data provided by the PR Statistics website and bioseguridad.maps.arcgis
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.attributes.town
+ *  @apiSuccess {String} table.attributes.health_region
+ *  @apiSuccess {Number} table.attributes.total_cases
+ * 
+ **/ 
+
 router.get('/PRDataByTowns' , (req , res) =>{
   PluginManager.prDataByTowns()
     .then(data =>{
@@ -310,6 +339,78 @@ router.get('/PRDataByTowns' , (req , res) =>{
       console.error(err);
     });
 });
+
+/**
+ *  @api {get} /PRExtraData Availability of necessary items / products for each hospital
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/PRExtraData
+ *  @apiVersion 1.1.9
+ *  @apiName GetPRExtraData
+ *  @apiGroup PRExtraData
+ *  @apiDescription Availability of necessary items / products for each hospital in Puerto Rico Data provided by the PR bioseguridad.maps.arcgis
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {Number} table.T_Camas_Adult_Disp
+ *  @apiSuccess {Number} table.T_Camas_Adult_Int_Disp
+ *  @apiSuccess {Number} table.T_Camas_Adult_Int_Occ
+ *  @apiSuccess {Number} table.T_Camas_Ped_Int_Disp
+ *  @apiSuccess {Number} table.T_Camas_Ped_Int_Occ
+ *  @apiSuccess {Number} table.T_Cuartos_PSINeg_Disp
+ *  @apiSuccess {Number} table.T_Cuartos_PSINeg_Occ
+ *  @apiSuccess {Number} table.T_Vent_Adult_Disp
+ *  @apiSuccess {Number} table.T_Vent_Adult_Occ
+ *  @apiSuccess {Number} table.T_Vent_Ped_Disp
+ *  @apiSuccess {Number} table.T_Vent_Ped_Occ
+ *  @apiSuccess {Number} table.T_Morgue_Disp
+ *  @apiSuccess {Number} table.T_Morgue_Occ
+ *  @apiSuccess {Number} table.T_Paciente_Adult
+ *  @apiSuccess {Number} table.T_Paciente_Ped
+ *  @apiSuccess {Number} table.T_Casos_Nuev_Ult_Inf
+ *  @apiSuccess {Number} table.T_Casos_Nuev_DS
+ *  @apiSuccess {Number} table.T_Casos_Nuev_AV
+ *  @apiSuccess {Number} table.T_Casos_Nuev_LabPriv
+ *  @apiSuccess {Number} table.T_Fatalidades
+ *  @apiSuccess {Number} table.T_Casos_Pos
+ *  @apiSuccess {Number} table.T_Casos_Neg
+ *  @apiSuccess {Number} table.T_Casos_Pend
+ *  @apiSuccess {Number} table.T_Casos_Inconcluso
+ *  @apiSuccess {Number} table.T_Fem
+ *  @apiSuccess {Number} table.T_Masc
+ *  @apiSuccess {Number} table.T_Menor_10
+ *  @apiSuccess {Number} table.T_10_19
+ *  @apiSuccess {Number} table.T_20_29
+ *  @apiSuccess {Number} table.T_30_39
+ *  @apiSuccess {Number} table.T_40_49
+ *  @apiSuccess {Number} table.T_50_59
+ *  @apiSuccess {Number} table.T_60_69
+ *  @apiSuccess {Number} table.T_70_79
+ *  @apiSuccess {Number} table.T_Mayor_80
+ *  @apiSuccess {Number} table.T_Vent_Ord
+ *  @apiSuccess {Number} table.T_Vent_Rec
+ *  @apiSuccess {Number} table.T_Vent_Entr
+ *  @apiSuccess {Number} table.T_Casos
+ *  @apiSuccess {Number} table.T_Prueba_Realizada
+ *  @apiSuccess {Number} table.T_Camas_Ped_Disp
+ *  @apiSuccess {Number} table.Edad_No_Dis
+ *  @apiSuccess {Number} table.T_Defunciones_RD
+ *  @apiSuccess {Number} table.T_Suicidios_RD
+ *  @apiSuccess {Number} table.T_Muertes_COVID_RD
+ *  @apiSuccess {Number} table.T_Cuartos_PSiNeg
+ *  @apiSuccess {Number} table.T_Hospitalizados
+ *  @apiSuccess {Number} table.T_Recuperados
+ *  @apiSuccess {Number} table.T_Camas_Int_Adult
+ *  @apiSuccess {Number} table.T_Camas_Int_Ped
+ *  @apiSuccess {Number} table.T_Vent_Adult
+ *  @apiSuccess {Number} table.T_Vent_Ped
+ *  @apiSuccess {Number} table.T_Camas_Adult_Available
+ *  @apiSuccess {Number} table.T_Camas_Ped_Available
+ *  @apiSuccess {Number} table.T_DefuncionesRD_Ene
+ *  @apiSuccess {Number} table.T_DefuncionesRD_Feb
+ *  @apiSuccess {Number} table.T_DefuncionesRD_Mar
+ *  @apiSuccess {Number} table.T_DefuncionesRD_Abr
+ *  @apiSuccess {Number} table.T_Muertes_Combinadas
+ *  @apiSuccess {Number} table.Sexo_No_Dis
+ * 
+ **/ 
 
 router.get('/PRExtraData' , (req , res) =>{
   PluginManager.prExtraData()
