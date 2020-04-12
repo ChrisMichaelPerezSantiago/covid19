@@ -1124,6 +1124,55 @@ await PluginManager.downloadReportsToCSV();
 ]
 ```
 
+## <img src="https://www.worldometers.info/img/flags/small/tn_ca-flag.gif" alt="Canada"> Canada
+### PluginManager.getCanadaCasesByProvincesAndHealthRegion();
+
+```json
+[
+  [
+    {
+      "tables": {
+        "province_table": [
+          {
+            "Prov": "QC",
+            "Cases": "12,292",
+            "Deaths": "289",
+            "Cases_1M": "1446.1"
+          },
+          {
+            "Prov": "NL",
+            "Cases": "241",
+            "Deaths": "3",
+            "Cases_1M": "482.0"
+          },
+          {
+            "Prov": "ON",
+            "Cases": "7,049 (401 New)",
+            "Deaths": "274 (21 New)",
+            "Cases_1M": "479.5"
+          },
+          // .....
+        ],
+        "health_region_table": [
+          {
+            "Cases": "5,861",
+            "HealthRegion": "Montréal"
+          },
+          {
+            "Cases": "1,830",
+            "HealthRegion": "Toronto Public Health"
+          },
+          {
+            "Cases": "1,259",
+            "HealthRegion": "Montérégie"
+          },
+          // .....
+        ]
+      }
+    }
+  ]
+]
+```
 
 
 # 🐛 COVID-19 Puerto Rico Data
