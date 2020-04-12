@@ -1033,7 +1033,7 @@ await PluginManager.downloadReportsToCSV();
 ]
 ```
 
-## <img src="https://www.worldometers.info/img/flags/small/tn_sp-flag.gif" alt="India"> Spain
+## <img src="https://www.worldometers.info/img/flags/small/tn_sp-flag.gif" alt="Spain"> Spain
 ### PluginManager.getSpainCasesByCommunities()
 
 
@@ -1070,7 +1070,59 @@ await PluginManager.downloadReportsToCSV();
 ]
 ```
 
+## <img src="https://www.worldometers.info/img/flags/small/tn_as-flag.gif" alt="Australia"> Australia
+### PluginManager.getAustraliaCasesByStates()
 
+```json
+[
+  [
+    {
+      "table": [
+        {
+          "state": "New South Wales",
+          "cases": "2,854",
+          "deaths": "23"
+        },
+        {
+          "state": "Victoria",
+          "cases": "1,268",
+          "deaths": "14"
+        },
+        {
+          "state": "Queensland",
+          "cases": "983",
+          "deaths": "5"
+        },
+        {
+          "state": "South Australia",
+          "cases": "429",
+          "deaths": "4"
+        },
+        {
+          "state": "Western Australia",
+          "cases": "517",
+          "deaths": "6"
+        },
+        {
+          "state": "Tasmania",
+          "cases": "144",
+          "deaths": "5"
+        },
+        {
+          "state": "Northern Territory",
+          "cases": "28",
+          "deaths": "0"
+        },
+        {
+          "state": "Australian Capital Territory",
+          "cases": "102",
+          "deaths": "2"
+        }
+      ]
+    }
+  ]
+]
+```
 
 
 
