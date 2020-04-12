@@ -28,5 +28,6 @@ const PluginManager = require('./src/api/index');
   //const spainCasesByCommunities = await PluginManager.getSpainCasesByCommunities();
   //const australiaCasesByStates = await PluginManager.getAustraliaCasesByStates();
   //const canadaCasesByProvincesAndHealthRegion = await PluginManager.getCanadaCasesByProvincesAndHealthRegion();
-  //console.log(JSON.stringify(canadaCasesByProvincesAndHealthRegion, null , 2 ));
+  //const japanCasesByPrefecture = await PluginManager.getJapanCasesByPrefecture();
+  //console.log(JSON.stringify(japanCasesByPrefecture, null , 2 ));
 })();

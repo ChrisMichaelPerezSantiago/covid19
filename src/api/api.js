@@ -833,6 +833,19 @@ const canadaCasesByProvincesAndHealthRegion = async() =>{
   }];
   
   return Promise.all(table);
+};
+
+const japanCasesByPrefecture = async() =>{
+  const res = await axios.get('https://www.nippon.com/en/japan-data/h00657/coronavirus-cases-in-japan-by-prefecture.html');
+  const body = await res.data;
+  const $ = cheerio.load(body);
+  const html = $.html();
+  const dataTable = tabletojson.convert(html);
+  const doc = dataTable[1]; 
+
+  const table = [{table: doc}];
+  
+  return Promise.all(table);
 }
 
 const reportsToCSV = () =>{
@@ -878,5 +891,6 @@ module.exports = {
   spainCasesByCommunities,
   reportsToCSV,
   australiaCasesByStates,
-  canadaCasesByProvincesAndHealthRegion
+  canadaCasesByProvincesAndHealthRegion,
+  japanCasesByPrefecture
 };

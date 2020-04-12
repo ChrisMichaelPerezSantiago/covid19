@@ -133,6 +133,11 @@ class PluginManager {
     return res;
   };
 
+  async getJapanCasesByPrefecture(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.japanCasesByPrefecture()));
+    return res;
+  };
+
   async downloadReportsToCSV(){
     const res = await Promise.all(this.plugins.map(plugin => plugin.reportsToCSV()));
     return res;
