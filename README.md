@@ -1125,7 +1125,7 @@ await PluginManager.downloadReportsToCSV();
 ```
 
 ## <img src="https://www.worldometers.info/img/flags/small/tn_ca-flag.gif" alt="Canada"> Canada
-### PluginManager.getCanadaCasesByProvincesAndHealthRegion();
+### PluginManager.getCanadaCasesByProvincesAndHealthRegion()
 
 ```json
 [
@@ -1169,6 +1169,41 @@ await PluginManager.downloadReportsToCSV();
           // .....
         ]
       }
+    }
+  ]
+]
+```
+
+## <img src="https://www.worldometers.info/img/flags/small/tn_ja-flag.gif" alt="Japan"> Japan
+### PluginManager.getJapanCasesByPrefecture()
+
+```json
+[
+  [
+    {
+      "table": [
+        {
+          "Prefecture": "Hokkaidō",
+          "Infections": "255"
+        },
+        {
+          "Prefecture": "Aomori",
+          "Infections": "22"
+        },
+        {
+          "Prefecture": "Akita",
+          "Infections": "13"
+        },
+        {
+          "Prefecture": "Yamagata",
+          "Infections": "33"
+        },
+        {
+          "Prefecture": "Miyagi",
+          "Infections": "45"
+        },
+        // .....
+      ]
     }
   ]
 ]
