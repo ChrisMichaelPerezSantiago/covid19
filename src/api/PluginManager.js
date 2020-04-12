@@ -128,6 +128,11 @@ class PluginManager {
     return res;
   };
 
+  async getCanadaCasesByProvincesAndHealthRegion(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.canadaCasesByProvincesAndHealthRegion()));
+    return res;
+  };
+
   async downloadReportsToCSV(){
     const res = await Promise.all(this.plugins.map(plugin => plugin.reportsToCSV()));
     return res;

@@ -813,6 +813,28 @@ const australiaCasesByStates = async() =>{
   return Promise.all(table);
 };
 
+const canadaCasesByProvincesAndHealthRegion = async() =>{
+  const res = await axios.get('https://virihealth.com/');
+  const data = await res.data;
+  const $ = cheerio.load(data);
+  const html = $.html();
+  const docTable = tabletojson.convert(html);
+  const provinceTable = docTable[1];
+  const healthRegionTable = docTable[7];
+  
+  provinceTable.forEach((obj) => renameKey(obj , 'Cases/1M' , 'Cases_1M'));
+  healthRegionTable.forEach((obj) => renameKey(obj , 'Health Region' , 'HealthRegion'));
+
+  const table = [{
+    tables:{
+      province_table: provinceTable,
+      health_region_table: healthRegionTable
+    }
+  }];
+  
+  return Promise.all(table);
+}
+
 const reportsToCSV = () =>{
   try{
     setTimeout(async() => {
@@ -855,5 +877,6 @@ module.exports = {
   indiaCasesByStates,
   spainCasesByCommunities,
   reportsToCSV,
-  australiaCasesByStates
+  australiaCasesByStates,
+  canadaCasesByProvincesAndHealthRegion
 };
