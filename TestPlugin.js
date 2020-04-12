@@ -24,5 +24,7 @@ const PluginManager = require('./src/api/index');
   //const prDataByRegion = await PluginManager.getPRDataByRegion();
   //const prDataBySex = await PluginManager.getPRDataBySex();
   //await PluginManager.downloadReportsToCSV();
-  //console.log(JSON.stringify(prDataBySex, null , 2 ));
+  //const indiaCasesByStates = await PluginManager.getIndiaCasesByStates();
+  //const spainCasesByCommunities = await PluginManager.getSpainCasesByCommunities();
+  //console.log(JSON.stringify(spainCasesByCommunities, null , 2 ));
 })();

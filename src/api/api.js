@@ -755,6 +755,38 @@ const prDataBySex = async() =>{
     }
 };
 
+const indiaCasesByStates = async() =>{
+  const res = await axios.get('https://api.covid19india.org/data.json');
+  const data = await res.data.statewise;
+  
+  const table = [{table: data}];
+  
+  return Promise.all(table);
+}
+
+const spainCasesByCommunities = async() =>{
+  const res = await axios.get('https://covid19tracking.narrativa.com/');
+  const body = await res.data;
+  const $ = cheerio.load(body);
+  const html = $.html();
+  const data = tabletojson.convert(html);
+  const dataTable = data[1];
+  if(dataTable){
+    dataTable.forEach((obj) =>{
+      renameKey(obj , '0', 'Community');
+      renameKey(obj , 'Total Nuevos Casos' , 'Total_Nuevos_Casos');
+      renameKey(obj , 'Total Casos (cambio % 24h)' , 'Total_Casos_cambio_porciento_24h');
+      renameKey(obj , 'Total Fallecidos (24h)' , 'Total_Fallecidos_24h');
+      renameKey(obj , 'Total Recuperados (24h)' , 'Total_Recuperados_24h');
+
+    })
+  }
+
+  const table = [{table: dataTable}];
+
+  return Promise.all(table)
+};
+
 const reportsToCSV = () =>{
   try{
     setTimeout(async() => {
@@ -794,5 +826,7 @@ module.exports = {
   prGeneralResults,
   prDataByRegion,
   prDataBySex,
+  indiaCasesByStates,
+  spainCasesByCommunities,
   reportsToCSV
 };

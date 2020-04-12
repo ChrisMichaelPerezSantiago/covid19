@@ -113,6 +113,16 @@ class PluginManager {
     return res;
   };
 
+  async getIndiaCasesByStates(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.indiaCasesByStates()));
+    return res;
+  };
+
+  async getSpainCasesByCommunities(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.spainCasesByCommunities()));
+    return res;
+  };
+
   async downloadReportsToCSV(){
     const res = await Promise.all(this.plugins.map(plugin => plugin.reportsToCSV()));
     return res;
