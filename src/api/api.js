@@ -848,6 +848,24 @@ const japanCasesByPrefecture = async() =>{
   return Promise.all(table);
 }
 
+const newZealandCasesByDistrictHealthBoard = async() =>{
+  const url = 'https://services2.arcgis.com/9V7Qc4NIcvZBm0io/arcgis/rest/services/COVID_19_Cases_by_DHB_(View)/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=DHB%20asc&outSR=102100&resultOffset=0&resultRecordCount=25&cacheHint=true';
+  const res = await axios.get(url);
+  const data = res.data.features;
+
+  data.forEach((doc) =>{
+    delete doc.attributes.DHB12
+    delete doc.attributes.Shape__Area
+    delete doc.attributes.Shape__Length
+    delete doc.attributes.DHBCode
+    delete doc.attributes.ObjectId
+  });
+ 
+  const table = [{table: data}];
+
+  return Promise.all(table);
+};
+
 const reportsToCSV = () =>{
   try{
     setTimeout(async() => {
@@ -892,5 +910,6 @@ module.exports = {
   reportsToCSV,
   australiaCasesByStates,
   canadaCasesByProvincesAndHealthRegion,
-  japanCasesByPrefecture
+  japanCasesByPrefecture,
+  newZealandCasesByDistrictHealthBoard
 };

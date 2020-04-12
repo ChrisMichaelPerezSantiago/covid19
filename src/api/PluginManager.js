@@ -138,6 +138,11 @@ class PluginManager {
     return res;
   };
 
+  async getNewZealandCasesByDistrictHealthBoard(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.newZealandCasesByDistrictHealthBoard()));
+    return res;
+  };
+
   async downloadReportsToCSV(){
     const res = await Promise.all(this.plugins.map(plugin => plugin.reportsToCSV()));
     return res;
