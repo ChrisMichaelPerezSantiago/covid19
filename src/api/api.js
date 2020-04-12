@@ -787,6 +787,32 @@ const spainCasesByCommunities = async() =>{
   return Promise.all(table)
 };
 
+const australiaCasesByStates = async() =>{
+  const res = await axios.get('https://e.infogram.com/_/H2SRT4P4dG96INW93w6g?parent_url=https%3A%2F%2Fwww-covid19data-com-au.filesusr.com%2Fhtml%2F2aed08_8d923ae1ec1a00e86fe031a8d6ad2d66.html&src=embed');
+  const data = await res.data;
+  let match = data.match(/window.infographicData=(\{.*?\});/)
+  let parsed = JSON.parse(match[1]);
+  let json = parsed.elements.map(doc => doc.data);
+  const doc = [];
+
+  const regex = /\d+/g;
+
+  Array.from({length: json[1][0].length} , (v , k) =>{
+    const state = json[1][0][k][0]; 
+    const cases = json[1][0][k][1];
+    const deaths = json[1][0][k][6].match(regex)[0];
+    doc.push({
+      state,
+      cases,
+      deaths
+    });
+  });
+
+  const table = [{table: doc}];
+ 
+  return Promise.all(table);
+};
+
 const reportsToCSV = () =>{
   try{
     setTimeout(async() => {
@@ -828,5 +854,6 @@ module.exports = {
   prDataBySex,
   indiaCasesByStates,
   spainCasesByCommunities,
-  reportsToCSV
+  reportsToCSV,
+  australiaCasesByStates
 };

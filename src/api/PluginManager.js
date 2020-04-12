@@ -123,6 +123,11 @@ class PluginManager {
     return res;
   };
 
+  async getAustraliaCasesByStates(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.australiaCasesByStates()));
+    return res;
+  };
+
   async downloadReportsToCSV(){
     const res = await Promise.all(this.plugins.map(plugin => plugin.reportsToCSV()));
     return res;
