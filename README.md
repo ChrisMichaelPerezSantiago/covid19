@@ -1209,6 +1209,63 @@ await PluginManager.downloadReportsToCSV();
 ]
 ```
 
+## <img src="https://www.worldometers.info/img/flags/small/tn_nz-flag.gif" alt="New Zealand"> New Zealand
+### PluginManager.getNewZealandCasesByDistrictHealthBoard()
+
+```json
+[
+  [
+    {
+      "table": [
+        {
+          "attributes": {
+            "NAME": "Auckland",    
+            "DHB": "Auckland",     
+            "Confirmed_New": 3,    
+            "Confirmed_Total": 135,
+            "Probable_New": 4,     
+            "Probable_Total": 40,  
+            "New": 7,
+            "Total": 175,
+            "New_Deaths": 0,       
+            "Total_Deaths": 0
+          }
+        },
+        {
+          "attributes": {
+            "NAME": "Bay of Plenty",
+            "DHB": "Bay of Plenty",
+            "Confirmed_New": 3,
+            "Confirmed_Total": 29,
+            "Probable_New": 0,
+            "Probable_Total": 13,
+            "New": 3,
+            "Total": 42,
+            "New_Deaths": 0,
+            "Total_Deaths": 0
+          }
+        },
+        {
+          "attributes": {
+            "NAME": "Canterbury",
+            "DHB": "Canterbury",
+            "Confirmed_New": 0,
+            "Confirmed_Total": 80,
+            "Probable_New": 0,
+            "Probable_Total": 50,
+            "New": 0,
+            "Total": 130,
+            "New_Deaths": 0,
+            "Total_Deaths": 0
+          }
+        },
+        // .....
+      ]
+    }
+  ]
+]
+```
+
 
 # 🐛 COVID-19 Puerto Rico Data
 
