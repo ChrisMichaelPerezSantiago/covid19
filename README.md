@@ -989,6 +989,91 @@ await PluginManager.downloadReportsToCSV();
 
 ---
 
+# ⚠️Section in process, once I have a large number of countries with the data I will be updating the library.
+
+# 🌎 Cases detected by the states, regions, or Communities of each country
+
+
+## <img src="https://www.worldometers.info/img/flags/small/tn_in-flag.gif" alt="India"> India
+### PluginManager.getIndiaCasesByStates()
+
+```json
+[
+  [
+    {
+      "table": [
+        {
+          "active": "7192",
+          "confirmed": "8453",
+          "deaths": "289",
+          "deltaconfirmed": "854",
+          "deltadeaths": "40",
+          "deltarecovered": "186",
+          "lastupdatedtime": "12/04/2020 02:35:24",
+          "recovered": "972",
+          "state": "Total",
+          "statecode": "TT"
+        },
+        {
+          "active": "1426",
+          "confirmed": "1761",
+          "deaths": "127",
+          "deltaconfirmed": "187",
+          "deltadeaths": "17",
+          "deltarecovered": "20",
+          "lastupdatedtime": "11/04/2020 22:35:24",
+          "recovered": "208",
+          "state": "Maharashtra",
+          "statecode": "MH"
+        },
+        // .....
+      ]
+    }
+  ]
+]
+```
+
+## <img src="https://www.worldometers.info/img/flags/small/tn_sp-flag.gif" alt="India"> Spain
+### PluginManager.getSpainCasesByCommunities()
+
+
+```json
+[
+  [
+    {
+      "table": [
+        {
+          "Community": "Cataluña",
+          "Total_Nuevos_Casos": "1.160",
+          "Total_Casos_cambio_porciento_24h": "32.984 (+3,65%)",
+          "Total_Fallecidos_24h": "3.331 (+100)",
+          "Total_Recuperados_24h": "14.258 (+745)"
+        },
+        {
+          "Community": "Madrid",
+          "Total_Nuevos_Casos": "1.066",
+          "Total_Casos_cambio_porciento_24h": "45.849 (+2,38%)",
+          "Total_Fallecidos_24h": "6.084 (+112)",
+          "Total_Recuperados_24h": "23.663 (+1249)"
+        },
+        {
+          "Community": "Castilla y León",
+          "Total_Nuevos_Casos": "441",
+          "Total_Casos_cambio_porciento_24h": "11.543 (+3,97%)",
+          "Total_Fallecidos_24h": "1.180 (+51)",
+          "Total_Recuperados_24h": "3.757 (+251)"
+        },
+        // .....
+      ]
+    }
+  ]
+]
+```
+
+
+
+
+
 # 🐛 COVID-19 Puerto Rico Data
 
 *Data provided by the [Puerto Rico Institute of Statistics](https://estadisticas.pr/en/covid-19), based on official data provided by the Puerto Rico Department of Health.*
