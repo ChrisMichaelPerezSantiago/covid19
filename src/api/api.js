@@ -866,6 +866,27 @@ const newZealandCasesByDistrictHealthBoard = async() =>{
   return Promise.all(table);
 };
 
+const unitedStateCasesByStates = async() =>{
+  const url = 'https://covidtracking.com/api/v1/states/current.json';
+  const res = await axios.get(url);
+  const data = res.data;
+
+  data.forEach((doc) =>{
+    delete doc.notes
+    delete doc.hash
+  });
+
+  data.forEach((obj) =>{
+    if(obj.grade){
+      renameKey(obj , 'grade' , 'dataGrade')
+    }
+  });
+
+  const table = [{table: data}];
+
+  return Promise.all(table);
+};
+
 const reportsToCSV = () =>{
   try{
     setTimeout(async() => {
@@ -911,5 +932,6 @@ module.exports = {
   australiaCasesByStates,
   canadaCasesByProvincesAndHealthRegion,
   japanCasesByPrefecture,
-  newZealandCasesByDistrictHealthBoard
+  newZealandCasesByDistrictHealthBoard,
+  unitedStateCasesByStates
 };
