@@ -644,4 +644,81 @@ router.get('/PRExtraData' , (req , res) =>{
     });
 });
 
+router.get('/IndiaCasesByStates' , (req , res) =>{
+  PluginManager.indiaCasesByStates()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/SpainCasesByCommunities' , (req , res) =>{
+  PluginManager.spainCasesByCommunities()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/AustraliaCasesByStates' , (req , res) =>{
+  PluginManager.australiaCasesByStates()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/CanadaCasesByProvincesAndHealthRegion' , (req , res) =>{
+  PluginManager.canadaCasesByProvincesAndHealthRegion()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/JapanCasesByPrefecture' , (req , res) =>{
+  PluginManager.japanCasesByPrefecture()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/NewZealandCasesByDistrictHealthBoard' , (req , res) =>{
+  PluginManager.newZealandCasesByDistrictHealthBoard()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/UnitedStateCasesByStates' , (req , res) =>{
+  PluginManager.unitedStateCasesByStates()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
 module.exports = router;

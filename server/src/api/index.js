@@ -32,7 +32,14 @@ router.get('/', (req, res) => {
         'PRDataByRegions': '/api/v1/PRDataByRegions',
         'PRDataBySex': '/api/v1/PRDataBySex',
         'PRDataByTowns': '/api/v1/PRDataByTowns',
-        'PRExtraData': '/api/v1/PRExtraData'
+        'PRExtraData': '/api/v1/PRExtraData',
+        'IndiaCasesByStates': '/api/v1/IndiaCasesByStates',
+        'SpainCasesByCommunities': '/api/v1/SpainCasesByCommunities',
+        'AustraliaCasesByStates': '/api/v1/AustraliaCasesByStates',
+        'CanadaCasesByProvincesAndHealthRegion': '/api/v1/CanadaCasesByProvincesAndHealthRegion',
+        'JapanCasesByPrefecture': '/api/v1/JapanCasesByPrefecture',
+        'NewZealandCasesByDistrictHealthBoard': '/api/v1/NewZealandCasesByDistrictHealthBoard',
+        'UnitedStateCasesByStates': '/api/v1/UnitedStateCasesByStates',
       }
     ]
   });

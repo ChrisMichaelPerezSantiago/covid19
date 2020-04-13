@@ -799,6 +799,138 @@ const prExtraData = async() =>{
   return Promise.all(table);
 };
 
+const indiaCasesByStates = async() =>{
+  const res = await axios.get('https://api.covid19india.org/data.json');
+  const data = await res.data.statewise;
+  
+  const table = [{table: data}];
+  
+  return Promise.all(table);
+}
+
+const spainCasesByCommunities = async() =>{
+  const res = await axios.get('https://covid19tracking.narrativa.com/');
+  const body = await res.data;
+  const $ = cheerio.load(body);
+  const html = $.html();
+  const data = tabletojson.convert(html);
+  const dataTable = data[1];
+  if(dataTable){
+    dataTable.forEach((obj) =>{
+      renameKey(obj , '0', 'Community');
+      renameKey(obj , 'Total Nuevos Casos' , 'Total_Nuevos_Casos');
+      renameKey(obj , 'Total Casos (cambio % 24h)' , 'Total_Casos_cambio_porciento_24h');
+      renameKey(obj , 'Total Fallecidos (24h)' , 'Total_Fallecidos_24h');
+      renameKey(obj , 'Total Recuperados (24h)' , 'Total_Recuperados_24h');
+
+    })
+  }
+
+  const table = [{table: dataTable}];
+
+  return Promise.all(table)
+};
+
+const australiaCasesByStates = async() =>{
+  const res = await axios.get('https://e.infogram.com/_/H2SRT4P4dG96INW93w6g?parent_url=https%3A%2F%2Fwww-covid19data-com-au.filesusr.com%2Fhtml%2F2aed08_8d923ae1ec1a00e86fe031a8d6ad2d66.html&src=embed');
+  const data = await res.data;
+  let match = data.match(/window.infographicData=(\{.*?\});/)
+  let parsed = JSON.parse(match[1]);
+  let json = parsed.elements.map(doc => doc.data);
+  const doc = [];
+
+  const regex = /\d+/g;
+
+  Array.from({length: json[1][0].length} , (v , k) =>{
+    const state = json[1][0][k][0]; 
+    const cases = json[1][0][k][1];
+    const deaths = json[1][0][k][6].match(regex)[0];
+    doc.push({
+      state,
+      cases,
+      deaths
+    });
+  });
+
+  const table = [{table: doc}];
+ 
+  return Promise.all(table);
+};
+
+const canadaCasesByProvincesAndHealthRegion = async() =>{
+  const res = await axios.get('https://virihealth.com/');
+  const data = await res.data;
+  const $ = cheerio.load(data);
+  const html = $.html();
+  const docTable = tabletojson.convert(html);
+  const provinceTable = docTable[1];
+  const healthRegionTable = docTable[7];
+  
+  provinceTable.forEach((obj) => renameKey(obj , 'Cases/1M' , 'Cases_1M'));
+  healthRegionTable.forEach((obj) => renameKey(obj , 'Health Region' , 'HealthRegion'));
+
+  const table = [{
+    tables:{
+      province_table: provinceTable,
+      health_region_table: healthRegionTable
+    }
+  }];
+  
+  return Promise.all(table);
+};
+
+const japanCasesByPrefecture = async() =>{
+  const res = await axios.get('https://www.nippon.com/en/japan-data/h00657/coronavirus-cases-in-japan-by-prefecture.html');
+  const body = await res.data;
+  const $ = cheerio.load(body);
+  const html = $.html();
+  const dataTable = tabletojson.convert(html);
+  const doc = dataTable[1]; 
+
+  const table = [{table: doc}];
+  
+  return Promise.all(table);
+}
+
+const newZealandCasesByDistrictHealthBoard = async() =>{
+  const url = 'https://services2.arcgis.com/9V7Qc4NIcvZBm0io/arcgis/rest/services/COVID_19_Cases_by_DHB_(View)/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=DHB%20asc&outSR=102100&resultOffset=0&resultRecordCount=25&cacheHint=true';
+  const res = await axios.get(url);
+  const data = res.data.features;
+
+  data.forEach((doc) =>{
+    delete doc.attributes.DHB12
+    delete doc.attributes.Shape__Area
+    delete doc.attributes.Shape__Length
+    delete doc.attributes.DHBCode
+    delete doc.attributes.ObjectId
+  });
+ 
+  const table = [{table: data}];
+
+  return Promise.all(table);
+};
+
+const unitedStateCasesByStates = async() =>{
+  const url = 'https://covidtracking.com/api/v1/states/current.json';
+  const res = await axios.get(url);
+  const data = res.data;
+
+  data.forEach((doc) =>{
+    delete doc.notes
+    delete doc.hash
+  });
+
+  data.forEach((obj) =>{
+    if(obj.grade){
+      renameKey(obj , 'grade' , 'dataGrade')
+    }
+  });
+
+  const table = [{table: data}];
+
+  return Promise.all(table);
+};
+
 //const reportsToCSV = () =>{
 //  try{
 //    setTimeout(async() => {
@@ -839,5 +971,12 @@ module.exports = {
   prDataByRegion,
   prDataBySex,
   prDataByTowns,
-  prExtraData
+  prExtraData,
+  indiaCasesByStates,
+  spainCasesByCommunities,
+  australiaCasesByStates,
+  canadaCasesByProvincesAndHealthRegion,
+  japanCasesByPrefecture,
+  newZealandCasesByDistrictHealthBoard,
+  unitedStateCasesByStates
 };
