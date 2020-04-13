@@ -1266,6 +1266,81 @@ await PluginManager.downloadReportsToCSV();
 ]
 ```
 
+## <img src="https://www.worldometers.info/img/flags/small/tn_us-flag.gif" alt="United States"> United States
+### PluginManager.getUnitedStateCasesByStates()
+
+```json
+[ 
+  [ 
+    { 
+      table: [
+        {
+          "state": "AK",
+          "positive": 272,
+          "positiveScore": 1,
+          "negativeScore": 1,
+          "negativeRegularScore": 1,
+          "commercialScore": 1,
+          "grade": "A",
+          "score": 4,
+          "negative": 7766,
+          "pending": null,
+          "hospitalizedCurrently": null,
+          "hospitalizedCumulative": 31,
+          "inIcuCurrently": null,
+          "inIcuCumulative": null,
+          "onVentilatorCurrently": null,
+          "onVentilatorCumulative": null,
+          "recovered": 66,
+          "lastUpdateEt": "4/12 14:50",
+          "checkTimeEt": "4/12 15:23",
+          "death": 8,
+          "hospitalized": 31,
+          "total": 8038,
+          "totalTestResults": 8038,
+          "posNeg": 8038,
+          "fips": "02",
+          "dateModified": "2020-04-12T18:50:00Z",
+          "dateChecked": "2020-04-12T19:23:00Z",
+          "notes": "Please stop using the \"total\" field. Use \"totalTestResults\" instead.",
+          "hash": "2f85c0f1a7ae3339571cb9ca079718611f5f35c8"
+        },
+        {
+          "state": "AL",
+          "positive": 3611,
+          "positiveScore": 1,
+          "negativeScore": 1,
+          "negativeRegularScore": 0,
+          "commercialScore": 1,
+          "grade": "B",
+          "score": 3,
+          "negative": 18058,
+          "pending": null,
+          "hospitalizedCurrently": null,
+          "hospitalizedCumulative": 437,
+          "inIcuCurrently": null,
+          "inIcuCumulative": 189,
+          "onVentilatorCurrently": null,
+          "onVentilatorCumulative": 119,
+          "recovered": null,
+          "lastUpdateEt": "4/13 00:00",
+          "checkTimeEt": "4/13 09:46",
+          "death": 95,
+          "hospitalized": 437,
+          "total": 21669,
+          "totalTestResults": 21669,
+          "posNeg": 21669,
+          "fips": "01",
+          "dateModified": "2020-04-13T04:00:00Z",
+          "dateChecked": "2020-04-13T13:46:00Z",
+          "notes": "Please stop using the \"total\" field. Use \"totalTestResults\" instead.",
+          "hash": "aad3ca84c754906faa48f4bbf062b23c5e0ce9e3"
+        },
+      ] 
+    } 
+  ]
+]
+```
 
 # 🐛 COVID-19 Puerto Rico Data
 
