@@ -644,6 +644,29 @@ router.get('/PRExtraData' , (req , res) =>{
     });
 });
 
+
+/**
+ *  @api {get} /IndiaCasesByStates  India Coronavirus (COVID-2019) cases by states
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/IndiaCasesByStates
+ *  @apiVersion 1.2.0
+ *  @apiName GetIndiaCasesByStates
+ *  @apiGroup IndiaCasesByStates
+ *  @apiDescription India Coronavirus (COVID-2019) cases by states 
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.active
+ *  @apiSuccess {String} table.confirmed
+ *  @apiSuccess {String} table.deaths
+ *  @apiSuccess {String} table.deltaconfirmed
+ *  @apiSuccess {String} table.deltadeaths
+ *  @apiSuccess {String} table.deltarecovered
+ *  @apiSuccess {String} table.lastupdatedtime
+ *  @apiSuccess {String} table.recovered
+ *  @apiSuccess {String} table.state
+ *  @apiSuccess {String} table.statecode
+ *  @apiSuccess {String} table.statenotes
+ **/
+
 router.get('/IndiaCasesByStates' , (req , res) =>{
   PluginManager.indiaCasesByStates()
     .then(data =>{
@@ -654,6 +677,22 @@ router.get('/IndiaCasesByStates' , (req , res) =>{
       console.error(err);
     });
 });
+
+/**
+ *  @api {get} /SpainCasesByCommunities  Spain Coronavirus (COVID-2019) cases by comunities
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/SpainCasesByCommunities
+ *  @apiVersion 1.2.0
+ *  @apiName GetSpainCasesByCommunities
+ *  @apiGroup SpainCasesByCommunities
+ *  @apiDescription Spain Coronavirus (COVID-2019) cases by comunities
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.Community
+ *  @apiSuccess {String} table.Total_Nuevos_Casos
+ *  @apiSuccess {String} table.Total_Casos_cambio_porciento_24h
+ *  @apiSuccess {String} table.Total_Fallecidos_24h
+ *  @apiSuccess {String} table.Total_Recuperados_24h
+ **/
 
 router.get('/SpainCasesByCommunities' , (req , res) =>{
   PluginManager.spainCasesByCommunities()
@@ -666,6 +705,20 @@ router.get('/SpainCasesByCommunities' , (req , res) =>{
     });
 });
 
+/**
+ *  @api {get} /AustraliaCasesByStates  Austrailia Coronavirus (COVID-2019) cases by states
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/AustraliaCasesByStates
+ *  @apiVersion 1.2.0
+ *  @apiName GetAustraliaCasesByStates
+ *  @apiGroup AustraliaCasesByStates
+ *  @apiDescription Austrailia Coronavirus (COVID-2019) cases by states
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.state
+ *  @apiSuccess {String} table.cases
+ *  @apiSuccess {String} table.deaths
+ **/
+
 router.get('/AustraliaCasesByStates' , (req , res) =>{
   PluginManager.australiaCasesByStates()
     .then(data =>{
@@ -676,6 +729,21 @@ router.get('/AustraliaCasesByStates' , (req , res) =>{
       console.error(err);
     });
 });
+
+/**
+ *  @api {get} /CanadaCasesByProvincesAndHealthRegion  Canada Coronavirus (COVID-2019) cases by Provinces And Health Region
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/CanadaCasesByProvincesAndHealthRegion
+ *  @apiVersion 1.2.0
+ *  @apiName GetCanadaCasesByProvincesAndHealthRegion
+ *  @apiGroup CanadaCasesByProvincesAndHealthRegion
+ *  @apiDescription Canada Coronavirus (COVID-2019) cases by Provinces And Health Region
+ * 
+ *  @apiSuccess {Object[]} province_table
+ *  @apiSuccess {String} province_table.Prov
+ *  @apiSuccess {String} province_table.Cases
+ *  @apiSuccess {String} province_table.Deaths
+ *  @apiSuccess {String} province_table.Cases_1M
+ **/
 
 router.get('/CanadaCasesByProvincesAndHealthRegion' , (req , res) =>{
   PluginManager.canadaCasesByProvincesAndHealthRegion()
@@ -688,6 +756,19 @@ router.get('/CanadaCasesByProvincesAndHealthRegion' , (req , res) =>{
     });
 });
 
+/**
+ *  @api {get} /JapanCasesByPrefecture  Japan Coronavirus (COVID-2019) cases by prefecture
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/JapanCasesByPrefecture
+ *  @apiVersion 1.2.0
+ *  @apiName GetJapanCasesByPrefecture
+ *  @apiGroup JapanCasesByPrefecture
+ *  @apiDescription Japan Coronavirus (COVID-2019) cases by prefecture
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.Prefecture
+ *  @apiSuccess {String} table.Infections
+ **/
+
 router.get('/JapanCasesByPrefecture' , (req , res) =>{
   PluginManager.japanCasesByPrefecture()
     .then(data =>{
@@ -699,6 +780,26 @@ router.get('/JapanCasesByPrefecture' , (req , res) =>{
     });
 });
 
+/**
+ *  @api {get} /NewZealandCasesByDistrictHealthBoard  New Zealand Coronavirus (COVID-2019) cases by District Health Board
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/NewZealandCasesByDistrictHealthBoard
+ *  @apiVersion 1.2.0
+ *  @apiName GetNewZealandCasesByDistrictHealthBoard
+ *  @apiGroup NewZealandCasesByDistrictHealthBoard
+ *  @apiDescription  New Zealand Coronavirus (COVID-2019) cases by District Health Board
+ * 
+ *  @apiSuccess {Object[]} attributes
+ *  @apiSuccess {String} attributes.NAME
+ *  @apiSuccess {String} attributes.Confirmed_New
+ *  @apiSuccess {String} attributes.Confirmed_Total
+ *  @apiSuccess {String} attributes.Probable_New
+ *  @apiSuccess {String} attributes.Probable_Total
+ *  @apiSuccess {String} attributes.New
+ *  @apiSuccess {String} attributes.Total
+ *  @apiSuccess {String} attributes.New_Deaths
+ *  @apiSuccess {String} attributes.Total_Deaths
+ **/
+
 router.get('/NewZealandCasesByDistrictHealthBoard' , (req , res) =>{
   PluginManager.newZealandCasesByDistrictHealthBoard()
     .then(data =>{
@@ -709,6 +810,44 @@ router.get('/NewZealandCasesByDistrictHealthBoard' , (req , res) =>{
       console.error(err);
     });
 });
+
+/**
+ *  @api {get} /UnitedStateCasesByStates  United States Coronavirus (COVID-2019) cases by states
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/UnitedStateCasesByStates
+ *  @apiVersion 1.2.0
+ *  @apiName GetUnitedStateCasesByStates
+ *  @apiGroup UnitedStateCasesByStates
+ *  @apiDescription United States Coronavirus (COVID-2019) cases by states
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.state
+ *  @apiSuccess {Number} table.positive
+ *  @apiSuccess {Number} table.positiveScore
+ *  @apiSuccess {Number} table.negativeScore
+ *  @apiSuccess {Number} table.negativeRegularScore
+ *  @apiSuccess {Number} table.commercialScore
+ *  @apiSuccess {Number} table.score
+ *  @apiSuccess {Number} table.negative
+ *  @apiSuccess {String} table.pending
+ *  @apiSuccess {String} table.hospitalizedCurrently
+ *  @apiSuccess {Number} table.hospitalizedCumulative
+ *  @apiSuccess {String} table.inIcuCurrently
+ *  @apiSuccess {String} table.inIcuCumulative
+ *  @apiSuccess {String} table.onVentilatorCurrently
+ *  @apiSuccess {String} table.onVentilatorCumulative
+ *  @apiSuccess {Number} table.recovered
+ *  @apiSuccess {String} table.lastUpdateEt
+ *  @apiSuccess {String} table.checkTimeEt
+ *  @apiSuccess {Number} table.death
+ *  @apiSuccess {Number} table.hospitalized
+ *  @apiSuccess {Number} table.total
+ *  @apiSuccess {Number} table.totalTestResults
+ *  @apiSuccess {Number} table.posNeg
+ *  @apiSuccess {String} table.fips
+ *  @apiSuccess {String} table.dateModified
+ *  @apiSuccess {String} table.dateChecked
+ *  @apiSuccess {String} table.dataGrade
+ **/
 
 router.get('/UnitedStateCasesByStates' , (req , res) =>{
   PluginManager.unitedStateCasesByStates()

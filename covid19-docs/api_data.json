@@ -297,6 +297,56 @@
     "groupTitle": "AllReports"
   },
   {
+    "type": "get",
+    "url": "/AustraliaCasesByStates",
+    "title": "Austrailia Coronavirus (COVID-2019) cases by states",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/AustraliaCasesByStates"
+      }
+    ],
+    "version": "1.2.0",
+    "name": "GetAustraliaCasesByStates",
+    "group": "AustraliaCasesByStates",
+    "description": "<p>Austrailia Coronavirus (COVID-2019) cases by states</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.state",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.cases",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.deaths",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "AustraliaCasesByStates"
+  },
+  {
     "success": {
       "fields": {
         "Success 200": [
@@ -323,6 +373,63 @@
     "group": "C:\\Users\\c\\Desktop\\COVID-19\\covid19-docs\\main.js",
     "groupTitle": "C:\\Users\\c\\Desktop\\COVID-19\\covid19-docs\\main.js",
     "name": ""
+  },
+  {
+    "type": "get",
+    "url": "/CanadaCasesByProvincesAndHealthRegion",
+    "title": "Canada Coronavirus (COVID-2019) cases by Provinces And Health Region",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/CanadaCasesByProvincesAndHealthRegion"
+      }
+    ],
+    "version": "1.2.0",
+    "name": "GetCanadaCasesByProvincesAndHealthRegion",
+    "group": "CanadaCasesByProvincesAndHealthRegion",
+    "description": "<p>Canada Coronavirus (COVID-2019) cases by Provinces And Health Region</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "province_table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "province_table.Prov",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "province_table.Cases",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "province_table.Deaths",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "province_table.Cases_1M",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "CanadaCasesByProvincesAndHealthRegion"
   },
   {
     "type": "get",
@@ -575,6 +682,155 @@
   },
   {
     "type": "get",
+    "url": "/IndiaCasesByStates",
+    "title": "India Coronavirus (COVID-2019) cases by states",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/IndiaCasesByStates"
+      }
+    ],
+    "version": "1.2.0",
+    "name": "GetIndiaCasesByStates",
+    "group": "IndiaCasesByStates",
+    "description": "<p>India Coronavirus (COVID-2019) cases by states</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.active",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.confirmed",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.deaths",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.deltaconfirmed",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.deltadeaths",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.deltarecovered",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.lastupdatedtime",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.recovered",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.state",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.statecode",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.statenotes",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "IndiaCasesByStates"
+  },
+  {
+    "type": "get",
+    "url": "/JapanCasesByPrefecture",
+    "title": "Japan Coronavirus (COVID-2019) cases by prefecture",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/JapanCasesByPrefecture"
+      }
+    ],
+    "version": "1.2.0",
+    "name": "GetJapanCasesByPrefecture",
+    "group": "JapanCasesByPrefecture",
+    "description": "<p>Japan Coronavirus (COVID-2019) cases by prefecture</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.Prefecture",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.Infections",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "JapanCasesByPrefecture"
+  },
+  {
+    "type": "get",
     "url": "/JohnsHopkinsDataDailyReport",
     "title": "Johns Hopkins - Coronavirus Resource Center (CSSE COVID-19 Dataset)",
     "sampleRequest": [
@@ -671,6 +927,98 @@
     },
     "filename": "./server/src/api/routes/index.js",
     "groupTitle": "JohnsHopkinsDataDailyReport"
+  },
+  {
+    "type": "get",
+    "url": "/NewZealandCasesByDistrictHealthBoard",
+    "title": "New Zealand Coronavirus (COVID-2019) cases by District Health Board",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/NewZealandCasesByDistrictHealthBoard"
+      }
+    ],
+    "version": "1.2.0",
+    "name": "GetNewZealandCasesByDistrictHealthBoard",
+    "group": "NewZealandCasesByDistrictHealthBoard",
+    "description": "<p>New Zealand Coronavirus (COVID-2019) cases by District Health Board</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "attributes",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "attributes.NAME",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "attributes.Confirmed_New",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "attributes.Confirmed_Total",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "attributes.Probable_New",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "attributes.Probable_Total",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "attributes.New",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "attributes.Total",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "attributes.New_Deaths",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "attributes.Total_Deaths",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "NewZealandCasesByDistrictHealthBoard"
   },
   {
     "type": "get",
@@ -1509,6 +1857,70 @@
   },
   {
     "type": "get",
+    "url": "/SpainCasesByCommunities",
+    "title": "Spain Coronavirus (COVID-2019) cases by comunities",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/SpainCasesByCommunities"
+      }
+    ],
+    "version": "1.2.0",
+    "name": "GetSpainCasesByCommunities",
+    "group": "SpainCasesByCommunities",
+    "description": "<p>Spain Coronavirus (COVID-2019) cases by comunities</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.Community",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.Total_Nuevos_Casos",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.Total_Casos_cambio_porciento_24h",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.Total_Fallecidos_24h",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.Total_Recuperados_24h",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "SpainCasesByCommunities"
+  },
+  {
+    "type": "get",
     "url": "/TestsInUS",
     "title": "Reporting public health labs are 48 state public health labs",
     "sampleRequest": [
@@ -1563,5 +1975,223 @@
     },
     "filename": "./server/src/api/routes/index.js",
     "groupTitle": "TestsInUS"
+  },
+  {
+    "type": "get",
+    "url": "/UnitedStateCasesByStates",
+    "title": "United States Coronavirus (COVID-2019) cases by states",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/UnitedStateCasesByStates"
+      }
+    ],
+    "version": "1.2.0",
+    "name": "GetUnitedStateCasesByStates",
+    "group": "UnitedStateCasesByStates",
+    "description": "<p>United States Coronavirus (COVID-2019) cases by states</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.state",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.positive",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.positiveScore",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.negativeScore",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.negativeRegularScore",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.commercialScore",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.score",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.negative",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.pending",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.hospitalizedCurrently",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.hospitalizedCumulative",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.inIcuCurrently",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.inIcuCumulative",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.onVentilatorCurrently",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.onVentilatorCumulative",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.recovered",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.lastUpdateEt",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.checkTimeEt",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.death",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.hospitalized",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.total",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.totalTestResults",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.posNeg",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.fips",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.dateModified",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.dateChecked",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.dataGrade",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "UnitedStateCasesByStates"
   }
 ]
