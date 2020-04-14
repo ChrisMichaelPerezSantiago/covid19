@@ -743,6 +743,9 @@ router.get('/AustraliaCasesByStates' , (req , res) =>{
  *  @apiSuccess {String} province_table.Cases
  *  @apiSuccess {String} province_table.Deaths
  *  @apiSuccess {String} province_table.Cases_1M
+ *  @apiSuccess {Object[]} health_region_table
+ *  @apiSuccess {String} health_region_table.Cases
+ *  @apiSuccess {String} health_region_table.HealthRegion
  **/
 
 router.get('/CanadaCasesByProvincesAndHealthRegion' , (req , res) =>{

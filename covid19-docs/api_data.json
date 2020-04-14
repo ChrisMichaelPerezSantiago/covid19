@@ -424,6 +424,27 @@
             "optional": false,
             "field": "province_table.Cases_1M",
             "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "health_region_table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "health_region_table.Cases",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "health_region_table.HealthRegion",
+            "description": ""
           }
         ]
       }
