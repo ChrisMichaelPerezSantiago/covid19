@@ -638,13 +638,22 @@ const prGeneralResults = async() =>{
     const html = $.html();
     const gitHubTable = tabletojson.convert(html);
     const r = new RegExp(/.+(\.csv)$/);
-    const N = gitHubTable[0].filter(doc => {
-      return r.test(doc.Name)
-    }).length;
+    //const N = gitHubTable[0].filter(doc => {
+    //  return r.test(doc.Name)
+    //}).length;
     const gitHubTableFilterCSV = gitHubTable[0].filter(doc => {
       return r.test(doc.Name)
     }) 
-    const date = gitHubTableFilterCSV[N - 1].Name;
+
+    const dates = gitHubTableFilterCSV.map(date => {
+      return{
+        originalDate: date.Name,
+        formatedDate: new Date(date.Name.replace('.csv' , '').trim())
+      }
+    });
+    
+    const datesListSorted = dates.sort((a, b) => b.formatedDate - a.formatedDate);
+    const date = datesListSorted[0].originalDate;
 
     const url = `https://raw.githubusercontent.com/ChrisMichaelPerezSantiago/covid19/master/EstatidistcasPuertoRico/resultados/datos_en_general/${date}`;
     const table = await csv()
@@ -658,16 +667,17 @@ const prGeneralResults = async() =>{
     table.forEach((obj) =>{
       renameKey(obj , 'field1' , 'type')
       renameKey(obj , 'Resultados de las Pruebas (n)' , 'tests_result')
-      renameKey(obj ,'Resultados de las Pruebas (%)' , 'tests_result_percent')
     });
 
     const data = [{table: table}]; 
 
     return Promise.all(data);
-    }catch(err){
+    
+  }catch(err){
     console.log(err)
   }
 };
+ 
 
 const prDataByRegion = async() =>{
   try{
@@ -680,13 +690,23 @@ const prDataByRegion = async() =>{
     const html = $.html();
     const gitHubTable = tabletojson.convert(html);
     const r = new RegExp(/.+(\.csv)$/);
-    const N = gitHubTable[0].filter(doc => {
-      return r.test(doc.Name)
-    }).length;
+    //const N = gitHubTable[0].filter(doc => {
+    //  return r.test(doc.Name)
+    //}).length;
+   
     const gitHubTableFilterCSV = gitHubTable[0].filter(doc => {
       return r.test(doc.Name)
     }) 
-    const date = gitHubTableFilterCSV[N - 1].Name;
+
+    const dates = gitHubTableFilterCSV.map(date => {
+      return{
+        originalDate: date.Name,
+        formatedDate: new Date(date.Name.replace('.csv' , '').trim())
+      }
+    });
+    
+    const datesListSorted = dates.sort((a, b) => b.formatedDate - a.formatedDate);
+    const date = datesListSorted[0].originalDate;
     
     const url = `https://raw.githubusercontent.com/ChrisMichaelPerezSantiago/covid19/master/EstatidistcasPuertoRico/resultados/datos_por_region/${date}`;
     const table = await csv()
@@ -724,13 +744,24 @@ const prDataBySex = async() =>{
     const html = $.html();
     const gitHubTable = tabletojson.convert(html);
     const r = new RegExp(/.+(\.csv)$/);
-    const N = gitHubTable[0].filter(doc => {
-      return r.test(doc.Name)
-    }).length;
+    //const N = gitHubTable[0].filter(doc => {
+    //  return r.test(doc.Name)
+    //}).length;
+    
     const gitHubTableFilterCSV = gitHubTable[0].filter(doc => {
       return r.test(doc.Name)
     }) 
-    const date = gitHubTableFilterCSV[N - 1].Name;
+
+    const dates = gitHubTableFilterCSV.map(date => {
+      return{
+        originalDate: date.Name,
+        formatedDate: new Date(date.Name.replace('.csv' , '').trim())
+      }
+    });
+    
+    const datesListSorted = dates.sort((a, b) => b.formatedDate - a.formatedDate);
+    const date = datesListSorted[0].originalDate;
+    
     
     const url = `https://raw.githubusercontent.com/ChrisMichaelPerezSantiago/covid19/master/EstatidistcasPuertoRico/resultados/datos_por_sexo/${date}`;
     const table = await csv()
