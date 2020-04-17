@@ -1350,6 +1350,62 @@ await PluginManager.downloadReportsToCSV();
   ]
 ]
 ```
+-----
+
+#  Data Provided by ICNL The International Center for Not-for-Profit Law
+<img width="10%" src="https://www.icnl.org/wp-content/uploads/Preferred-Stack-Color-square.png">
+
+## COVID-19 Civic Freedom Tracker
+*This tracker monitors government responses to the pandemic that affect civic freedoms and human rights, focusing on emergency laws.*
+
+### PluginManager.getCivicFreedomTracker()
+
+```json
+[
+  [
+    {
+      "table": [
+        {
+          "country": "Albania",
+          "title": "Normative Act",
+          "description": "The normative act, issued by the government without parliamentary approval per Article 101 of Albania's Constitution, provides for fines to be levied on anyone who violates measures to contain the coronavirus. Among other provisions, participating in or organizing a political, social, or cultural gathering is subject to a fine of 5 million lek (40,000 Euros). (See primary source or citation here)",
+          "type": "order",
+          "date": "15 Mar 2020",
+          "issue": "Assembly"
+        },
+        {
+          "country": "Algeria",
+          "title": "Ban on Public Gatherings",
+          "description": "President Abdelmadjid Tebboune bans all protests, marches, demonstrations, and other mass gatherings, due to the coronavirus epidemic. His order also closes all public spaces suspected of being a hub for the virus. (See primary source or citation here)",
+          "type": "order",
+          "date": "17 Mar 2020",
+          "issue": "Assembly"
+        },
+        {
+          "country": "Angola",
+          "title": "Decree No. 82/20 on a State of Exception to Prevent and Control the Covid-19 Pandemic",
+          "description": "The presidential decree declares a nationwide \"state of exception.\" The decree grants the government power to limit individuals' freedom of movement and assembly, requisition private property, and forcibly confine people deemed likely to transmit COVID-19. (See primary source or citation here)",
+          "type": "order",
+          "date": "27 Mar 2020",
+          "issue": "Assembly, Emergency"
+        },
+        {
+          "country": "Argentina",
+          "title": "No. 297 of 2020 on Preventative and Mandatory Social Isolation",
+          "description": "The decree mandates that all individuals self-isolate at their homes with minimal exceptions, in order to combat the spread of the coronavirus. The decree also prohibits gatherings of persons for any reason. According to the decree, the Ministry of Security will place permanent controls on public roads and routes as it deems necessary to limit movement and enforce compliance. (See primary source or citation here)",
+          "type": "order",
+          "date": "19 Mar 2020",
+          "issue": "Assembly"
+        },
+        // .....
+      ]
+    }
+  ]
+] 
+```
+
+---
+
 
 # 🐛 COVID-19 Puerto Rico Data
 
@@ -1515,7 +1571,7 @@ These are projects that take a lot of effort and time to maintain. So with your 
 - *paho(Organizacion Panamericano de la Salud). 2020. Enfermedad por el Coronavirus ‎‎(COVID-19)‎. [online] Available at: <https://www.paho.org/es/temas/coronavirus/enfermedad-por-coronavirus-covid-19/> [Accessed 21 Mar 2020]*
 - *salud.gov. 2020 . ESTATUS DE CASOS BAJO EVALUACIÓN POR COVID-19 [online] Available at: <http://www.salud.gov.pr/Pages/coronavirus.aspx/> [Accessed 22 Mar 2020]*
 - *covidcaremap.org. 2020. COVID CARE [online] Available at: <https://www.covidcaremap.org/#data/> [Accessed 26 Mar 2020]*
-
+- *icnl.org. 2020. COVID-19 Civic Freedom Tracker [online] Available at: <https://www.icnl.org/covid19tracker/> [Accessed 17 April 2020]*
 
 ### **📚 Projects that use the API**
 
