@@ -553,6 +553,77 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/CivicFreedomTracker",
+    "title": "COVID-19 Civic Freedom Tracker",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/CivicFreedomTracker"
+      }
+    ],
+    "version": "1.2.1",
+    "name": "GetCivicFreedomTracker",
+    "group": "CivicFreedomTracker",
+    "description": "<p>COVID-19 Civic Freedom Tracker | Data Provided by ICNL The International Center for Not-for-Profit Law</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.country",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.title",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.description",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.type",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.date",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.issue",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "CivicFreedomTracker"
+  },
+  {
+    "type": "get",
     "url": "/FatalityRateByAge",
     "title": "Age of Coronavirus Deaths - COVID-19 Fatality Rate by AGE",
     "sampleRequest": [

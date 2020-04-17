@@ -863,4 +863,33 @@ router.get('/UnitedStateCasesByStates' , (req , res) =>{
     });
 });
 
+
+/**
+ *  @api {get} /CivicFreedomTracker  COVID-19 Civic Freedom Tracker
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/CivicFreedomTracker
+ *  @apiVersion 1.2.1
+ *  @apiName GetCivicFreedomTracker
+ *  @apiGroup CivicFreedomTracker
+ *  @apiDescription COVID-19 Civic Freedom Tracker | Data Provided by ICNL The International Center for Not-for-Profit Law
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.country
+ *  @apiSuccess {String} table.title
+ *  @apiSuccess {String} table.description
+ *  @apiSuccess {String} table.type
+ *  @apiSuccess {String} table.date
+ *  @apiSuccess {String} table.issue
+ **/
+
+router.get('/CivicFreedomTracker' , (req , res) =>{
+  PluginManager.civicFreedomTracker()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
 module.exports = router;
