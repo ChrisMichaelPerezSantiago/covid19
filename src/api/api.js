@@ -918,6 +918,33 @@ const unitedStateCasesByStates = async() =>{
   return Promise.all(table);
 };
 
+const civicFreedomTracker = async() =>{
+  const res = await axios.get('https://www.icnl.org/covid19tracker/');
+  const body = await res.data;
+  const $ = cheerio.load(body);
+  
+  const promises = [];
+
+  $('div#entries div.entry').each((index, element) =>{
+    const $element = $(element);
+    const country = $element.find('div.entrypretitle').text().trim();
+    const title = $element.find('h3').text().trim();
+    const description = $element.find('p').text().trim();
+    let type = $element.find('h6 span.regulation').text().trim() || 
+               $element.find('h6 span.order').text().trim()      ||
+               $element.find('h6 span.law').text().trim();
+    
+    const date = $element.find('h6 span.date').text().trim();
+    const issue = $element.find('h6 span.issue').text().trim();
+
+    promises.push({country , title , description , type , date, issue});
+  });
+
+  const table = [{table: promises}];
+
+  return Promise.all(table);
+};
+
 const reportsToCSV = () =>{
   try{
     setTimeout(async() => {
@@ -964,5 +991,6 @@ module.exports = {
   canadaCasesByProvincesAndHealthRegion,
   japanCasesByPrefecture,
   newZealandCasesByDistrictHealthBoard,
-  unitedStateCasesByStates
+  unitedStateCasesByStates,
+  civicFreedomTracker
 };

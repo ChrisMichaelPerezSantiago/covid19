@@ -152,6 +152,11 @@ class PluginManager {
     const res = await Promise.all(this.plugins.map(plugin => plugin.reportsToCSV()));
     return res;
   };
+
+  async getCivicFreedomTracker(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.civicFreedomTracker()));
+    return res;
+  };
 }
 
 module.exports = PluginManager;
