@@ -41,18 +41,14 @@ describe('COVID19 API' , () =>{
       .get('/Deaths')
       .end((err , res) =>{      
         expect(res.status).to.be.equal(200);
-        expect(res.body.deaths).to.be.an('Object');
+        expect(res.body.deaths).to.be.an('Array');
 
-        const keys = [
-          "deaths" , "table"
-        ]
         const tableKeys = [
           "Date" ,          "TotalDeaths",
           "ChangeInTotal" , "ChangeTotalInPercent"
         ]
 
-        expect(res.body.deaths).to.have.keys(keys);
-        expect(res.body.deaths.table[0]).to.have.keys(tableKeys);
+        expect(res.body.deaths[0]).to.have.keys(tableKeys);
         ok();
       })
   }).timeout(10000);
