@@ -1381,6 +1381,40 @@ await PluginManager.downloadReportsToCSV();
 ]
 ```
 
+## <img src="https://www.worldometers.info/img/flags/small/tn_sw-flag.gif" alt="Sweden"> Sweden
+### PluginManager.getSwedenCasesByRegion()
+
+```json
+[
+  [
+    {
+      "table": [
+        {
+          "region": "Blekinge",
+          "infectedCount": 43,
+          "deathCount": 2,
+          "intensiveCareCount": 3
+        },
+        {
+          "region": "Dalarna",
+          "infectedCount": 429,
+          "deathCount": 63,
+          "intensiveCareCount": 30
+        },
+        {
+          "region": "Gävleborg",
+          "infectedCount": 357,
+          "deathCount": 36,
+          "intensiveCareCount": 23
+        },
+        // .....
+      ]
+    }
+  ]
+]
+```
+
+
 -----
 
 #  Data Provided by ICNL The International Center for Not-for-Profit Law
