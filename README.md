@@ -1350,6 +1350,37 @@ await PluginManager.downloadReportsToCSV();
   ]
 ]
 ```
+
+## <img src="https://www.worldometers.info/img/flags/small/tn_gm-flag.gif" alt="Germany"> Germany
+### PluginManager.getGermanyCasesByRegion()
+
+```json
+[
+  [
+    {
+      "table": [
+        {
+          "region": "Baden-Württem­berg",
+          "infectedCount": 26543,
+          "deceasedCount": 872
+        },
+        {
+          "region": "Bayern",
+          "infectedCount": 36027,
+          "deceasedCount": 1
+        },
+        {
+          "region": "Berlin",
+          "infectedCount": 4945,
+          "deceasedCount": 84
+        },
+        // .....
+      ]
+    }
+  ]
+]
+```
+
 -----
 
 #  Data Provided by ICNL The International Center for Not-for-Profit Law
