@@ -153,6 +153,11 @@ class PluginManager {
     return res;
   };
 
+  async getSwedenCasesByRegion(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.swedenCasesByRegion()));
+    return res;
+  };
+
   async downloadReportsToCSV(){
     const res = await Promise.all(this.plugins.map(plugin => plugin.reportsToCSV()));
     return res;

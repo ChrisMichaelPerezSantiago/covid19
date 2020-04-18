@@ -972,6 +972,17 @@ const germanyCasesByRegion = async() =>{
   return Promise.all(table);
 };
 
+const swedenCasesByRegion = async() =>{
+  const res = await axios.get('https://api.apify.com/v2/key-value-stores/8mRFdwyukavRNCr42/records/LATEST?disableRedirect=true');
+  const data = await res.data;
+  const doc =  data.infectedByRegion;
+  
+  const table = [{table: doc}]
+
+  return Promise.all(table);
+};
+
+
 const civicFreedomTracker = async() =>{
   const res = await axios.get('https://www.icnl.org/covid19tracker/');
   const body = await res.data;
@@ -1048,5 +1059,6 @@ module.exports = {
   newZealandCasesByDistrictHealthBoard,
   unitedStateCasesByStates,
   germanyCasesByRegion,
+  swedenCasesByRegion,
   civicFreedomTracker
 };

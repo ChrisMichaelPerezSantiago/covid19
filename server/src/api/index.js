@@ -41,6 +41,7 @@ router.get('/', (req, res) => {
         'NewZealandCasesByDistrictHealthBoard': '/api/v1/NewZealandCasesByDistrictHealthBoard',
         'UnitedStateCasesByStates': '/api/v1/UnitedStateCasesByStates',
         'GermanyCasesByRegion': '/api/v1/GermanyCasesByRegion',
+        'SwedenCasesByRegion': '/api/v1/SwedenCasesByRegion',
         'CivicFreedomTracker': '/api/v1/CivicFreedomTracker',
       }
     ]

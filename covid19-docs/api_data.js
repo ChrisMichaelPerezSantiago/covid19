@@ -2063,6 +2063,63 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/SwedenCasesByRegion",
+    "title": "Sweden Coronavirus (COVID-2019) cases by region",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/SwedenCasesByRegion"
+      }
+    ],
+    "version": "1.2.1",
+    "name": "GetSwedenCasesByRegion",
+    "group": "SwedenCasesByRegion",
+    "description": "<p>Sweden Coronavirus (COVID-2019) cases by region</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.region",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.infectedCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.deathCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.intensiveCareCount",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "SwedenCasesByRegion"
+  },
+  {
+    "type": "get",
     "url": "/TestsInUS",
     "title": "Reporting public health labs are 48 state public health labs",
     "sampleRequest": [

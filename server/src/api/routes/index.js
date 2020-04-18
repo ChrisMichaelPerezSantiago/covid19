@@ -890,6 +890,32 @@ router.get('/GermanyCasesByRegion' , (req , res) =>{
 });
 
 
+/**
+ *  @api {get} /SwedenCasesByRegion  Sweden Coronavirus (COVID-2019) cases by region
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/SwedenCasesByRegion
+ *  @apiVersion 1.2.1
+ *  @apiName GetSwedenCasesByRegion
+ *  @apiGroup SwedenCasesByRegion
+ *  @apiDescription Sweden Coronavirus (COVID-2019) cases by region
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.region
+ *  @apiSuccess {Number} table.infectedCount
+ *  @apiSuccess {Number} table.deathCount
+ *  @apiSuccess {Number} table.intensiveCareCount
+ **/
+
+router.get('/SwedenCasesByRegion' , (req , res) =>{
+  PluginManager.swedenCasesByRegion()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
 
 /**
  *  @api {get} /CivicFreedomTracker  COVID-19 Civic Freedom Tracker
