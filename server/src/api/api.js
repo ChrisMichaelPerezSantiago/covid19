@@ -983,6 +983,23 @@ const swedenCasesByRegion = async() =>{
   return Promise.all(table);
 };
 
+const slovakiaCasesByDistrict = async() =>{
+  const res = await axios.get('https://services.arcgis.com/s2Iyql6ZO52bpobk/arcgis/rest/services/2020_COVID_OKRESY_POSLEDNY_DEN_PUBLIC_VIEW/FeatureServer/0/query?f=json&where=celkom_pozitivni%20%3E%200&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=celkom_pozitivni%20desc&outSR=102100&resultOffset=0&resultRecordCount=50&resultType=standard&cacheHint=true');
+  const data =  res.data.features;
+
+  data.forEach((doc) =>{
+    delete doc.attributes.DATUM
+    delete doc.attributes.ID
+    delete doc.attributes.AREA
+    delete doc.attributes.x
+    delete doc.attributes.y
+    delete doc.attributes.ObjectId
+  });
+ 
+  const table = [{table: data}];
+
+  return Promise.all(table);
+};
 
 const civicFreedomTracker = async() =>{
   const res = await axios.get('https://www.icnl.org/covid19tracker/');
@@ -1061,5 +1078,6 @@ module.exports = {
   unitedStateCasesByStates,
   germanyCasesByRegion,
   swedenCasesByRegion,
+  slovakiaCasesByDistrict,
   civicFreedomTracker
 };

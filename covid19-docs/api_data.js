@@ -1999,6 +1999,126 @@ define({ "api": [
   },
   {
     "type": "get",
+    "url": "/SlovakiaCasesByDistrict",
+    "title": "Slovakia Coronavirus (COVID-2019) cases by district",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/SlovakiaCasesByDistrict"
+      }
+    ],
+    "version": "1.2.1",
+    "name": "GetSlovakiaCasesByDistrict",
+    "group": "SlovakiaCasesByDistrict",
+    "description": "<p>Slovakia Coronavirus (COVID-2019) cases by district</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "attributes",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "attributes.NAME",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "attributes.hospitalizovani_so_symptomami",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "attributes.intenzivna_starostlivost",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "attributes.celkom_hospitalizovani",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "attributes.domaca_izolacia",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "attributes.miesto_liecenia_nezverejnene",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "attributes.celkom_sucasne_pozitivni",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "attributes.pozitivni_predch_den",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "attributes.novi_pozitivni",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "attributes.vyzdraveni",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "attributes.mrtvi",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "attributes.celkom_pozitivni",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "attributes.vykonane_testy",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "SlovakiaCasesByDistrict"
+  },
+  {
+    "type": "get",
     "url": "/SpainCasesByCommunities",
     "title": "Spain Coronavirus (COVID-2019) cases by comunities",
     "sampleRequest": [

@@ -918,6 +918,43 @@ router.get('/SwedenCasesByRegion' , (req , res) =>{
 
 
 /**
+ *  @api {get} /SlovakiaCasesByDistrict  Slovakia Coronavirus (COVID-2019) cases by district
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/SlovakiaCasesByDistrict
+ *  @apiVersion 1.2.1
+ *  @apiName GetSlovakiaCasesByDistrict
+ *  @apiGroup SlovakiaCasesByDistrict
+ *  @apiDescription Slovakia Coronavirus (COVID-2019) cases by district
+ * 
+ *  @apiSuccess {Object[]} attributes
+ *  @apiSuccess {String} attributes.NAME
+ *  @apiSuccess {Number} attributes.hospitalizovani_so_symptomami
+ *  @apiSuccess {Number} attributes.intenzivna_starostlivost
+ *  @apiSuccess {Number} attributes.celkom_hospitalizovani
+ *  @apiSuccess {Number} attributes.domaca_izolacia
+ *  @apiSuccess {Number} attributes.miesto_liecenia_nezverejnene
+ *  @apiSuccess {Number} attributes.celkom_sucasne_pozitivni
+ *  @apiSuccess {Number} attributes.pozitivni_predch_den
+ *  @apiSuccess {Number} attributes.novi_pozitivni
+ *  @apiSuccess {Number} attributes.vyzdraveni
+ *  @apiSuccess {Number} attributes.mrtvi
+ *  @apiSuccess {Number} attributes.celkom_pozitivni
+ *  @apiSuccess {Number} attributes.vykonane_testy
+ * 
+ **/
+
+router.get('/SlovakiaCasesByDistrict' , (req , res) =>{
+  PluginManager.slovakiaCasesByDistrict()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+
+/**
  *  @api {get} /CivicFreedomTracker  COVID-19 Civic Freedom Tracker
  *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/CivicFreedomTracker
  *  @apiVersion 1.2.1

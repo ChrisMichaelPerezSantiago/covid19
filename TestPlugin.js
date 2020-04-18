@@ -34,5 +34,6 @@ const PluginManager = require('./src/api/index');
   //const getCivicFreedomTracker = await PluginManager.getCivicFreedomTracker();
   //const getGermanyCasesByRegion = await PluginManager.getGermanyCasesByRegion();
   //const getSwedenCasesByRegion = await PluginManager.getSwedenCasesByRegion();
-  //console.log(JSON.stringify(getSwedenCasesByRegion , null , 2));
+  //const getSlovakiaCasesByDistrict = await PluginManager.getSlovakiaCasesByDistrict();
+  //console.log(JSON.stringify(getSlovakiaCasesByDistrict , null , 2));
 })();
