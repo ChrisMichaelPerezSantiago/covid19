@@ -166,23 +166,25 @@ const deaths = async() =>{
   const body = await res.data;
   const $ = cheerio.load(body);
   const html = $.html();
-  const data = [];
-
-  const tempCases = $('div#maincounter-wrap').eq(0).text().match(/\d+/g);
-  const total_deaths = parseInt(`${tempCases[0]}${tempCases[1]}` , 10); 
   const table = tabletojson.convert(html);
+  const data = table[0];
 
-  data.push({
-    deaths: total_deaths,
-    table: table[0]
-  });
+  //const tempCases = $('div#maincounter-wrap').eq(0).text().match(/\d+/g);
+  //const total_deaths = parseInt(`${tempCases[0]}${tempCases[1]}` , 10); 
+  //const table = tabletojson.convert(html);
 
-  data[0].table.forEach((obj) => renameKey(obj , 'Total Deaths' , 'TotalDeaths'));
-  data[0].table.forEach((obj) => renameKey(obj , 'Change in Total' , 'ChangeInTotal'));
-  data[0].table.forEach((obj) => renameKey(obj , 'Change in  Total (%)' , 'ChangeTotalInPercent'));
+  //data.push({
+  //  //deaths: total_deaths,
+  //  table: table[0]
+  //});
+
+  data.forEach((obj) => renameKey(obj , 'Total\nDeaths' , 'TotalDeaths'));
+  data.forEach((obj) => renameKey(obj , 'Change\nin Total' , 'ChangeInTotal'));
+  data.forEach((obj) => renameKey(obj , 'Change in \nTotal (%)' , 'ChangeTotalInPercent'));
 
   return Promise.all(data);
 };
+
 
 const situationReports = async() =>{
   //const res = await cloudscraper(`${WHO_BASE_URL}/emergencies/diseases/novel-coronavirus-2019/situation-reports` , {

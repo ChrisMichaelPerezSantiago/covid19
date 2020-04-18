@@ -54,7 +54,7 @@ router.get('/Deaths' , (req , res) =>{
   PluginManager.deaths()
     .then(deaths =>{
       res.status(200).json({
-        deaths: deaths[0]
+        deaths: deaths
       });
     }).catch((err) =>{
       console.error(err);
