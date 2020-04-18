@@ -40,6 +40,7 @@ router.get('/', (req, res) => {
         'JapanCasesByPrefecture': '/api/v1/JapanCasesByPrefecture',
         'NewZealandCasesByDistrictHealthBoard': '/api/v1/NewZealandCasesByDistrictHealthBoard',
         'UnitedStateCasesByStates': '/api/v1/UnitedStateCasesByStates',
+        'GermanyCasesByRegion': '/api/v1/GermanyCasesByRegion',
         'CivicFreedomTracker': '/api/v1/CivicFreedomTracker',
       }
     ]

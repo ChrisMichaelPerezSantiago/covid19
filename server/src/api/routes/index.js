@@ -865,6 +865,33 @@ router.get('/UnitedStateCasesByStates' , (req , res) =>{
 
 
 /**
+ *  @api {get} /GermanyCasesByRegion  Germany Coronavirus (COVID-2019) cases by region
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/GermanyCasesByRegion
+ *  @apiVersion 1.2.1
+ *  @apiName GetGermanyCasesByRegion
+ *  @apiGroup GermanyCasesByRegion
+ *  @apiDescription Germany Coronavirus (COVID-2019) cases by region
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.region
+ *  @apiSuccess {Number} table.infectedCount
+ *  @apiSuccess {Number} table.deceasedCount
+ **/
+
+router.get('/GermanyCasesByRegion' , (req , res) =>{
+  PluginManager.germanyCasesByRegion()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+
+
+/**
  *  @api {get} /CivicFreedomTracker  COVID-19 Civic Freedom Tracker
  *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/CivicFreedomTracker
  *  @apiVersion 1.2.1

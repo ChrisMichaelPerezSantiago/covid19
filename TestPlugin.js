@@ -32,5 +32,6 @@ const PluginManager = require('./src/api/index');
   //const getNewZealandCasesByDistrictHealthBoard = await PluginManager.getNewZealandCasesByDistrictHealthBoard();
   //const unitedStateCasesByStates = await PluginManager.getUnitedStateCasesByStates();
   //const getCivicFreedomTracker = await PluginManager.getCivicFreedomTracker();
-  //console.log(JSON.stringify(getCivicFreedomTracker , null , 2));
+  //const getGermanyCasesByRegion = await PluginManager.getGermanyCasesByRegion();
+  //console.log(JSON.stringify(getGermanyCasesByRegion , null , 2));
 })();

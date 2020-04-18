@@ -774,6 +774,56 @@
   },
   {
     "type": "get",
+    "url": "/GermanyCasesByRegion",
+    "title": "Germany Coronavirus (COVID-2019) cases by region",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/GermanyCasesByRegion"
+      }
+    ],
+    "version": "1.2.1",
+    "name": "GetGermanyCasesByRegion",
+    "group": "GermanyCasesByRegion",
+    "description": "<p>Germany Coronavirus (COVID-2019) cases by region</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.region",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.infectedCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.deceasedCount",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "GermanyCasesByRegion"
+  },
+  {
+    "type": "get",
     "url": "/IndiaCasesByStates",
     "title": "India Coronavirus (COVID-2019) cases by states",
     "sampleRequest": [
