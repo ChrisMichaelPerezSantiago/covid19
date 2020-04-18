@@ -280,46 +280,35 @@
 *Total Deaths of Novel Coronavirus (2019-nCoV)*
 
 ```json
-[
-  [
+{
+  "deaths": [
     {
-      "deaths": 898546,
-      "table": [
-        {
-          "Date": "Mar. 14",
-          "Total Deaths": "5,833",
-          "Change in Total": "404",
-          "Change in  Total (%)": "7%"
-        },
-        {
-          "Date": "Mar. 13",
-          "Total Deaths": "5,429",
-          "Change in Total": "448",
-          "Change in  Total (%)": "9%"
-        },
-        {
-          "Date": "Mar. 12",
-          "Total Deaths": "4,981",
-          "Change in Total": "353",
-          "Change in  Total (%)": "8%"
-        },
-        {
-          "Date": "Mar. 11",
-          "Total Deaths": "4,628",
-          "Change in Total": "332",
-          "Change in  Total (%)": "8%"
-        },
-        {
-          "Date": "Mar. 10",
-          "Total Deaths": "4,296",
-          "Change in Total": "271",
-          "Change in  Total (%)": "7%"
-        },
-        // .....
-      ]
-    }
+      "Date": "Apr. 17",
+      "TotalDeaths": "154,145",
+      "ChangeInTotal": "8,672",
+      "ChangeTotalInPercent": "6%"
+    },
+    {
+      "Date": "Apr. 16",
+      "TotalDeaths": "145,473",
+      "ChangeInTotal": "6,998",
+      "ChangeTotalInPercent": "5%"
+    },
+    {
+      "Date": "Apr. 15",
+      "TotalDeaths": "138,475",
+      "ChangeInTotal": "8,096",
+      "ChangeTotalInPercent": "6%"
+    },
+    {
+      "Date": "Apr. 14",
+      "TotalDeaths": "130,379",
+      "ChangeInTotal": "10,761",
+      "ChangeTotalInPercent": "9%"
+    },
+    // .....
   ]
-]
+}
 ```
 
 ## PluginManager.getSituationReports()
