@@ -1403,6 +1403,71 @@ await PluginManager.downloadReportsToCSV();
 ]
 ```
 
+## <img src="https://www.worldometers.info/img/flags/small/tn_lo-flag.gif" alt="Slovakia"> Slovakia
+### PluginManager.getSlovakiaCasesByDistrict();
+
+```json
+[
+  [
+    {
+      "table": [
+        {
+          "attributes": {
+            "NAME": "Okresy Bratislava",
+            "hospitalizovani_so_symptomami": 2,
+            "intenzivna_starostlivost": 0,
+            "celkom_hospitalizovani": 2,
+            "domaca_izolacia": 10,
+            "miesto_liecenia_nezverejnene": 13,
+            "celkom_sucasne_pozitivni": 192,
+            "pozitivni_predch_den": 188,
+            "novi_pozitivni": 4,
+            "vyzdraveni": 0,
+            "mrtvi": 0,
+            "celkom_pozitivni": 192,
+            "vykonane_testy": 0
+          }
+        },
+        {
+          "attributes": {
+            "NAME": "Pezinok",
+            "hospitalizovani_so_symptomami": 0,
+            "intenzivna_starostlivost": 0,
+            "celkom_hospitalizovani": 0,
+            "domaca_izolacia": 0,
+            "miesto_liecenia_nezverejnene": 1,
+            "celkom_sucasne_pozitivni": 89,
+            "pozitivni_predch_den": 88,
+            "novi_pozitivni": 1,
+            "vyzdraveni": 0,
+            "mrtvi": 0,
+            "celkom_pozitivni": 89,
+            "vykonane_testy": 0
+          }
+        },
+        {
+          "attributes": {
+            "NAME": "neuvedený",
+            "hospitalizovani_so_symptomami": 0,
+            "intenzivna_starostlivost": 0,
+            "celkom_hospitalizovani": 0,
+            "domaca_izolacia": 0,
+            "miesto_liecenia_nezverejnene": 0,
+            "celkom_sucasne_pozitivni": 53,
+            "pozitivni_predch_den": 53,
+            "novi_pozitivni": 0,
+            "vyzdraveni": 0,
+            "mrtvi": 0,
+            "celkom_pozitivni": 53,
+            "vykonane_testy": 0
+          }
+        },
+        // .....
+      ]
+    }
+  ]
+]
+```
 
 -----
 
