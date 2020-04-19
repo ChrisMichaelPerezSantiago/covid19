@@ -1,4 +1,4 @@
-# **🐛 COVID19** (version v1.2.0)
+# **🐛 COVID19** (version v1.2.1)
 
 ![node version](https://img.shields.io/badge/node->=10.16.x-brightgreen.svg)
 ![npm version](https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg)
@@ -67,17 +67,22 @@
 *Symptoms of the novel coronavirus (2019-nCoV) may appear in as few as `2` days or as long as `14` (estimated ranges vary from `2-10` days, `2-14` days, and `10-14` days, [see details](https://www.worldometers.info/coronavirus/coronavirus-incubation-period/)), during which the virus is contagious but the patient does not display any symptom (asymptomatic transmission).*
 
 
-## 🎉 COVID19 API - UPDATED v1.2.0
-- [x] *This new version **v1.2.0** is not mandatory to download, but it does bring new functions related to cases by countries and their states.*
-- [x] *Cases detected by the states, regions, or Communities of each country. For future updates this list may increase.*
+## 🎉 COVID19 API - UPDATED v1.2.1
+- [x] *Fixed a bug related to the `getDeaths()` function, this because now the **worldometers** website data had to be parsed directly from the table element.*
+- [x] *Cases detected by the states, regions, or Communities of each country. For future updates this list may increase. **List updated today 04/19/2020***
+  - `PluginManager.getGermanyCasesByRegion()`
+  - `PluginManager.getSwedenCasesByRegion()`
+  - `PluginManager.getSlovakiaCasesByDistrict()`
+  - `PluginManager.getPortugalCasesByRegion()`
+  - `PluginManager.getPolandCasesByRegion()`
+  - `PluginManager.getPalestineCasesByRegion()`
+  - `PluginManager.getNorwayCasesByRegion()`
+  - `PluginManager.getBrazilCasesByRegion()`
+  - `PluginManager.getAlgeriaCasesByRegion()`
 
-  - `PluginManager.getIndiaCasesByStates()`
-  - `PluginManager.getSpainCasesByCommunities()`
-  - `PluginManager.getAustraliaCasesByStates()`
-  - `PluginManager.getCanadaCasesByProvincesAndHealthRegion()`
-  - `PluginManager.getJapanCasesByPrefecture()`
-  - `PluginManager.getNewZealandCasesByDistrictHealthBoard()`
-  - `PluginManager.getUnitedStateCasesByStates()`
+- [x] *Data Provided by ICNL The International Center for Not-for-Profit Law*
+  - *COVID-19 Civic Freedom Tracker*
+  - `PluginManager.getCivicFreedomTracker()` 
 
 
 ## 📖 API Documentation
