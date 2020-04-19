@@ -1,6 +1,49 @@
 [
   {
     "type": "get",
+    "url": "/AlgeriaCasesByRegion",
+    "title": "Algeria Coronavirus (COVID-2019) cases by region",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/AlgeriaCasesByRegion"
+      }
+    ],
+    "version": "1.2.1",
+    "name": "GetAlgeriaCasesByRegion",
+    "group": "AlgeriaCasesByRegion",
+    "description": "<p>Algeria Coronavirus (COVID-2019) cases by region</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.region",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.cases",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "AlgeriaCasesByRegion"
+  },
+  {
+    "type": "get",
     "url": "/AllCasesInAmerica",
     "title": "Number of COVID-19 cases in the Americas region",
     "sampleRequest": [
@@ -345,6 +388,49 @@
     },
     "filename": "./server/src/api/routes/index.js",
     "groupTitle": "AustraliaCasesByStates"
+  },
+  {
+    "type": "get",
+    "url": "/BrazilCasesByRegion",
+    "title": "Brazil Coronavirus (COVID-2019) cases by region",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/BrazilCasesByRegion"
+      }
+    ],
+    "version": "1.2.1",
+    "name": "GetBrazilCasesByRegion",
+    "group": "BrazilCasesByRegion",
+    "description": "<p>Brazil Coronavirus (COVID-2019) cases by region</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.state",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.cases",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "BrazilCasesByRegion"
   },
   {
     "success": {
@@ -1164,6 +1250,49 @@
   },
   {
     "type": "get",
+    "url": "/NorwayCasesByRegion",
+    "title": "Norway Coronavirus (COVID-2019) cases by region",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/NorwayCasesByRegion"
+      }
+    ],
+    "version": "1.2.1",
+    "name": "GetNorwayCasesByRegion",
+    "group": "NorwayCasesByRegion",
+    "description": "<p>Norway Coronavirus (COVID-2019) cases by region</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.region",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.infectedCount",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "NorwayCasesByRegion"
+  },
+  {
+    "type": "get",
     "url": "/PRDataByRegions",
     "title": "Distribution by Health Region",
     "sampleRequest": [
@@ -1817,6 +1946,142 @@
     },
     "filename": "./server/src/api/routes/index.js",
     "groupTitle": "PRGeneralResults"
+  },
+  {
+    "type": "get",
+    "url": "/PalestineCasesByRegion",
+    "title": "Palestine Coronavirus (COVID-2019) cases by region",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/PalestineCasesByRegion"
+      }
+    ],
+    "version": "1.2.1",
+    "name": "GetPalestineCasesByRegion",
+    "group": "PalestineCasesByRegion",
+    "description": "<p>Palestine Coronavirus (COVID-2019) cases by region</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.region",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.cases",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "PalestineCasesByRegion"
+  },
+  {
+    "type": "get",
+    "url": "/PolandCasesByRegion",
+    "title": "Poland Coronavirus (COVID-2019) cases by region",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/PolandCasesByRegion"
+      }
+    ],
+    "version": "1.2.1",
+    "name": "GetPolandCasesByRegion",
+    "group": "PolandCasesByRegion",
+    "description": "<p>Poland Coronavirus (COVID-2019) cases by region</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.region",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.infectedCount",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.deceasedCount",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "PolandCasesByRegion"
+  },
+  {
+    "type": "get",
+    "url": "/PortugalCasesByRegion",
+    "title": "Portugal Coronavirus (COVID-2019) cases by region",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/PortugalCasesByRegion"
+      }
+    ],
+    "version": "1.2.1",
+    "name": "GetPortugalCasesByRegion",
+    "group": "PortugalCasesByRegion",
+    "description": "<p>Portugal Coronavirus (COVID-2019) cases by region</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.region",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.cases",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "PortugalCasesByRegion"
   },
   {
     "type": "get",

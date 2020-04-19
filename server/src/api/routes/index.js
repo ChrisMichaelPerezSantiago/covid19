@@ -953,6 +953,150 @@ router.get('/SlovakiaCasesByDistrict' , (req , res) =>{
     });
 });
 
+/**
+ *  @api {get} /PortugalCasesByRegion  Portugal Coronavirus (COVID-2019) cases by region
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/PortugalCasesByRegion
+ *  @apiVersion 1.2.1
+ *  @apiName GetPortugalCasesByRegion
+ *  @apiGroup PortugalCasesByRegion
+ *  @apiDescription Portugal Coronavirus (COVID-2019) cases by region
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.region
+ *  @apiSuccess {Number} table.cases
+ **/
+
+router.get('/PortugalCasesByRegion' , (req , res) =>{
+  PluginManager.portugalCasesByRegion()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+/**
+ *  @api {get} /PolandCasesByRegion  Poland Coronavirus (COVID-2019) cases by region
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/PolandCasesByRegion
+ *  @apiVersion 1.2.1
+ *  @apiName GetPolandCasesByRegion
+ *  @apiGroup PolandCasesByRegion
+ *  @apiDescription Poland Coronavirus (COVID-2019) cases by region
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.region
+ *  @apiSuccess {Number} table.infectedCount
+ *  @apiSuccess {Number} table.deceasedCount
+ **/
+
+router.get('/PolandCasesByRegion' , (req , res) =>{
+  PluginManager.polandCasesByRegion()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+/**
+ *  @api {get} /PalestineCasesByRegion  Palestine Coronavirus (COVID-2019) cases by region
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/PalestineCasesByRegion
+ *  @apiVersion 1.2.1
+ *  @apiName GetPalestineCasesByRegion
+ *  @apiGroup PalestineCasesByRegion
+ *  @apiDescription Palestine Coronavirus (COVID-2019) cases by region
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.region
+ *  @apiSuccess {Number} table.cases
+ **/
+
+router.get('/PalestineCasesByRegion' , (req , res) =>{
+  PluginManager.palestineCasesByRegion()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+/**
+ *  @api {get} /NorwayCasesByRegion  Norway Coronavirus (COVID-2019) cases by region
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/NorwayCasesByRegion
+ *  @apiVersion 1.2.1
+ *  @apiName GetNorwayCasesByRegion
+ *  @apiGroup NorwayCasesByRegion
+ *  @apiDescription Norway Coronavirus (COVID-2019) cases by region
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.region
+ *  @apiSuccess {Number} table.infectedCount
+ **/
+
+router.get('/NorwayCasesByRegion' , (req , res) =>{
+  PluginManager.norwayCasesByRegion()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+/**
+ *  @api {get} /BrazilCasesByRegion  Brazil Coronavirus (COVID-2019) cases by region
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/BrazilCasesByRegion
+ *  @apiVersion 1.2.1
+ *  @apiName GetBrazilCasesByRegion
+ *  @apiGroup BrazilCasesByRegion
+ *  @apiDescription Brazil Coronavirus (COVID-2019) cases by region
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.state
+ *  @apiSuccess {Number} table.cases
+ **/
+
+router.get('/BrazilCasesByRegion' , (req , res) =>{
+  PluginManager.brazilCasesByRegion()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+/**
+ *  @api {get} /AlgeriaCasesByRegion  Algeria Coronavirus (COVID-2019) cases by region
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/AlgeriaCasesByRegion
+ *  @apiVersion 1.2.1
+ *  @apiName GetAlgeriaCasesByRegion
+ *  @apiGroup AlgeriaCasesByRegion
+ *  @apiDescription Algeria Coronavirus (COVID-2019) cases by region
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.region
+ *  @apiSuccess {Number} table.cases
+ **/
+
+router.get('/AlgeriaCasesByRegion' , (req , res) =>{
+  PluginManager.algeriaCasesByRegion()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
 
 /**
  *  @api {get} /CivicFreedomTracker  COVID-19 Civic Freedom Tracker

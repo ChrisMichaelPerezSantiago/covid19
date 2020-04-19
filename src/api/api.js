@@ -984,7 +984,69 @@ const slovakiaCasesByDistrict = async() =>{
 
   return Promise.all(table);
 };
+
+const portugalCasesByRegion = async() =>{
+  const res = await axios.get('https://api.apify.com/v2/key-value-stores/BXGEYTTUQzYBboEQK/records/LATEST?disableRedirect=true');
+  const data = res.data.infectedByRegion;
+
+  data.forEach((obj) => renameKey(obj , 'value' , 'cases'));
   
+  const table = [{table: data}];
+
+  return Promise.all(table);
+};  
+
+const polandCasesByRegion = async() =>{
+  const res = await axios.get('https://api.apify.com/v2/key-value-stores/3Po6TV7wTht4vIEid/records/LATEST?disableRedirect=true');
+  const data = res.data.infectedByRegion;
+  
+  const table = [{table: data}];
+
+  return Promise.all(table);
+};
+
+const palestineCasesByRegion = async() =>{
+  const res = await axios.get('https://api.apify.com/v2/key-value-stores/SbribCOVf2wgR868y/records/LATEST?disableRedirect=true');
+  const data = res.data.infectedByRegion;
+
+  data.forEach((obj) => renameKey(obj , 'value' , 'cases'));
+
+  const table = [{table: data}];
+
+  return Promise.all(table);
+};
+
+const norwayCasesByRegion = async() =>{
+  const res = await axios.get('https://api.apify.com/v2/key-value-stores/3qlmMu1XN2ZLoVIQt/records/LATEST?disableRedirect=true');
+  const data = res.data.infectedByRegion;
+
+  const table = [{table: data}];
+
+  return Promise.all(table);
+};
+
+const brazilCasesByRegion = async() =>{
+  const res = await axios.get('https://api.apify.com/v2/key-value-stores/TyToNta7jGKkpszMZ/records/LATEST?disableRedirect=true');
+  const data = res.data.infectedByRegion;
+
+  data.forEach((obj) => renameKey(obj , 'count' , 'cases'));
+
+  const table = [{table: data}];
+
+  return Promise.all(table);
+};
+
+const algeriaCasesByRegion = async() =>{
+  const res = await axios.get('https://api.apify.com/v2/key-value-stores/pp4Wo2slUJ78ZnaAi/records/LATEST?disableRedirect=true');
+  const data = res.data.infectedByRegion;
+
+  data.forEach((obj) => delete obj.newly);
+  data.forEach((obj) => renameKey(obj , 'value' , 'cases'));
+
+  const table = [{table: data}];
+
+  return Promise.all(table);
+};
 
 const reportsToCSV = () =>{
   try{
@@ -1036,5 +1098,11 @@ module.exports = {
   germanyCasesByRegion,
   swedenCasesByRegion,
   slovakiaCasesByDistrict,
+  portugalCasesByRegion,
+  polandCasesByRegion,
+  palestineCasesByRegion,
+  norwayCasesByRegion,
+  brazilCasesByRegion,
+  algeriaCasesByRegion,
   civicFreedomTracker
 };

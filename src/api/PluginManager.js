@@ -163,8 +163,33 @@ class PluginManager {
     return res;
   };
 
-  async downloadReportsToCSV(){
-    const res = await Promise.all(this.plugins.map(plugin => plugin.reportsToCSV()));
+  async getPortugalCasesByRegion(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.portugalCasesByRegion()));
+    return res;
+  };
+
+  async getPolandCasesByRegion(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.polandCasesByRegion()));
+    return res;
+  };
+
+  async getPalestineCasesByRegion(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.palestineCasesByRegion()));
+    return res;
+  };
+
+  async getNorwayCasesByRegion(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.norwayCasesByRegion()));
+    return res;
+  };
+
+  async getBrazilCasesByRegion(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.brazilCasesByRegion()));
+    return res;
+  };
+
+  async getAlgeriaCasesByRegion(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.algeriaCasesByRegion()));
     return res;
   };
 

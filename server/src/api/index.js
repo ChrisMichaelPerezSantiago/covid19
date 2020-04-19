@@ -43,6 +43,12 @@ router.get('/', (req, res) => {
         'GermanyCasesByRegion': '/api/v1/GermanyCasesByRegion',
         'SwedenCasesByRegion': '/api/v1/SwedenCasesByRegion',
         'SlovakiaCasesByDistrict': '/api/v1/SlovakiaCasesByDistrict',
+        'PortugalCasesByRegion': '/api/v1/PortugalCasesByRegion',
+        'PolandCasesByRegion': '/api/v1/PolandCasesByRegion',
+        'PalestineCasesByRegion': '/api/v1/PalestineCasesByRegion',
+        'NorwayCasesByRegion': '/api/v1/NorwayCasesByRegion',
+        'BrazilCasesByRegion': '/api/v1/BrazilCasesByRegion',
+        'AlgeriaCasesByRegion': '/api/v1/AlgeriaCasesByRegion',
         'CivicFreedomTracker': '/api/v1/CivicFreedomTracker',
       }
     ]
