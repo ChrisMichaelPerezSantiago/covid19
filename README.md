@@ -1404,7 +1404,7 @@ await PluginManager.downloadReportsToCSV();
 ```
 
 ## <img src="https://www.worldometers.info/img/flags/small/tn_lo-flag.gif" alt="Slovakia"> Slovakia
-### PluginManager.getSlovakiaCasesByDistrict();
+### PluginManager.getSlovakiaCasesByDistrict()
 
 ```json
 [
@@ -1467,6 +1467,182 @@ await PluginManager.downloadReportsToCSV();
     }
   ]
 ]
+```
+
+## <img src="https://www.worldometers.info/img/flags/small/tn_po-flag.gif" alt="Portugal"> Portugal
+### PluginManager.getPortugalCasesByRegion()
+
+
+```json
+{
+  "data": [
+    {
+      "table": [
+        {
+          "region": "PORTO",
+          "cases": 1059
+        },
+        {
+          "region": "LISBOA",
+          "cases": 1038
+        },
+        {
+          "region": "VILA NOVA DE GAIA",
+          "cases": 1035
+        },
+      ]
+    }
+  ]
+}
+```
+
+## <img src="https://www.worldometers.info/img/flags/small/tn_pl-flag.gif" alt="Poland"> Poland
+### PluginManager.getPolandCasesByRegion()
+
+```json
+{
+  "data": [
+    {
+      "table": [
+          {
+            "region": "dolnoslaskie",
+            "infectedCount": 1014,
+            "deceasedCount": 30
+          },
+          {
+            "region": "kujawsko-pomorskie",
+            "infectedCount": 406,
+            "deceasedCount": 16
+          },
+          {
+            "region": "lubelskie",
+            "infectedCount": 308,
+            "deceasedCount": 10
+          },
+          // .....
+      ]
+    }
+  ]
+}
+```
+
+
+## <img src="https://www.worldometers.info/img/flags/small/tn_palestine-flag.gif" alt="Palestine"> Palestine
+### PluginManager.getPalestineCasesByRegion()
+
+```json
+{
+  "data": [
+    {
+      "table": [
+        {
+          "region": "Qatanna",
+          "cases": 49
+        },
+        {
+          "region": "Bethlehem",
+          "cases": 38
+        },
+        {
+          "region": "Biddu",
+          "cases": 34
+        },
+        {
+          "region": "Artas",
+          "cases": 14
+        },
+        // .....
+      ]
+    }
+  ]
+}
+```
+
+
+## <img src="https://www.worldometers.info/img/flags/small/tn_no-flag.gif" alt="Norway"> Norway
+### PluginManager.getNorwayCasesByRegion()
+
+```json
+{
+  "data": [
+    {
+      "table": [
+        {
+          "region": "Agder",
+          "infectedCount": 287
+        },
+        {
+          "region": "Innlandet",
+          "infectedCount": 412
+        },
+        {
+          "region": "Møre og Romsdal",
+          "infectedCount": 118
+        },
+      ]
+    }
+  ]
+}  
+```
+
+
+## <img src="https://www.worldometers.info/img/flags/small/tn_br-flag.gif" alt="Brazil"> Brazil
+### PluginManager.getBrazilCasesByRegion()
+
+```json
+{
+  "data": [
+    {
+      "table": [
+        {
+          "state": "AC",
+          "cases": 142
+        },
+        {
+          "state": "AL",
+          "cases": 132
+        },
+        {
+          "state": "AP",
+          "cases": 393
+        },
+        // .....
+      ]
+    }
+  ]
+}
+```
+
+
+## <img src="https://www.worldometers.info/img/flags/small/tn_ag-flag.gif" alt="Algeria"> Algeria
+### PluginManager.getAlgeriaCasesByRegion()
+
+```json
+{
+  "data": [
+    {
+      "table": [
+        {
+            "region": "BLIDA",
+            "cases": 669
+        },
+        {
+            "region": "ALGER",
+            "cases": 445
+        },
+        {
+            "region": "ORAN",
+            "cases": 153
+        },
+        {
+            "region": "SETIF",
+            "cases": 111
+        },
+        // .....
+      ]
+    }
+  ]
+}
 ```
 
 -----
