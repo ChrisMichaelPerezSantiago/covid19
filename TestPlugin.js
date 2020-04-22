@@ -41,5 +41,6 @@ const PluginManager = require('./src/api/index');
   //const getNorwayCasesByRegion = await PluginManager.getNorwayCasesByRegion();
   //const getBrazilCasesByRegion = await PluginManager.getBrazilCasesByRegion();
   //const getAlgeriaCasesByRegion = await PluginManager.getAlgeriaCasesByRegion();
-  //console.log(JSON.stringify(getAlgeriaCasesByRegion , null , 2));
+  //const getUSAMedicalAidDistribution = await PluginManager.getUSAMedicalAidDistribution();
+  //console.log(JSON.stringify(getUSAMedicalAidDistribution , null , 2));
 })();

@@ -1159,5 +1159,6 @@ module.exports = {
   norwayCasesByRegion,
   brazilCasesByRegion,
   algeriaCasesByRegion,
-  civicFreedomTracker
+  civicFreedomTracker,
+  usaMedicalAidDistribution
 };

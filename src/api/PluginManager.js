@@ -197,6 +197,11 @@ class PluginManager {
     const res = await Promise.all(this.plugins.map(plugin => plugin.civicFreedomTracker()));
     return res;
   };
+
+  async getUSAMedicalAidDistribution(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.usaMedicalAidDistribution()));
+    return res;
+  };
 }
 
 module.exports = PluginManager;
