@@ -1704,6 +1704,37 @@ await PluginManager.downloadReportsToCSV();
 ] 
 ```
 
+## USA Medical Aid Distribution
+*Recipient Details*
+
+### PluginManager.getUSAMedicalAidDistribution()
+
+```json
+{
+  "data": [
+    {
+      "table": [
+        {
+          "recipient_Name": "1st Choice Healthcare- Administration",
+          "city": "Corning",
+          "county": "Clay County",
+          "state": "AR",
+          "first_shipment": "Tue Mar 24 2020",
+          "last_shipment": "Tue Mar 24 2020",
+          "weight_lbs": 25,
+          "country": "US",
+          "facility_type": "FQHC/Look-Alike",
+          "number_of_deliveries": 1,
+          "cost": "$109.27"
+        },
+        // .....
+      ]
+    }
+  ]
+}
+
+```
+
 ---
 
 
