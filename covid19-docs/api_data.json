@@ -2562,6 +2562,112 @@
   },
   {
     "type": "get",
+    "url": "/USAMedicalAidDistribution",
+    "title": "USA Medical Aid Distribution",
+    "sampleRequest": [
+      {
+        "url": "https://covid19-server.chrismichael.now.sh/api/v1/USAMedicalAidDistribution"
+      }
+    ],
+    "version": "1.2.2",
+    "name": "GetUSAMedicalAidDistribution",
+    "group": "USAMedicalAidDistribution",
+    "description": "<p>USA Medical Aid Distribution Recipient Details</p>",
+    "success": {
+      "fields": {
+        "Success 200": [
+          {
+            "group": "Success 200",
+            "type": "Object[]",
+            "optional": false,
+            "field": "table",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.recipient_Name",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.city",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.county",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.state",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.first_shipment",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.last_shipment",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.weight_lbs",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.country",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.facility_type",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "Number",
+            "optional": false,
+            "field": "table.number_of_deliveries",
+            "description": ""
+          },
+          {
+            "group": "Success 200",
+            "type": "String",
+            "optional": false,
+            "field": "table.cost",
+            "description": ""
+          }
+        ]
+      }
+    },
+    "filename": "./server/src/api/routes/index.js",
+    "groupTitle": "USAMedicalAidDistribution"
+  },
+  {
+    "type": "get",
     "url": "/UnitedStateCasesByStates",
     "title": "United States Coronavirus (COVID-2019) cases by states",
     "sampleRequest": [
