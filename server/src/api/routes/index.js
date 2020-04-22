@@ -1160,7 +1160,18 @@ router.get('/USAMedicalAidDistribution' , (req , res) =>{
     });
 });
 
-router.get('/PuertoRico/PRMedicalAidDistribution' , (req , res) =>{
+
+
+
+/*********************************************************************
+ *                                                                   *
+ *                EXCLUSIVE DATA ROUTES OF PUERTO RICO               *
+ *                                                                   *
+ *                                                                   *
+ *********************************************************************/
+
+
+router.get('/PuertoRico/MedicalData/PRMedicalAidDistribution' , (req , res) =>{
   PluginManager.usaMedicalAidDistribution()
     .then(data =>{
       const doc = data[0].table.filter(doc => doc.state === 'PR')
@@ -1172,7 +1183,7 @@ router.get('/PuertoRico/PRMedicalAidDistribution' , (req , res) =>{
     });
 });
 
-router.get('/PuertoRico/PRDataByTowns' , (req , res) =>{
+router.get('/PuertoRico/Biosecurity/PRDataByTowns' , (req , res) =>{
   PluginManager.prDataByTowns()
     .then(data =>{
       res.status(200).json({
@@ -1182,5 +1193,50 @@ router.get('/PuertoRico/PRDataByTowns' , (req , res) =>{
       console.error(err);
     });
 });
+
+router.get('/PuertoRico/Biosecurity/HospitalDataAndNeeds' , (req , res) =>{
+  PluginManager.prExtraData()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/PuertoRico/StatisticsPR/PRDataByRegion' , (req , res) =>{
+  PluginManager.prDataByRegion()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/PuertoRico/StatisticsPR/PRDataBySex' , (req , res) =>{
+  PluginManager.prDataBySex()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/PuertoRico/StatisticsPR/PRGeneralResults' , (req , res) =>{
+  PluginManager.prGeneralResults()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
 
 module.exports = router;

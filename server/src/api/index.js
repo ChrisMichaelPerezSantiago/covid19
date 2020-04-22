@@ -62,10 +62,22 @@ router.get('/PuertoRico', (req, res) => {
   res.json({
     message: 'COVID19 API PUERTO RICO - 👋🌎🌍🌏',
     author: 'Chris Michael',
-    entries: [
+    statistics_pr: [
       {
-        'PRMedicalAidDistribution': 'PRMedicalAidDistribution',
-        'PRDataByTowns': 'PRDataByTowns'
+       'PRDataByRegion': '/StatisticsPR/PRDataByRegion',
+       'PRDataBySex': '/StatisticsPR/PRDataBySex',
+       'PRGeneralResults': '/StatisticsPR/PRGeneralResults'
+      }
+    ],
+    medical_data: [
+      {
+        'PRMedicalAidDistribution': '/MedicalData/PRMedicalAidDistribution',
+      }
+    ],
+    biosecurity: [
+      {
+        'PRDataByTowns': '/Biosecurity/PRDataByTowns',
+        'HospitalDataAndNeeds': '/Biosecurity/HospitalDataAndNeeds',
       }
     ]
   });
