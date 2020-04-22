@@ -5,7 +5,7 @@ const tabletojson = require('tabletojson').Tabletojson;
 const _ = require('lodash');
 const csv = require('csvtojson');
 const request = require('request')
-const {renameKey , requests} = require('./utils/utils');
+const {renameKey , requests , currencyFormatter} = require('./utils/utils');
 const { 
   BASE_URL , 
   WHO_BASE_URL,
@@ -1091,6 +1091,61 @@ const civicFreedomTracker = async() =>{
   return Promise.all(table);
 };
 
+
+const usaMedicalAidDistribution = async() =>{
+  const res = await axios.get('https://services1.arcgis.com/ZGrptGlLV2IILABw/arcgis/rest/services/COVID19_US_Shipments_Facilities/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Recipient_Name%20asc&outSR=102100&resultOffset=0&resultRecordCount=2000&resultType=standard&cacheHint=true');
+  const data =  res.data.features;
+
+  data.forEach((doc) =>{
+    delete doc.attributes.ID
+    delete doc.attributes.Lat
+    delete doc.attributes.Long
+    delete doc.attributes.FID
+    delete doc.attributes.Grants
+    delete doc.attributes.DDD
+    delete doc.attributes.__Years
+    delete doc.attributes.HU_Volume
+  });
+
+  data.forEach((obj) =>{
+    renameKey(obj.attributes , '__of_Deliveries' , 'number_of_Deliveries')
+    renameKey(obj.attributes , 'Value' , 'cost')
+  });
+
+  const docs = [];
+  data.map(doc =>{
+    const recipient_Name = doc.attributes.Recipient_Name;
+    const city = doc.attributes.City;
+    const county = doc.attributes.County;
+    const state = doc.attributes.State;
+    const first_shipment = new Date(doc.attributes.First_Shipment).toDateString();
+    const last_shipment = new Date(doc.attributes.Last_Shipment).toDateString();
+    const weight_lbs = doc.attributes.HU_Weight;
+    const country = doc.attributes.Country;
+    const facility_type = doc.attributes.Facility_Type;
+    const number_of_deliveries = doc.attributes.number_of_Deliveries;
+    const cost = currencyFormatter.format(doc.attributes.cost);
+    docs.push({
+      recipient_Name,
+      city,
+      county,
+      state,
+      first_shipment,
+      last_shipment,
+      weight_lbs,
+      country,
+      facility_type,
+      number_of_deliveries,
+      cost
+    });
+  });
+
+  const table = [{table: docs}];
+
+  return Promise.all(table);
+};
+
+
 //const reportsToCSV = () =>{
 //  try{
 //    setTimeout(async() => {
@@ -1148,5 +1203,6 @@ module.exports = {
   norwayCasesByRegion,
   brazilCasesByRegion,
   algeriaCasesByRegion,
-  civicFreedomTracker
+  civicFreedomTracker,
+  usaMedicalAidDistribution
 };
