@@ -1126,4 +1126,61 @@ router.get('/CivicFreedomTracker' , (req , res) =>{
     });
 });
 
+/**
+ *  @api {get} /USAMedicalAidDistribution USA Medical Aid Distribution
+ *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/USAMedicalAidDistribution
+ *  @apiVersion 1.2.2
+ *  @apiName GetUSAMedicalAidDistribution
+ *  @apiGroup USAMedicalAidDistribution
+ *  @apiDescription USA Medical Aid Distribution Recipient Details
+ * 
+ *  @apiSuccess {Object[]} table
+ *  @apiSuccess {String} table.recipient_Name
+ *  @apiSuccess {String} table.city
+ *  @apiSuccess {String} table.county
+ *  @apiSuccess {String} table.state
+ *  @apiSuccess {String} table.first_shipment
+ *  @apiSuccess {String} table.last_shipment
+ *  @apiSuccess {Number} table.weight_lbs
+ *  @apiSuccess {String} table.country
+ *  @apiSuccess {String} table.facility_type
+ *  @apiSuccess {Number} table.number_of_deliveries
+ *  @apiSuccess {String} table.cost
+ **/
+
+
+router.get('/USAMedicalAidDistribution' , (req , res) =>{
+  PluginManager.usaMedicalAidDistribution()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/PuertoRico/PRMedicalAidDistribution' , (req , res) =>{
+  PluginManager.usaMedicalAidDistribution()
+    .then(data =>{
+      const doc = data[0].table.filter(doc => doc.state === 'PR')
+      res.status(200).json({
+        data: doc
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
+router.get('/PuertoRico/PRDataByTowns' , (req , res) =>{
+  PluginManager.prDataByTowns()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
 module.exports = router;
