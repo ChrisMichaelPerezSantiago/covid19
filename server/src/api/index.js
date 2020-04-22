@@ -50,6 +50,22 @@ router.get('/', (req, res) => {
         'BrazilCasesByRegion': '/api/v1/BrazilCasesByRegion',
         'AlgeriaCasesByRegion': '/api/v1/AlgeriaCasesByRegion',
         'CivicFreedomTracker': '/api/v1/CivicFreedomTracker',
+        'USAMedicalAidDistribution': '/api/v1/USAMedicalAidDistribution',
+        'PRMedicalAidDistribution': '/PuertoRico/MedicalAidDistribution'
+      }
+    ]
+  });
+});
+
+
+router.get('/PuertoRico', (req, res) => {
+  res.json({
+    message: 'COVID19 API PUERTO RICO - 👋🌎🌍🌏',
+    author: 'Chris Michael',
+    entries: [
+      {
+        'PRMedicalAidDistribution': 'PRMedicalAidDistribution',
+        'PRDataByTowns': 'PRDataByTowns'
       }
     ]
   });
