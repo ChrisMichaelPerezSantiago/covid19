@@ -35,7 +35,14 @@ const exportCSVFile = (data, headers , title) =>{
   convertToCSV(data , headers , title);
 };
 
+const currencyFormatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 2
+});
+
 module.exports = {
   renameKey,
-  exportCSVFile
+  exportCSVFile,
+  currencyFormatter
 };
