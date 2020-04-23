@@ -5,7 +5,7 @@
     "title": "Algeria Coronavirus (COVID-2019) cases by region",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/AlgeriaCasesByRegion"
+        "url": "https://covid19api.io/api/v1/AlgeriaCasesByRegion"
       }
     ],
     "version": "1.2.1",
@@ -48,7 +48,7 @@
     "title": "Number of COVID-19 cases in the Americas region",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/AllCasesInAmerica"
+        "url": "https://covid19api.io/api/v1/AllCasesInAmerica"
       }
     ],
     "version": "1.1.9",
@@ -98,7 +98,7 @@
     "title": "Situation update for the EU/EEA and the UK",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/AllCasesInEurope"
+        "url": "https://covid19api.io/api/v1/AllCasesInEurope"
       }
     ],
     "version": "1.1.9",
@@ -148,7 +148,7 @@
     "title": "Get list of all reports",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/AllReports"
+        "url": "https://covid19api.io/api/v1/AllReports"
       }
     ],
     "version": "1.1.9",
@@ -345,7 +345,7 @@
     "title": "Austrailia Coronavirus (COVID-2019) cases by states",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/AustraliaCasesByStates"
+        "url": "https://covid19api.io/api/v1/AustraliaCasesByStates"
       }
     ],
     "version": "1.2.0",
@@ -395,7 +395,7 @@
     "title": "Brazil Coronavirus (COVID-2019) cases by region",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/BrazilCasesByRegion"
+        "url": "https://covid19api.io/api/v1/BrazilCasesByRegion"
       }
     ],
     "version": "1.2.1",
@@ -466,7 +466,7 @@
     "title": "Canada Coronavirus (COVID-2019) cases by Provinces And Health Region",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/CanadaCasesByProvincesAndHealthRegion"
+        "url": "https://covid19api.io/api/v1/CanadaCasesByProvincesAndHealthRegion"
       }
     ],
     "version": "1.2.0",
@@ -544,7 +544,7 @@
     "title": "Coronavirus cases in all US states",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/CasesInAllUSStates"
+        "url": "https://covid19api.io/api/v1/CasesInAllUSStates"
       }
     ],
     "version": "1.1.9",
@@ -643,7 +643,7 @@
     "title": "COVID-19 Civic Freedom Tracker",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/CivicFreedomTracker"
+        "url": "https://covid19api.io/api/v1/CivicFreedomTracker"
       }
     ],
     "version": "1.2.1",
@@ -714,7 +714,7 @@
     "title": "Age of Coronavirus Deaths - COVID-19 Fatality Rate by AGE",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/FatalityRateByAge"
+        "url": "https://covid19api.io/api/v1/FatalityRateByAge"
       }
     ],
     "version": "1.1.9",
@@ -764,7 +764,7 @@
     "title": "COVID-19 Fatality Rate by COMORBIDITY",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/FatalityRateByComorbidities"
+        "url": "https://covid19api.io/api/v1/FatalityRateByComorbidities"
       }
     ],
     "version": "1.1.9",
@@ -814,7 +814,7 @@
     "title": "Sex ratio - COVID-19 Fatality Rate by SEX",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/FatalityRateBySex"
+        "url": "https://covid19api.io/api/v1/FatalityRateBySex"
       }
     ],
     "version": "1.1.9",
@@ -864,7 +864,7 @@
     "title": "Germany Coronavirus (COVID-2019) cases by region",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/GermanyCasesByRegion"
+        "url": "https://covid19api.io/api/v1/GermanyCasesByRegion"
       }
     ],
     "version": "1.2.1",
@@ -914,7 +914,7 @@
     "title": "India Coronavirus (COVID-2019) cases by states",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/IndiaCasesByStates"
+        "url": "https://covid19api.io/api/v1/IndiaCasesByStates"
       }
     ],
     "version": "1.2.0",
@@ -1020,7 +1020,7 @@
     "title": "Japan Coronavirus (COVID-2019) cases by prefecture",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/JapanCasesByPrefecture"
+        "url": "https://covid19api.io/api/v1/JapanCasesByPrefecture"
       }
     ],
     "version": "1.2.0",
@@ -1063,7 +1063,7 @@
     "title": "Johns Hopkins - Coronavirus Resource Center (CSSE COVID-19 Dataset)",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/JohnsHopkinsDataDailyReport"
+        "url": "https://covid19api.io/api/v1/JohnsHopkinsDataDailyReport"
       }
     ],
     "version": "1.1.9",
@@ -1162,7 +1162,7 @@
     "title": "New Zealand Coronavirus (COVID-2019) cases by District Health Board",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/NewZealandCasesByDistrictHealthBoard"
+        "url": "https://covid19api.io/api/v1/NewZealandCasesByDistrictHealthBoard"
       }
     ],
     "version": "1.2.0",
@@ -1254,7 +1254,7 @@
     "title": "Norway Coronavirus (COVID-2019) cases by region",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/NorwayCasesByRegion"
+        "url": "https://covid19api.io/api/v1/NorwayCasesByRegion"
       }
     ],
     "version": "1.2.1",
@@ -1297,7 +1297,7 @@
     "title": "Distribution by Health Region",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/PRDataByRegions"
+        "url": "https://covid19api.io/api/v1/PRDataByRegions"
       }
     ],
     "version": "1.1.9",
@@ -1361,7 +1361,7 @@
     "title": "According to the Reported Sex",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/PRDataBySex"
+        "url": "https://covid19api.io/api/v1/PRDataBySex"
       }
     ],
     "version": "1.1.9",
@@ -1404,7 +1404,7 @@
     "title": "Positive Cases by Municipality of Residence",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/PRDataByTowns"
+        "url": "https://covid19api.io/api/v1/PRDataByTowns"
       }
     ],
     "version": "1.1.9",
@@ -1454,7 +1454,7 @@
     "title": "Availability of necessary items / products for each hospital",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/PRExtraData"
+        "url": "https://covid19api.io/api/v1/PRExtraData"
       }
     ],
     "version": "1.1.9",
@@ -1903,7 +1903,7 @@
     "title": "Quantity and Percentage Distribution",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/PRGeneralResults"
+        "url": "https://covid19api.io/api/v1/PRGeneralResults"
       }
     ],
     "version": "1.1.9",
@@ -1953,7 +1953,7 @@
     "title": "Palestine Coronavirus (COVID-2019) cases by region",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/PalestineCasesByRegion"
+        "url": "https://covid19api.io/api/v1/PalestineCasesByRegion"
       }
     ],
     "version": "1.2.1",
@@ -1996,7 +1996,7 @@
     "title": "Poland Coronavirus (COVID-2019) cases by region",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/PolandCasesByRegion"
+        "url": "https://covid19api.io/api/v1/PolandCasesByRegion"
       }
     ],
     "version": "1.2.1",
@@ -2046,7 +2046,7 @@
     "title": "Portugal Coronavirus (COVID-2019) cases by region",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/PortugalCasesByRegion"
+        "url": "https://covid19api.io/api/v1/PortugalCasesByRegion"
       }
     ],
     "version": "1.2.1",
@@ -2089,7 +2089,7 @@
     "title": "Confirmed Cases and Deaths by Country",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/ReportsByCountries/:country"
+        "url": "https://covid19api.io/api/v1/ReportsByCountries/:country"
       }
     ],
     "version": "1.1.9",
@@ -2218,7 +2218,7 @@
     "title": "Coronavirus disease (COVID-2019) situation reports",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/SituationReports"
+        "url": "https://covid19api.io/api/v1/SituationReports"
       }
     ],
     "version": "1.1.9",
@@ -2268,7 +2268,7 @@
     "title": "Slovakia Coronavirus (COVID-2019) cases by district",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/SlovakiaCasesByDistrict"
+        "url": "https://covid19api.io/api/v1/SlovakiaCasesByDistrict"
       }
     ],
     "version": "1.2.1",
@@ -2388,7 +2388,7 @@
     "title": "Spain Coronavirus (COVID-2019) cases by comunities",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/SpainCasesByCommunities"
+        "url": "https://covid19api.io/api/v1/SpainCasesByCommunities"
       }
     ],
     "version": "1.2.0",
@@ -2452,7 +2452,7 @@
     "title": "Sweden Coronavirus (COVID-2019) cases by region",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/SwedenCasesByRegion"
+        "url": "https://covid19api.io/api/v1/SwedenCasesByRegion"
       }
     ],
     "version": "1.2.1",
@@ -2509,7 +2509,7 @@
     "title": "Reporting public health labs are 48 state public health labs",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/TestsInUS"
+        "url": "https://covid19api.io/api/v1/TestsInUS"
       }
     ],
     "version": "1.1.9",
@@ -2566,7 +2566,7 @@
     "title": "USA Medical Aid Distribution",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/USAMedicalAidDistribution"
+        "url": "https://covid19api.io/api/v1/USAMedicalAidDistribution"
       }
     ],
     "version": "1.2.2",
@@ -2672,7 +2672,7 @@
     "title": "United States Coronavirus (COVID-2019) cases by states",
     "sampleRequest": [
       {
-        "url": "https://covid19-server.chrismichael.now.sh/api/v1/UnitedStateCasesByStates"
+        "url": "https://covid19api.io/api/v1/UnitedStateCasesByStates"
       }
     ],
     "version": "1.2.0",

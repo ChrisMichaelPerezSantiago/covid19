@@ -5,7 +5,7 @@ const PluginManager = require('../api');
 
 /**
  *  @api {get} /AllReports Get list of all reports
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/AllReports
+ *  @apiSampleRequest https://covid19api.io/api/v1/AllReports
  *  @apiVersion 1.1.9
  *  @apiName GetAllReports
  *  @apiGroup AllReports
@@ -63,7 +63,7 @@ router.get('/Deaths' , (req , res) =>{
 
 /**
  *  @api {get} /ReportsByCountries/:country Confirmed Cases and Deaths by Country
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/ReportsByCountries/:country
+ *  @apiSampleRequest https://covid19api.io/api/v1/ReportsByCountries/:country
  *  @apiVersion 1.1.9
  *  @apiName GetReportsByCountries
  *  @apiGroup ReportsByCountries
@@ -125,7 +125,7 @@ router.get('/ReportsByCountries/:country' , (req , res) =>{
 
 /**
  *  @api {get} /SituationReports Coronavirus disease (COVID-2019) situation reports
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/SituationReports
+ *  @apiSampleRequest https://covid19api.io/api/v1/SituationReports
  *  @apiVersion 1.1.9
  *  @apiName GetSituationReports
  *  @apiGroup SituationReports
@@ -173,7 +173,7 @@ router.get('/GlobalDataReports' , (req , res) =>{
 
 /**
  *  @api {get} /TestsInUS Reporting public health labs are 48 state public health labs
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/TestsInUS
+ *  @apiSampleRequest https://covid19api.io/api/v1/TestsInUS
  *  @apiVersion 1.1.9
  *  @apiName GetTestsInUS
  *  @apiGroup TestsInUS
@@ -200,7 +200,7 @@ router.get('/TestsInUS' , (req , res) =>{
 
 /**
  *  @api {get} /FatalityRateByAge Age of Coronavirus Deaths - COVID-19 Fatality Rate by AGE
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/FatalityRateByAge
+ *  @apiSampleRequest https://covid19api.io/api/v1/FatalityRateByAge
  *  @apiVersion 1.1.9
  *  @apiName GetFatalityRateByAge
  *  @apiGroup FatalityRateByAge
@@ -228,7 +228,7 @@ router.get('/FatalityRateByAge' , (req , res) =>{
 
 /**
  *  @api {get} /FatalityRateBySex Sex ratio - COVID-19 Fatality Rate by SEX
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/FatalityRateBySex
+ *  @apiSampleRequest https://covid19api.io/api/v1/FatalityRateBySex
  *  @apiVersion 1.1.9
  *  @apiName GetFatalityRateBySex
  *  @apiGroup FatalityRateBySex
@@ -256,7 +256,7 @@ router.get('/FatalityRateBySex' , (req , res) =>{
 
 /**
  *  @api {get} /FatalityRateByComorbidities COVID-19 Fatality Rate by COMORBIDITY
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/FatalityRateByComorbidities
+ *  @apiSampleRequest https://covid19api.io/api/v1/FatalityRateByComorbidities
  *  @apiVersion 1.1.9
  *  @apiName GetFatalityRateByComorbidities
  *  @apiGroup FatalityRateByComorbidities
@@ -305,7 +305,7 @@ router.get('/TravelHealthNotices' , (req , res) =>{
 
 /**
  *  @api {get} /AllCasesInAmerica Number of COVID-19 cases in the Americas region
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/AllCasesInAmerica
+ *  @apiSampleRequest https://covid19api.io/api/v1/AllCasesInAmerica
  *  @apiVersion 1.1.9
  *  @apiName GetAllCasesInAmerica
  *  @apiGroup AllCasesInAmerica
@@ -331,7 +331,7 @@ router.get('/AllCasesInAmerica' , (req , res) =>{
 
 /**
  *  @api {get} /AllCasesInEurope Situation update for the EU/EEA and the UK
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/AllCasesInEurope
+ *  @apiSampleRequest https://covid19api.io/api/v1/AllCasesInEurope
  *  @apiVersion 1.1.9
  *  @apiName GetAllCasesInEurope
  *  @apiGroup AllCasesInEurope
@@ -369,7 +369,7 @@ router.get('/AllCasesInEurope' , (req , res) =>{
 
 /**
  *  @api {get} /CasesInAllUSStates Coronavirus cases in all US states
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/CasesInAllUSStates
+ *  @apiSampleRequest https://covid19api.io/api/v1/CasesInAllUSStates
  *  @apiVersion 1.1.9
  *  @apiName GetCasesInAllUSStates
  *  @apiGroup CasesInAllUSStates
@@ -424,7 +424,7 @@ router.get('/AggregatedFacilityCapacityCounty' , (req , res) =>{
 
 /**
  *  @api {get} /JohnsHopkinsDataDailyReport Johns Hopkins - Coronavirus Resource Center (CSSE COVID-19 Dataset)
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/JohnsHopkinsDataDailyReport
+ *  @apiSampleRequest https://covid19api.io/api/v1/JohnsHopkinsDataDailyReport
  *  @apiVersion 1.1.9
  *  @apiName GetJohnsHopkinsDataDailyReport
  *  @apiGroup JohnsHopkinsDataDailyReport
@@ -457,7 +457,7 @@ router.get('/JohnsHopkinsDataDailyReport' , (req , res) =>{
 
 /**
  *  @api {get} /PRGeneralResults Quantity and Percentage Distribution
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/PRGeneralResults
+ *  @apiSampleRequest https://covid19api.io/api/v1/PRGeneralResults
  *  @apiVersion 1.1.9
  *  @apiName GetPRGeneralResults
  *  @apiGroup PRGeneralResults
@@ -484,7 +484,7 @@ router.get('/PRGeneralResults' , (req , res) =>{
 
 /**
  *  @api {get} /PRDataByRegions Distribution by Health Region
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/PRDataByRegions
+ *  @apiSampleRequest https://covid19api.io/api/v1/PRDataByRegions
  *  @apiVersion 1.1.9
  *  @apiName GetPRDataByRegions
  *  @apiGroup PRDataByRegions
@@ -512,7 +512,7 @@ router.get('/PRDataByRegions' , (req , res) =>{
 
 /**
  *  @api {get} /PRDataBySex According to the Reported Sex
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/PRDataBySex
+ *  @apiSampleRequest https://covid19api.io/api/v1/PRDataBySex
  *  @apiVersion 1.1.9
  *  @apiName GetPRDataBySex
  *  @apiGroup PRDataBySex
@@ -537,7 +537,7 @@ router.get('/PRDataBySex' , (req , res) =>{
 
 /**
  *  @api {get} /PRDataByTowns Positive Cases by Municipality of Residence
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/PRDataByTowns
+ *  @apiSampleRequest https://covid19api.io/api/v1/PRDataByTowns
  *  @apiVersion 1.1.9
  *  @apiName GetPRDataByTowns
  *  @apiGroup PRDataByTowns
@@ -563,7 +563,7 @@ router.get('/PRDataByTowns' , (req , res) =>{
 
 /**
  *  @api {get} /PRExtraData Availability of necessary items / products for each hospital
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/PRExtraData
+ *  @apiSampleRequest https://covid19api.io/api/v1/PRExtraData
  *  @apiVersion 1.1.9
  *  @apiName GetPRExtraData
  *  @apiGroup PRExtraData
@@ -647,7 +647,7 @@ router.get('/PRExtraData' , (req , res) =>{
 
 /**
  *  @api {get} /IndiaCasesByStates  India Coronavirus (COVID-2019) cases by states
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/IndiaCasesByStates
+ *  @apiSampleRequest https://covid19api.io/api/v1/IndiaCasesByStates
  *  @apiVersion 1.2.0
  *  @apiName GetIndiaCasesByStates
  *  @apiGroup IndiaCasesByStates
@@ -680,7 +680,7 @@ router.get('/IndiaCasesByStates' , (req , res) =>{
 
 /**
  *  @api {get} /SpainCasesByCommunities  Spain Coronavirus (COVID-2019) cases by comunities
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/SpainCasesByCommunities
+ *  @apiSampleRequest https://covid19api.io/api/v1/SpainCasesByCommunities
  *  @apiVersion 1.2.0
  *  @apiName GetSpainCasesByCommunities
  *  @apiGroup SpainCasesByCommunities
@@ -707,7 +707,7 @@ router.get('/SpainCasesByCommunities' , (req , res) =>{
 
 /**
  *  @api {get} /AustraliaCasesByStates  Austrailia Coronavirus (COVID-2019) cases by states
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/AustraliaCasesByStates
+ *  @apiSampleRequest https://covid19api.io/api/v1/AustraliaCasesByStates
  *  @apiVersion 1.2.0
  *  @apiName GetAustraliaCasesByStates
  *  @apiGroup AustraliaCasesByStates
@@ -732,7 +732,7 @@ router.get('/AustraliaCasesByStates' , (req , res) =>{
 
 /**
  *  @api {get} /CanadaCasesByProvincesAndHealthRegion  Canada Coronavirus (COVID-2019) cases by Provinces And Health Region
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/CanadaCasesByProvincesAndHealthRegion
+ *  @apiSampleRequest https://covid19api.io/api/v1/CanadaCasesByProvincesAndHealthRegion
  *  @apiVersion 1.2.0
  *  @apiName GetCanadaCasesByProvincesAndHealthRegion
  *  @apiGroup CanadaCasesByProvincesAndHealthRegion
@@ -761,7 +761,7 @@ router.get('/CanadaCasesByProvincesAndHealthRegion' , (req , res) =>{
 
 /**
  *  @api {get} /JapanCasesByPrefecture  Japan Coronavirus (COVID-2019) cases by prefecture
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/JapanCasesByPrefecture
+ *  @apiSampleRequest https://covid19api.io/api/v1/JapanCasesByPrefecture
  *  @apiVersion 1.2.0
  *  @apiName GetJapanCasesByPrefecture
  *  @apiGroup JapanCasesByPrefecture
@@ -785,7 +785,7 @@ router.get('/JapanCasesByPrefecture' , (req , res) =>{
 
 /**
  *  @api {get} /NewZealandCasesByDistrictHealthBoard  New Zealand Coronavirus (COVID-2019) cases by District Health Board
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/NewZealandCasesByDistrictHealthBoard
+ *  @apiSampleRequest https://covid19api.io/api/v1/NewZealandCasesByDistrictHealthBoard
  *  @apiVersion 1.2.0
  *  @apiName GetNewZealandCasesByDistrictHealthBoard
  *  @apiGroup NewZealandCasesByDistrictHealthBoard
@@ -816,7 +816,7 @@ router.get('/NewZealandCasesByDistrictHealthBoard' , (req , res) =>{
 
 /**
  *  @api {get} /UnitedStateCasesByStates  United States Coronavirus (COVID-2019) cases by states
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/UnitedStateCasesByStates
+ *  @apiSampleRequest https://covid19api.io/api/v1/UnitedStateCasesByStates
  *  @apiVersion 1.2.0
  *  @apiName GetUnitedStateCasesByStates
  *  @apiGroup UnitedStateCasesByStates
@@ -866,7 +866,7 @@ router.get('/UnitedStateCasesByStates' , (req , res) =>{
 
 /**
  *  @api {get} /GermanyCasesByRegion  Germany Coronavirus (COVID-2019) cases by region
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/GermanyCasesByRegion
+ *  @apiSampleRequest https://covid19api.io/api/v1/GermanyCasesByRegion
  *  @apiVersion 1.2.1
  *  @apiName GetGermanyCasesByRegion
  *  @apiGroup GermanyCasesByRegion
@@ -892,7 +892,7 @@ router.get('/GermanyCasesByRegion' , (req , res) =>{
 
 /**
  *  @api {get} /SwedenCasesByRegion  Sweden Coronavirus (COVID-2019) cases by region
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/SwedenCasesByRegion
+ *  @apiSampleRequest https://covid19api.io/api/v1/SwedenCasesByRegion
  *  @apiVersion 1.2.1
  *  @apiName GetSwedenCasesByRegion
  *  @apiGroup SwedenCasesByRegion
@@ -919,7 +919,7 @@ router.get('/SwedenCasesByRegion' , (req , res) =>{
 
 /**
  *  @api {get} /SlovakiaCasesByDistrict  Slovakia Coronavirus (COVID-2019) cases by district
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/SlovakiaCasesByDistrict
+ *  @apiSampleRequest https://covid19api.io/api/v1/SlovakiaCasesByDistrict
  *  @apiVersion 1.2.1
  *  @apiName GetSlovakiaCasesByDistrict
  *  @apiGroup SlovakiaCasesByDistrict
@@ -942,6 +942,8 @@ router.get('/SwedenCasesByRegion' , (req , res) =>{
  * 
  **/
 
+
+ https://covid19api.io/api/v1/
 router.get('/SlovakiaCasesByDistrict' , (req , res) =>{
   PluginManager.slovakiaCasesByDistrict()
     .then(data =>{
@@ -955,7 +957,7 @@ router.get('/SlovakiaCasesByDistrict' , (req , res) =>{
 
 /**
  *  @api {get} /PortugalCasesByRegion  Portugal Coronavirus (COVID-2019) cases by region
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/PortugalCasesByRegion
+ *  @apiSampleRequest https://covid19api.io/api/v1/PortugalCasesByRegion
  *  @apiVersion 1.2.1
  *  @apiName GetPortugalCasesByRegion
  *  @apiGroup PortugalCasesByRegion
@@ -979,7 +981,7 @@ router.get('/PortugalCasesByRegion' , (req , res) =>{
 
 /**
  *  @api {get} /PolandCasesByRegion  Poland Coronavirus (COVID-2019) cases by region
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/PolandCasesByRegion
+ *  @apiSampleRequest https://covid19api.io/api/v1/PolandCasesByRegion
  *  @apiVersion 1.2.1
  *  @apiName GetPolandCasesByRegion
  *  @apiGroup PolandCasesByRegion
@@ -1004,7 +1006,7 @@ router.get('/PolandCasesByRegion' , (req , res) =>{
 
 /**
  *  @api {get} /PalestineCasesByRegion  Palestine Coronavirus (COVID-2019) cases by region
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/PalestineCasesByRegion
+ *  @apiSampleRequest https://covid19api.io/api/v1/PalestineCasesByRegion
  *  @apiVersion 1.2.1
  *  @apiName GetPalestineCasesByRegion
  *  @apiGroup PalestineCasesByRegion
@@ -1028,7 +1030,7 @@ router.get('/PalestineCasesByRegion' , (req , res) =>{
 
 /**
  *  @api {get} /NorwayCasesByRegion  Norway Coronavirus (COVID-2019) cases by region
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/NorwayCasesByRegion
+ *  @apiSampleRequest https://covid19api.io/api/v1/NorwayCasesByRegion
  *  @apiVersion 1.2.1
  *  @apiName GetNorwayCasesByRegion
  *  @apiGroup NorwayCasesByRegion
@@ -1052,7 +1054,7 @@ router.get('/NorwayCasesByRegion' , (req , res) =>{
 
 /**
  *  @api {get} /BrazilCasesByRegion  Brazil Coronavirus (COVID-2019) cases by region
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/BrazilCasesByRegion
+ *  @apiSampleRequest https://covid19api.io/api/v1/BrazilCasesByRegion
  *  @apiVersion 1.2.1
  *  @apiName GetBrazilCasesByRegion
  *  @apiGroup BrazilCasesByRegion
@@ -1076,7 +1078,7 @@ router.get('/BrazilCasesByRegion' , (req , res) =>{
 
 /**
  *  @api {get} /AlgeriaCasesByRegion  Algeria Coronavirus (COVID-2019) cases by region
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/AlgeriaCasesByRegion
+ *  @apiSampleRequest https://covid19api.io/api/v1/AlgeriaCasesByRegion
  *  @apiVersion 1.2.1
  *  @apiName GetAlgeriaCasesByRegion
  *  @apiGroup AlgeriaCasesByRegion
@@ -1100,7 +1102,7 @@ router.get('/AlgeriaCasesByRegion' , (req , res) =>{
 
 /**
  *  @api {get} /CivicFreedomTracker  COVID-19 Civic Freedom Tracker
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/CivicFreedomTracker
+ *  @apiSampleRequest https://covid19api.io/api/v1/CivicFreedomTracker
  *  @apiVersion 1.2.1
  *  @apiName GetCivicFreedomTracker
  *  @apiGroup CivicFreedomTracker
@@ -1128,7 +1130,7 @@ router.get('/CivicFreedomTracker' , (req , res) =>{
 
 /**
  *  @api {get} /USAMedicalAidDistribution USA Medical Aid Distribution
- *  @apiSampleRequest https://covid19-server.chrismichael.now.sh/api/v1/USAMedicalAidDistribution
+ *  @apiSampleRequest https://covid19api.io/api/v1/USAMedicalAidDistribution
  *  @apiVersion 1.2.2
  *  @apiName GetUSAMedicalAidDistribution
  *  @apiGroup USAMedicalAidDistribution
