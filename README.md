@@ -1705,9 +1705,9 @@ await PluginManager.downloadReportsToCSV();
 ```
 
 ## USA Medical Aid Distribution
+### PluginManager.getUSAMedicalAidDistribution()
 *Recipient Details*
 
-### PluginManager.getUSAMedicalAidDistribution()
 
 ```json
 {
@@ -1733,6 +1733,48 @@ await PluginManager.downloadReportsToCSV();
   ]
 }
 
+```
+
+## COVID-19 Community Mobility Reports (Google)
+### PluginManager.getGoogleCommunityMobilityReports()
+*These Community Mobility Reports aim to provide insights into what has changed in response to policies aimed at combating COVID-19. The reports chart movement trends over time by geography, across different categories of places such as retail and recreation, groceries and pharmacies, parks, transit stations, workplaces, and residential.*
+
+```json
+[
+  [
+    { 
+      table: [
+          {
+          "country_region_code": "AE",
+          "country_region": "United Arab Emirates",
+          "sub_region_1": "Ajman",
+          "sub_region_2": "",
+          "date": "2020-02-19",
+          "retail_and_recreation_percent_change_from_baseline": "-2",
+          "grocery_and_pharmacy_percent_change_from_baseline": "-1",
+          "parks_percent_change_from_baseline": "5",
+          "transit_stations_percent_change_from_baseline": "11",
+          "workplaces_percent_change_from_baseline": "2",
+          "residential_percent_change_from_baseline": "1"
+        },
+        {
+          "country_region_code": "AE",
+          "country_region": "United Arab Emirates",
+          "sub_region_1": "Ajman",
+          "sub_region_2": "",
+          "date": "2020-02-20",
+          "retail_and_recreation_percent_change_from_baseline": "-1",
+          "grocery_and_pharmacy_percent_change_from_baseline": "0",
+          "parks_percent_change_from_baseline": "7",
+          "transit_stations_percent_change_from_baseline": "9",
+          "workplaces_percent_change_from_baseline": "2",
+          "residential_percent_change_from_baseline": "1"
+        },
+        // .....
+      ] 
+    } 
+  ] 
+]
 ```
 
 ---
