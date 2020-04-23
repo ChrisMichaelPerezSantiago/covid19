@@ -19,16 +19,13 @@
   <img style="" src="./assets/img/logo.png"/>
 </p> 
 
-## 🚨 Important Information 🚨
-*If you notice that I make and publish many updates / versions in the api, it is due to all the data that is reaching the public. This helps me create a more complete API, with accurate data.*
-
-*In turn, I have created a [website](https://covid19pr.chrismichael.now.sh/) to demonstrate the capabilities that this API has when using it to create web applications. I have only created it for demonstration, so it will serve as a prototype.*
-
-*Sorry for the inconvenience!*
+## 🚨 THE DOMAIN WAS CHANGED - 04/23/2020🚨
+*To notify you that the domain has been updated by the following `https://covid19api.io/api/v1`. In turn, endpoints maintain the same routes.*
+*For people who are from Puerto Rico I have separated an exclusive route `https://covid19api.io/api/v1/PuertoRico` that contains data endpoint from PR Statistics,  Department of Health and data from the Biosecurity Dashboard.*
 
 
 ## API URL
-- [x] [COVID19 API URL now.sh](https://covid19-server.chrismichael.now.sh/api/v1/)
+- [x] [COVID19 API URL](https://covid19api.io/api/v1)
 
 ## 🚀 COVID19 API Documentation
 - [x] [COVID19 API DOC](https://covid19-docs.chrismichael.now.sh)
