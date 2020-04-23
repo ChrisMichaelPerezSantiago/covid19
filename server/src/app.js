@@ -23,7 +23,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/v1', api);
-app.use('/api/v1/animeflv-docs' , express.static('./animeflv-docs'))
 
 app.use(middlewares);
 
