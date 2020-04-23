@@ -202,6 +202,11 @@ class PluginManager {
     const res = await Promise.all(this.plugins.map(plugin => plugin.usaMedicalAidDistribution()));
     return res;
   };
+
+  async getGoogleCommunityMobilityReports(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.  googleCommunityMobilityReports()));
+    return res;
+  };
 }
 
 module.exports = PluginManager;
