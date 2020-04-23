@@ -51,7 +51,7 @@ router.get('/', (req, res) => {
         'AlgeriaCasesByRegion': '/api/v1/AlgeriaCasesByRegion',
         'CivicFreedomTracker': '/api/v1/CivicFreedomTracker',
         'USAMedicalAidDistribution': '/api/v1/USAMedicalAidDistribution',
-        'PRMedicalAidDistribution': '/PuertoRico/MedicalAidDistribution',
+        //'PRMedicalAidDistribution': '/PuertoRico/MedicalAidDistribution',
         //'GoogleCommunityMobilityReports': '/api/v1/GoogleCommunityMobilityReports'
       }
     ]
