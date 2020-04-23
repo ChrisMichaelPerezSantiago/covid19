@@ -1145,6 +1145,24 @@ const usaMedicalAidDistribution = async() =>{
   return Promise.all(table);
 };
 
+const googleCommunityMobilityReports = async() =>{
+  const res = await axios.get('https://www.google.com/covid19/mobility/');
+  const $ = cheerio.load(res.data);
+  var matches = $.html().match(/\bhttps?:\/\/\S+/gi);
+  const file = matches.filter(file => file.includes('.csv'))[0].split('"')[0].trim();
+
+  const data = await csv()
+  .fromStream(request.get(file))
+    .subscribe((json)=>{
+      return new Promise((resolve,reject)=>{          
+        resolve(json)     
+    });
+  });
+
+  const table = [{table: data}];
+
+  return Promise.all(table);
+};
 
 //const reportsToCSV = () =>{
 //  try{
@@ -1204,5 +1222,6 @@ module.exports = {
   brazilCasesByRegion,
   algeriaCasesByRegion,
   civicFreedomTracker,
-  usaMedicalAidDistribution
+  usaMedicalAidDistribution,
+  googleCommunityMobilityReports
 };

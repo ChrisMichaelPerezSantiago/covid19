@@ -1161,6 +1161,18 @@ router.get('/USAMedicalAidDistribution' , (req , res) =>{
 });
 
 
+//router.get('/GoogleCommunityMobilityReports' , (req , res) =>{
+//  PluginManager.googleCommunityMobilityReports()
+//    .then(data =>{
+//      res.status(200).json({
+//        data: data
+//      });
+//    }).catch((err) =>{
+//      console.error(err);
+//    });
+//});
+
+
 
 
 /*********************************************************************
