@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/img/logo.png" width="50%" alt="Nest Logo" />
+  <img src="./assets/img/logo.png" width="50%" alt="COVID19 API" />
 </p>
 
 <p align="center">This API provides updated real-time data on coronavirus cases from the worldometers page and other important websites, provided by the most reputable organizations and statistical offices in the world.</p>
