@@ -1,23 +1,25 @@
-# **🐛 COVID19** (version v1.2.1)
+<p align="center">
+  <img src="./assets/img/logo.png" width="50%" alt="Nest Logo" />
+</p>
 
-![node version](https://img.shields.io/badge/node->=10.16.x-brightgreen.svg)
-![npm version](https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg)
+<p align="center">This API provides updated real-time data on coronavirus cases from the worldometers page and other important websites, provided by the most reputable organizations and statistical offices in the world.</p>
+
+<p align="center">
+<img src="https://img.shields.io/badge/node->=10.16.x-brightgreen.svg"/>
+<img src="https://img.shields.io/badge/npm->=6.9.x-brightgreen.svg"/>
 <img alt="Maintenance" src="https://img.shields.io/badge/Maintained%3F-yes-green.svg" />          
 <img alt="License: MIT" src="https://img.shields.io/badge/License-MIT-yellow.svg" />
 <img src="https://img.shields.io/badge/COVID19-API-brightgreen.svg" alt="">
 <img src="https://badgen.net/badge/icon/now?icon=now&label" alt="">
-[![Build Status](https://travis-ci.com/ChrisMichaelPerezSantiago/covid19.svg?branch=master)](https://travis-ci.com/ChrisMichaelPerezSantiago/covid19)
 
- <a href="https://nodei.co/npm/covid19-api/"><img src="https://nodei.co/npm/covid19-api.png"></a>
+<img src="https://travis-ci.com/ChrisMichaelPerezSantiago/covid19.svg?branch=master"/>
 
+<p align="center">
+  <a href="https://nodei.co/npm/covid19-api/"><img src="https://nodei.co/npm/covid19-api.png"></a>
+</p>
+</p>
+  
 
-> This API provides updated real-time data on coronavirus cases from the worldometers page and other important websites, provided by the most reputable organizations and statistical offices in the world.
-
----
-
- <p align="center"> 
-  <img style="" src="./assets/img/logo.png"/>
-</p> 
 
 ## 🚨 THE DOMAIN WAS CHANGED - 04/23/2020🚨
 *To notify you that the domain has been updated by the following `https://covid19api.io/api/v1`. In turn, endpoints maintain the same routes.*
