@@ -79,6 +79,7 @@ router.get('/PuertoRico', (req, res) => {
       {
         'PRDataByTowns': '/Biosecurity/PRDataByTowns',
         'HospitalDataAndNeeds': '/Biosecurity/HospitalDataAndNeeds',
+        'PRBiosecurityDataByRegion': '/Biosecurity/PRBiosecurityDataByRegion'
       }
     ]
   });

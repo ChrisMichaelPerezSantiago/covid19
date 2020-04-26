@@ -1208,6 +1208,17 @@ router.get('/PuertoRico/Biosecurity/PRDataByTowns' , (req , res) =>{
     });
 });
 
+router.get('/PuertoRico/Biosecurity/PRBiosecurityDataByRegion' , (req , res) =>{
+  PluginManager.prBiosecurityDataByRegion()
+    .then(data =>{
+      res.status(200).json({
+        data: data
+      });
+    }).catch((err) =>{
+      console.error(err);
+    });
+});
+
 router.get('/PuertoRico/Biosecurity/HospitalDataAndNeeds' , (req , res) =>{
   PluginManager.prExtraData()
     .then(data =>{

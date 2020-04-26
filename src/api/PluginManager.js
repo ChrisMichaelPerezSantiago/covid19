@@ -108,6 +108,11 @@ class PluginManager {
     return res;
   };
 
+  async getPRBiosecurityDataByRegion(){
+    const res = await Promise.all(this.plugins.map(plugin => plugin.prBiosecurityDataByRegion()));
+    return res;
+  };
+
   async getPRDataBySex(){
     const res = await Promise.all(this.plugins.map(plugin => plugin.prDataBySex()));
     return res;

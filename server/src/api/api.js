@@ -734,6 +734,25 @@ const prDataByRegion = async() =>{
     }
 };
 
+const prBiosecurityDataByRegion = async() =>{
+  try{
+    const res = await axios.get('https://services5.arcgis.com/klquQoHA0q9zjblu/arcgis/rest/services/Regiones_Joined/FeatureServer/0/query?f=json&where=1%3D1&returnGeometry=false&spatialRel=esriSpatialRelIntersects&outFields=*&orderByFields=Total%20desc&outSR=102100&resultOffset=0&resultRecordCount=4000&resultType=standard&cacheHint=true');
+    const table = await res.data.features;
+    
+    table.forEach((obj) =>{
+      delete obj.attributes.Shape__Area;
+      delete obj.attributes.Shape__Length;
+      delete obj.attributes.IDRegion;
+      delete obj.attributes.ObjectId;
+    });  
+    const data = [{table: table}]; 
+
+    return Promise.all(data);
+  }catch(err){
+    console.log(err)
+  }
+};
+
 const prDataBySex = async() =>{
   try{
     //const res1 = await cloudscraper('https://github.com/ChrisMichaelPerezSantiago/covid19/tree/master/EstatidistcasPuertoRico/resultados/datos_por_sexo',{
@@ -1202,6 +1221,7 @@ module.exports = {
   johnsHopkinsDataDailyReport,
   prGeneralResults,
   prDataByRegion,
+  prBiosecurityDataByRegion,
   prDataBySex,
   prDataByTowns,
   prExtraData,
