@@ -1918,6 +1918,69 @@ await PluginManager.downloadReportsToCSV();
 ]
 ```
 
+### PluginManager.getPRBiosecurityDataByRegion()
+*Data by regions provided by Biosecurity*
+
+```json
+[
+  [
+    {
+      "table": [
+        {
+          "attributes": {
+            "RegionSalud": "Metro",
+            "Region": "Metro",
+            "Total": 449
+          }
+        },
+        {
+          "attributes": {
+            "RegionSalud": "Bayamon",
+            "Region": "Bayamon",
+            "Total": 268
+          }
+        },
+        {
+          "attributes": {
+            "RegionSalud": "Mayaguez",
+            "Region": "Mayaguez",
+            "Total": 176
+          }
+        },
+        {
+          "attributes": {
+            "RegionSalud": "Caguas",
+            "Region": "Caguas",
+            "Total": 170
+          }
+        },
+        {
+          "attributes": {
+            "RegionSalud": "Ponce",
+            "Region": "Ponce ",
+            "Total": 106
+          }
+        },
+        {
+          "attributes": {
+            "RegionSalud": "Arecibo",
+            "Region": "Arecibo",
+            "Total": 85
+          }
+        },
+        {
+          "attributes": {
+            "RegionSalud": "Fajardo",
+            "Region": "Fajardo",
+            "Total": 28
+          }
+        }
+      ]
+    }
+  ]
+]
+```
+
 ---
 
 
