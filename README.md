@@ -2067,4 +2067,9 @@ _*Chris Michael*_
 
 ---
 
-Copyright © 2020 [COVID19 API](https://github.com/ChrisMichaelPerezSantiago/covid19).
+
+<p align="center">
+ <a src="https://github.com/ChrisMichaelPerezSantiago/covid19">Copyright © 2020 COVID19 API</a>
+  <br/><br/>
+  <img src="./assets/svg/powered-by-vercel.svg"/>
+</p>
