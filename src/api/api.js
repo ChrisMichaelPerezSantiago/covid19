@@ -275,18 +275,26 @@ const fatalityRateByAge  = async() =>{
   const $ = cheerio.load(body);
   const html = $.html();
   const table = tabletojson.convert(html);  
-  const data = table[0];
+  const data = table[4];
 
-  data.forEach((obj) => renameKey(obj , '0' , 'Age'));
-  data.forEach((obj) => renameKey(obj , '1' , 'DeathRateConfirmedCases'));
-  data.forEach((obj) => renameKey(obj , '2' , 'DeathRateAllCases'));
+  
+
+  data.forEach((obj) => {
+    renameKey(obj , '0' , 'Genre')
+    renameKey(obj , '1' , 'DeathRateConfirmedCases')
+    renameKey(obj , '2' , 'DeathRateAllCases')
+  })
+
+  //data.forEach((obj) => renameKey(obj , '0' , 'Age'));
+  //data.forEach((obj) => renameKey(obj , '1' , 'DeathRateConfirmedCases'));
+  //data.forEach((obj) => renameKey(obj , '2' , 'DeathRateAllCases'));
   const doc = [];
 
   Array.from({length: data.length} , (v , k) =>{
     let info = data[k + 1];
     doc.push(info)
   });
-
+  
   return Promise.all(doc.filter(doc => doc))
 };
 
@@ -297,11 +305,17 @@ const fatalityRateBySex  = async() =>{
   const $ = cheerio.load(body);
   const html = $.html();
   const table = tabletojson.convert(html);  
-  const data = table[1];
+  const data = table[4];
 
-  data.forEach((obj) => renameKey(obj , '0' , 'Sex'));
-  data.forEach((obj) => renameKey(obj , '1' , 'DeathRateConfirmedCases'));
-  data.forEach((obj) => renameKey(obj , '2' , 'DeathRateAllCases'));
+  data.forEach((obj) => {
+    renameKey(obj , '0' , 'Genre')
+    renameKey(obj , '1' , 'DeathRateConfirmedCases')
+    renameKey(obj , '2' , 'DeathRateAllCases')
+  });
+
+  //data.forEach((obj) => renameKey(obj , '0' , 'Sex'));
+  //data.forEach((obj) => renameKey(obj , '1' , 'DeathRateConfirmedCases'));
+  //data.forEach((obj) => renameKey(obj , '2' , 'DeathRateAllCases'));
   const doc = [];
 
   Array.from({length: data.length} , (v , k) =>{
@@ -319,7 +333,7 @@ const fatalityRateByComorbidities  = async() =>{
   const $ = cheerio.load(body);
   const html = $.html();
   const table = tabletojson.convert(html);  
-  const data = table[2];
+  const data = table[5];
 
   data.forEach((obj) => renameKey(obj , '0' , 'PreExistingCondition'));
   data.forEach((obj) => renameKey(obj , '1' , 'DeathRateConfirmedCases'));
