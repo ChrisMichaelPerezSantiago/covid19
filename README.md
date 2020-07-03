@@ -2022,6 +2022,16 @@ These are projects that take a lot of effort and time to maintain. So with your 
         <sub>Covid Texting Service</sub>
       </a>
     </td>
+     <td align="center">
+      <a href="https://github.com/emulk/covid19">
+        <img src="https://avatars1.githubusercontent.com/u/3034446?s=460&u=7e5fb94a9040cd874f7e7d22e7644bfae11cbe1f&v=4" width="75px;" alt="yenniejun"/><br />
+          <sub>
+            <b>emulk</b>
+          </sub>
+      </a><br/>
+        <sub>Covid19 Real Time News</sub>
+      </a>
+    </td>
   </tr>
 </table>
 
