@@ -976,30 +976,27 @@ const swedenCasesByRegion = async() =>{
 };
 
 const civicFreedomTracker = async() =>{
-  const res = await axios.get('https://www.icnl.org/covid19tracker/');
-  const body = await res.data;
-  const $ = cheerio.load(body);
-  
-  const promises = [];
-
-  $('div#entries div.entry').each((index, element) =>{
-    const $element = $(element);
-    const country = $element.find('div.entrypretitle').text().trim();
-    const title = $element.find('h3').text().trim();
-    const description = $element.find('p').text().trim();
-    let type = $element.find('h6 span.regulation').text().trim() || 
-               $element.find('h6 span.order').text().trim()      ||
-               $element.find('h6 span.law').text().trim();
+  const res = await axios.get('https://www.icnl.org/covid19tracker/')
+    const body = await res.data;
+    const $ = cheerio.load(body);
     
-    const date = $element.find('h6 span.date').text().trim();
-    const issue = $element.find('h6 span.issue').text().trim();
-
-    promises.push({country , title , description , type , date, issue});
-  });
-
-  const table = [{table: promises}];
-
-  return Promise.all(table);
+    const promises = [];
+  
+    $('div#entries div.entry').each((index, element) =>{
+      const $element = $(element);
+      const country = $element.find('div.entrypretitle').text().trim();
+      const title = $element.find('h3').text().trim();
+      let type = $element.find('span.order').text().trim();
+      const date = $element.find('span.date').text().trim().substr(11);
+      const issue = $element.find('span.issue').text().trim().substr(10);
+      const description = $element.find('p').text().trim().split("\n")[0];
+  
+      promises.push({country , title , description , type , date, issue});
+    });
+  
+    const table = [{table: promises}];
+  
+    return Promise.all(table);
 };
 
 const slovakiaCasesByDistrict = async() =>{
