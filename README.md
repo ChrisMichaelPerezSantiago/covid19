@@ -21,16 +21,17 @@
   
 
 
-## 🚨 THE DOMAIN WAS CHANGED - 04/23/2020🚨
-*To notify you that the domain has been updated by the following `https://covid19api.io/api/v1`. In turn, endpoints maintain the same routes.*
-*For people who are from Puerto Rico I have separated an exclusive route `https://covid19api.io/api/v1/PuertoRico` that contains data endpoint from PR Statistics,  Department of Health and data from the Biosecurity Dashboard.*
+## 🚨 Important Announcement 🚨
+*Several months the vercel team contacted me in relation to the fact that they could no longer support me with the API URL, due to the high volume of traffic (this represented a high cost for them).*
+
+*I still thank the team for the support during the time they supported the API.*
 
 
 ## API URL
-- [x] [COVID19 API URL](https://covid19api.io/api/v1)
+- [x] Not available
 
 ## 🚀 COVID19 API Documentation
-- [x] [COVID19 API DOC](https://covid19-docs.chrismichael.now.sh)
+- [x] Not available
 
 ## 📝 Brief Information on COVID19
 
